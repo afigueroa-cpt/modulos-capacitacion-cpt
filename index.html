@@ -130,7 +130,7 @@ body{
   gap:0;
   position:relative;
 }
-@media (max-width:1000px){
+@media (max-width:768px){
   .layout{grid-template-columns:1fr}
   .timeline-nav{display:none}
 }
@@ -2282,6 +2282,555 @@ footer strong{color:var(--navy);font-weight:800}
           <h3>Las cinco etapas de una visita preventiva</h3>
           <p class="sec-desc">Toda visita del CPT se ejecuta en cinco etapas encadenadas. Cada una tiene consideraciones específicas que determinan la calidad del producto final.</p>
         </div>
+
+        <button class="infog-modal-trigger" onclick="openInfog('modal-etapas')" style="margin-bottom:16px">
+  <div class="infog-modal-trigger-ico">🗺️</div>
+  <div class="infog-modal-trigger-body">
+    <div class="infog-modal-trigger-title">Las cinco etapas de la visita preventiva</div>
+    <div class="infog-modal-trigger-sub">Flujo interactivo · Haz clic en cada etapa para desplegar su contenido</div>
+  </div>
+  <span class="infog-modal-trigger-arr">→</span>
+</button>
+<div class="infog-overlay" id="modal-etapas">
+  <div class="infog-modal-box">
+    <div class="infog-modal-topbar">
+      <div class="infog-modal-topbar-title">🗺️ Las cinco etapas de la visita preventiva · CPT</div>
+      <button class="infog-modal-close" onclick="closeInfog('modal-etapas')" title="Cerrar">✕</button>
+    </div>
+    <div class="infog-modal-content">
+      <div class="infog-embed-outer">
+<style>
+/* ══════════════════════════════════
+   SCOPE-ETAPAS — CSS aislado
+══════════════════════════════════ */
+.scope-etapas{all:initial;display:block;font-family:'Atkinson Hyperlegible Next',Arial,sans-serif;box-sizing:border-box;color:#1A2840}
+.scope-etapas *{box-sizing:border-box;margin:0;padding:0}
+.scope-etapas{--navy:#142E66;--navy-deep:#0D1F47;--teal:#2DA8A2;--teal-d:#1E8880;--teal-light:#5ECAC4;--teal-bg:#D4F0EE;--comp:#4172B8;--cream:#F2F6FB;--cd:#DDE7F2;--gray:#5A6A80;--text:#1A2840;--sh:0 4px 20px rgba(13,31,71,.10)}
+
+/* FLOW NAV */
+.scope-etapas .flow-nav{display:flex;gap:0;background:var(--cream);border-bottom:2px solid var(--cd);overflow:hidden}
+.scope-etapas .flow-step{flex:1;padding:18px 10px 14px;cursor:pointer;text-align:center;border-right:1px solid var(--cd);transition:all .2s;position:relative;user-select:none}
+.scope-etapas .flow-step:last-child{border-right:none}
+.scope-etapas .flow-step:hover{background:rgba(45,168,162,.06)}
+.scope-etapas .flow-step.active{background:var(--navy-deep)}
+.scope-etapas .flow-step.active::after{content:'';position:absolute;bottom:-10px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:10px solid var(--navy-deep);z-index:2}
+.scope-etapas .flow-ico-wrap{width:44px;height:44px;border-radius:10px;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;margin:0 auto 8px;transition:all .2s}
+.scope-etapas .flow-step.active .flow-ico-wrap{background:rgba(94,202,196,.18)}
+.scope-etapas .flow-ico-wrap svg{width:22px;height:22px}
+.scope-etapas .flow-letter{font-size:9.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);margin-bottom:3px}
+.scope-etapas .flow-step.active .flow-letter{color:rgba(94,202,196,.75)}
+.scope-etapas .flow-label{font-size:11.5px;font-weight:700;color:var(--navy);line-height:1.25}
+.scope-etapas .flow-step.active .flow-label{color:white}
+.scope-etapas .flow-badge{display:inline-block;margin-top:5px;padding:2px 8px;border-radius:10px;font-size:9.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.scope-etapas .bp{background:rgba(45,168,162,.12);color:var(--teal-d)}
+.scope-etapas .bi{background:rgba(65,114,184,.12);color:var(--comp)}
+.scope-etapas .bpo{background:rgba(212,148,26,.12);color:#8A5A08}
+.scope-etapas .bd{background:rgba(30,136,128,.12);color:var(--teal-d)}
+.scope-etapas .flow-step.active .flow-badge{opacity:.75}
+
+/* PANELS */
+.scope-etapas .panels-wrap{padding:28px 32px 24px}
+.scope-etapas .etapa-panel{display:none}
+.scope-etapas .etapa-panel.active{display:block}
+
+/* PANEL HEADER */
+.scope-etapas .ph{display:flex;align-items:center;gap:18px;padding:20px 24px;background:var(--navy-deep);border-radius:12px;margin-bottom:22px}
+.scope-etapas .ph-ico{width:54px;height:54px;background:rgba(94,202,196,.15);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.scope-etapas .ph-ico svg{width:28px;height:28px}
+.scope-etapas .ph-pre{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(94,202,196,.8);margin-bottom:4px}
+.scope-etapas .ph-title{font-size:20px;font-weight:800;color:white;line-height:1.2;margin-bottom:5px}
+.scope-etapas .ph-tag{display:inline-block;padding:3px 10px;border-radius:10px;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+
+/* ACORDEÓN SUB-ITEMS */
+.scope-etapas .sub-list{display:flex;flex-direction:column;gap:8px}
+.scope-etapas .sub-item{background:white;border:1px solid var(--cd);border-radius:9px;overflow:hidden;transition:border-color .15s}
+.scope-etapas .sub-item.open{border-color:var(--teal-light)}
+.scope-etapas .sub-head{display:flex;align-items:center;gap:12px;padding:13px 16px;cursor:pointer;transition:background .15s;user-select:none}
+.scope-etapas .sub-head:hover{background:var(--cream)}
+.scope-etapas .sub-ico{width:30px;height:30px;border-radius:7px;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .15s}
+.scope-etapas .sub-item.open .sub-ico{background:var(--teal);}.scope-etapas .sub-item.open .sub-ico svg path,.scope-etapas .sub-item.open .sub-ico svg rect,.scope-etapas .sub-item.open .sub-ico svg circle,.scope-etapas .sub-item.open .sub-ico svg polyline{stroke:white}
+.scope-etapas .sub-ico svg{width:15px;height:15px}
+.scope-etapas .sub-name{font-size:13.5px;font-weight:700;color:var(--navy);flex:1;line-height:1.3}
+.scope-etapas .sub-chev{font-size:11px;color:var(--gray);transition:transform .2s;flex-shrink:0}
+.scope-etapas .sub-item.open .sub-chev{transform:rotate(180deg)}
+.scope-etapas .sub-body{display:none;padding:0 16px 16px 58px}
+.scope-etapas .sub-item.open .sub-body{display:block}
+.scope-etapas .sub-body p{font-size:13px;color:#3A4A60;line-height:1.65;margin-bottom:8px}
+.scope-etapas .sub-body p:last-child{margin-bottom:0}
+.scope-etapas .sub-body strong{color:var(--navy);font-weight:700}
+
+/* CHECKLIST */
+.scope-etapas .chk-list{display:flex;flex-direction:column;gap:7px}
+.scope-etapas .chk-item{display:flex;align-items:flex-start;gap:12px;font-size:13px;color:#3A4A60;line-height:1.55;padding:11px 14px;background:white;border:1px solid var(--cd);border-radius:8px}
+.scope-etapas .chk-n{flex-shrink:0;width:24px;height:24px;background:var(--teal);color:white;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;margin-top:0}
+.scope-etapas .chk-item strong{color:var(--navy)}
+
+/* BULLETS */
+.scope-etapas .bul-list{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.scope-etapas .bul-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#3A4A60;line-height:1.55}
+.scope-etapas .bul-dot{flex-shrink:0;width:8px;height:8px;background:var(--teal);border-radius:50%;margin-top:6px}
+.scope-etapas .bul-item strong{color:var(--navy)}
+
+/* CALLOUT / NOTE */
+.scope-etapas .note{background:var(--cream);border-left:3px solid var(--teal-light);border-radius:0 7px 7px 0;padding:12px 16px;font-size:12.5px;color:var(--gray);line-height:1.55;font-style:italic;margin:12px 0}
+.scope-etapas .note strong{color:var(--navy);font-style:normal}
+.scope-etapas .warn{background:#FEF3D8;border-left:3px solid #D4941A;border-radius:0 7px 7px 0;padding:12px 16px;font-size:12.5px;color:#6A4A0A;line-height:1.55;margin:12px 0}
+.scope-etapas .call{background:var(--teal-bg);border:1px dashed var(--teal);border-radius:9px;padding:13px 16px;font-size:12.5px;color:#0E3A38;line-height:1.55;margin:12px 0;display:flex;gap:12px;align-items:flex-start}
+.scope-etapas .call-ico{flex-shrink:0;width:26px;height:26px;background:var(--teal);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
+
+/* GRID-2 */
+.scope-etapas .g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+@media(max-width:680px){.scope-etapas .g2{grid-template-columns:1fr}}
+.scope-etapas .ic{background:white;border:1px solid var(--cd);border-radius:8px;padding:14px 16px}
+.scope-etapas .ic-lbl{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-d);margin-bottom:6px}
+.scope-etapas .ic-body{font-size:12.5px;color:#3A4A60;line-height:1.55}
+
+/* FOOTER */
+.scope-etapas .panel-foot{margin-top:22px;padding:14px 18px;background:var(--navy-deep);border-radius:9px;display:flex;align-items:center;gap:14px}
+.scope-etapas .panel-foot svg{width:20px;height:20px;flex-shrink:0}
+.scope-etapas .panel-foot-txt{font-size:12.5px;color:rgba(255,255,255,.8);line-height:1.5}
+.scope-etapas .panel-foot-txt strong{color:var(--teal-light)}
+
+/* BOTTOM BAR */
+.scope-etapas .bottom-bar{display:flex;justify-content:center;gap:8px;padding:18px 32px;border-top:1px solid var(--cd);background:var(--cream)}
+.scope-etapas .bb-dot{width:10px;height:10px;border-radius:50%;background:var(--cd);cursor:pointer;transition:all .2s}
+.scope-etapas .bb-dot.active{background:var(--teal);transform:scale(1.3)}
+
+/* GRID MÉTODOS */
+.scope-etapas .met-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin:10px 0}
+.scope-etapas .met-item{background:white;border:1px solid var(--cd);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;padding:10px 12px}
+.scope-etapas .met-name{font-size:12px;font-weight:800;color:var(--navy);margin-bottom:3px}
+.scope-etapas .met-desc{font-size:11.5px;color:var(--gray);line-height:1.45}
+</style>
+
+<div class="scope-etapas">
+
+  <!-- FLOW NAVIGATION -->
+  <div class="flow-nav">
+    <div class="flow-step active" onclick="etapaSwitch(0)">
+      <div class="flow-ico-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="7" r="3"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+          <circle cx="18" cy="8" r="2"/><path d="M21 21v-1a3 3 0 0 0-3-3h-1"/>
+        </svg>
+      </div>
+      <div class="flow-letter">E1</div>
+      <div class="flow-label">Equipo de visita</div>
+      <span class="flow-badge bp">Pre-visita</span>
+    </div>
+    <div class="flow-step" onclick="etapaSwitch(1)">
+      <div class="flow-ico-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/>
+        </svg>
+      </div>
+      <div class="flow-letter">E2</div>
+      <div class="flow-label">Preparación</div>
+      <span class="flow-badge bp">Pre-visita</span>
+    </div>
+    <div class="flow-step" onclick="etapaSwitch(2)">
+      <div class="flow-ico-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          <path d="M11 8v3l2 2"/>
+        </svg>
+      </div>
+      <div class="flow-letter">E3</div>
+      <div class="flow-label">Conducción</div>
+      <span class="flow-badge bi">In situ</span>
+    </div>
+    <div class="flow-step" onclick="etapaSwitch(3)">
+      <div class="flow-ico-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="9" y1="15" x2="9" y2="15"/><polyline points="9 12 9 15 11 15"/>
+        </svg>
+      </div>
+      <div class="flow-letter">E4</div>
+      <div class="flow-label">Informe</div>
+      <span class="flow-badge bpo">Post-visita</span>
+    </div>
+    <div class="flow-step" onclick="etapaSwitch(4)">
+      <div class="flow-ico-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+        </svg>
+      </div>
+      <div class="flow-letter">E5</div>
+      <div class="flow-label">Seguimiento</div>
+      <span class="flow-badge bd">Diálogo continuo</span>
+    </div>
+  </div>
+
+  <!-- PANELS -->
+  <div class="panels-wrap">
+
+    <!-- ══ E1: EQUIPO ══ -->
+    <div class="etapa-panel active" id="ep0">
+      <div class="ph">
+        <div class="ph-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5ECAC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="7" r="3"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+            <circle cx="18" cy="8" r="2"/><path d="M21 21v-1a3 3 0 0 0-3-3h-1"/>
+          </svg>
+        </div>
+        <div>
+          <div class="ph-pre">Etapa 1 · Pre-visita</div>
+          <div class="ph-title">Definición preliminar del equipo de visita</div>
+          <span class="ph-tag bp">Antes de preparar la visita, se define quiénes la conducirán</span>
+        </div>
+      </div>
+
+      <div class="sub-list">
+        <div class="sub-item open" id="e1s1">
+          <div class="sub-head" onclick="etapaSub('e1s1')">
+            <div class="sub-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <div class="sub-name">Composición del equipo</div>
+            <span class="sub-chev">▾</span>
+          </div>
+          <div class="sub-body">
+            <div class="g2">
+              <div class="ic"><div class="ic-lbl">Habilidades profesionales</div><div class="ic-body">Idealmente al menos una persona con formación <strong>jurídica</strong> y una con formación <strong>médica</strong> (especialmente importante ante casos de tortura y malos tratos).</div></div>
+              <div class="ic"><div class="ic-lbl">Habilidades personales</div><div class="ic-body">Sensibilidad, respeto por la dignidad humana, capacidades lingüísticas adecuadas al contexto del recinto.</div></div>
+              <div class="ic"><div class="ic-lbl">Sin conflicto de intereses</div><div class="ic-body">Los miembros no deben tener vínculo laboral, familiar o afectivo con los establecimientos a visitar. Se sugiere firmar declaración jurada simple.</div></div>
+              <div class="ic"><div class="ic-lbl">Paridad de género</div><div class="ic-body">Facilita las entrevistas privadas, sobre todo en develaciones de abuso o violencia sexual. Es un requisito operativo de protección.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-item" id="e1s2">
+          <div class="sub-head" onclick="etapaSub('e1s2')">
+            <div class="sub-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <div class="sub-name">Tamaño del equipo</div>
+            <span class="sub-chev">▾</span>
+          </div>
+          <div class="sub-body">
+            <p>Entre <strong>3 y 8 personas</strong> (expertos/as y apoyo). La cifra depende de cuatro factores:</p>
+            <div class="bul-list">
+              <div class="bul-item"><div class="bul-dot"></div><span>Objetivos específicos de la visita.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span>Tamaño y complejidad del establecimiento.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span>Conocimiento previo del lugar y su población.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span>Restricciones impuestas por las autoridades del recinto.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-item" id="e1s3">
+          <div class="sub-head" onclick="etapaSub('e1s3')">
+            <div class="sub-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="sub-name">Capacitación del equipo</div>
+            <span class="sub-chev">▾</span>
+          </div>
+          <div class="sub-body">
+            <div class="g2">
+              <div class="ic"><div class="ic-lbl">Formación teórica</div><div class="ic-body">Principios básicos del monitoreo · Marco jurídico nacional e internacional · Problemas clave de la privación de libertad.</div></div>
+              <div class="ic"><div class="ic-lbl">Formación práctica</div><div class="ic-body">Metodología de visitas · Entrevistas privadas · Comportamiento con autoridades y personal · Reglas de seguridad · Redacción de informes · Cooperación interna.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-item" id="e1s4">
+          <div class="sub-head" onclick="etapaSub('e1s4')">
+            <div class="sub-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <div class="sub-name">Autocuidado del equipo</div>
+            <span class="sub-chev">▾</span>
+          </div>
+          <div class="sub-body">
+            <div class="warn">El monitoreo expone a <strong>trauma secundario, estrés postraumático y desgaste profesional</strong>. Estudios muestran alta correlación entre actividades en DDHH y síntomas de estrés/depresión.</div>
+            <p>Medidas recomendadas:</p>
+            <div class="bul-list">
+              <div class="bul-item"><div class="bul-dot"></div><span>Períodos obligatorios de descanso.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span>Espacios de descarga grupal post-visita.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span>Terapia psicológica disponible.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span>Ejercicio físico, rotación de tipos de trabajo y sueño adecuado.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /E1 -->
+
+    <!-- ══ E2: PREPARACIÓN ══ -->
+    <div class="etapa-panel" id="ep1">
+      <div class="ph">
+        <div class="ph-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5ECAC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/>
+          </svg>
+        </div>
+        <div>
+          <div class="ph-pre">Etapa 2 · Pre-visita</div>
+          <div class="ph-title">Preparación de la visita</div>
+          <span class="ph-tag bp">Tres bloques de preparación, en este orden</span>
+        </div>
+      </div>
+
+      <div class="sub-list">
+        <div class="sub-item open" id="e2s1">
+          <div class="sub-head" onclick="etapaSub('e2s1')">
+            <div class="sub-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <div class="sub-name">Preparación documental y entrevistas previas</div>
+            <span class="sub-chev">▾</span>
+          </div>
+          <div class="sub-body">
+            <p>Reunir información disponible: informes anteriores del CPT, informes de otros órganos de monitoreo, prensa, universidades. Entrevistas previas con ONGs, ex-personas privadas de libertad y familiares (caso a caso).</p>
+            <div class="g2" style="margin-top:10px">
+              <div class="ic"><div class="ic-lbl">Sobre el establecimiento</div><div class="ic-body">Características físicas · Autoridades responsables · Problemas conocidos o denunciados.</div></div>
+              <div class="ic"><div class="ic-lbl">Sobre la población</div><div class="ic-body">Caracterización socio-demográfica · Grupos especialmente vulnerables · Historial de visitas previas.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-item" id="e2s2">
+          <div class="sub-head" onclick="etapaSub('e2s2')">
+            <div class="sub-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            </div>
+            <div class="sub-name">Preparación logística · decisiones metodológicas</div>
+            <span class="sub-chev">▾</span>
+          </div>
+          <div class="sub-body">
+            <div class="met-grid">
+              <div class="met-item"><div class="met-name">Objetivos específicos</div><div class="met-desc">Precisar los objetivos del Programa Anual a partir de la información levantada.</div></div>
+              <div class="met-item"><div class="met-name">Unidades de observación</div><div class="met-desc">Carpetas de caso · PPL · Personal · Instalaciones · Familiares · Sociedad civil.</div></div>
+              <div class="met-item"><div class="met-name">Técnicas</div><div class="met-desc">Solicitud de registros · Observación · Encuestas · Grupos focales · Entrevistas · Conversaciones informales.</div></div>
+              <div class="met-item"><div class="met-name">Muestra</div><div class="met-desc">Método de selección con representatividad cualitativa, aleatoriedad y mínimo de confidencialidad.</div></div>
+              <div class="met-item"><div class="met-name">Instrumentos y protocolos</div><div class="met-desc">Seleccionar y adaptar los instrumentos para el recinto específico.</div></div>
+              <div class="met-item"><div class="met-name">Cronograma del equipo</div><div class="met-desc">Flujo de acciones, distribución de tareas, tiempos y anticipación de imprevistos.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-item" id="e2s3">
+          <div class="sub-head" onclick="etapaSub('e2s3')">
+            <div class="sub-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div class="sub-name">Preparación operativa</div>
+            <span class="sub-chev">▾</span>
+          </div>
+          <div class="sub-body">
+            <p>Reunión previa con <strong>todo el equipo</strong> para acordar la coordinación interna, revisar las decisiones metodológicas y repartir instrumentos y materiales. Ningún miembro debe llegar al recinto sin haber participado en esta instancia.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- /E2 -->
+
+    <!-- ══ E3: CONDUCCIÓN ══ -->
+    <div class="etapa-panel" id="ep2">
+      <div class="ph">
+        <div class="ph-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5ECAC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            <path d="M11 8v3l2 2"/>
+          </svg>
+        </div>
+        <div>
+          <div class="ph-pre">Etapa 3 · In situ</div>
+          <div class="ph-title">Conducción de la visita</div>
+          <span class="ph-tag bi">Desde la entrada al establecimiento hasta el cierre</span>
+        </div>
+      </div>
+
+      <div class="chk-list">
+        <div class="chk-item"><div class="chk-n">1</div><span><strong>Conversación inicial con la autoridad:</strong> presentar el CPT, los miembros del equipo y los objetivos de la visita.</span></div>
+        <div class="chk-item"><div class="chk-n">2</div><span><strong>Entrevista con la autoridad del establecimiento:</strong> instancia abierta sobre cuestiones generales de funcionamiento.</span></div>
+        <div class="chk-item"><div class="chk-n">3</div><span><strong>Encuesta institucional (auto-aplicada):</strong> gestión, dotación, capacitación, enfoques, normativas internas.</span></div>
+        <div class="chk-item"><div class="chk-n">4</div><span><strong>Solicitud y análisis de documentación:</strong> tiempo dedicado a especificar requerimientos y recoger todos los datos relevantes.</span></div>
+        <div class="chk-item"><div class="chk-n">5</div><span><strong>Observación de instalaciones:</strong> con Pautas de Observación, prestando atención a dormitorios/celdas, ingreso, aislamiento y sanitarios.</span></div>
+        <div class="chk-item"><div class="chk-n">6</div><span><strong>Entrevistas con personas bajo custodia y personal:</strong> formales e informales — son la base del proceso documental.</span></div>
+        <div class="chk-item"><div class="chk-n">7</div><span><strong>Conversación final con la autoridad:</strong> resumen preliminar, casos urgentes y observaciones iniciales.</span></div>
+        <div class="chk-item"><div class="chk-n">8</div><span><strong>Semana intermedia:</strong> análisis de la información recolectada para identificar vacíos y dudas antes de la re-visita.</span></div>
+        <div class="chk-item"><div class="chk-n">9</div><span><strong>Re-visita:</strong> abordar áreas no cubiertas o profundizar en los aspectos identificados en el análisis intermedio.</span></div>
+      </div>
+    </div><!-- /E3 -->
+
+    <!-- ══ E4: INFORME ══ -->
+    <div class="etapa-panel" id="ep3">
+      <div class="ph">
+        <div class="ph-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5ECAC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <polyline points="9 15 9 10 12 13 15 10 15 15"/>
+          </svg>
+        </div>
+        <div>
+          <div class="ph-pre">Etapa 4 · Post-visita</div>
+          <div class="ph-title">Elaboración del informe de visita</div>
+          <span class="ph-tag bpo">Esta fase es tan o más importante que la visita misma</span>
+        </div>
+      </div>
+
+      <div class="sub-list">
+        <div class="sub-item open" id="e4s1">
+          <div class="sub-head" onclick="etapaSub('e4s1')">
+            <div class="sub-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <div class="sub-name">Metodología de análisis</div>
+            <span class="sub-chev">▾</span>
+          </div>
+          <div class="sub-body">
+            <div class="bul-list">
+              <div class="bul-item"><div class="bul-dot"></div><span><strong>Conformidad con estándares</strong> nacionales e internacionales de derechos humanos.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span><strong>Priorización</strong> de áreas problemáticas según gravedad y urgencia.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span><strong>Triangulación de fuentes:</strong> documentación + observación + entrevistas.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-item" id="e4s2">
+          <div class="sub-head" onclick="etapaSub('e4s2')">
+            <div class="sub-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div class="sub-name">Contenido mínimo del informe</div>
+            <span class="sub-chev">▾</span>
+          </div>
+          <div class="sub-body">
+            <div class="bul-list">
+              <div class="bul-item"><div class="bul-dot"></div><span>Composición del equipo y fecha de la visita.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span>Objetivos específicos de la visita.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span>Cómo fue obtenida y corroborada la información.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span>Condiciones de detención organizadas por dimensión CPT.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span>Recomendaciones priorizadas según urgencia y plazo.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-item" id="e4s3">
+          <div class="sub-head" onclick="etapaSub('e4s3')">
+            <div class="sub-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div class="sub-name">Advertencia sobre terminología</div>
+            <span class="sub-chev">▾</span>
+          </div>
+          <div class="sub-body">
+            <div class="call">
+              <div class="call-ico">!</div>
+              <div>Cuando se informa sobre tortura o situaciones no presenciadas directamente, la terminología debe diferenciar claramente entre lo que <strong>"es"</strong> y lo que se ha <strong>"alegado"</strong> o <strong>"informado"</strong>. El objetivo es pedir a las autoridades que investiguen — no sustituir al poder judicial.</div>
+            </div>
+            <p style="margin-top:10px">Los detalles personales de los detenidos solo se mencionan con su <strong>consentimiento expreso</strong>. El contenido del informe no debe ponerlos en peligro.</p>
+          </div>
+        </div>
+      </div>
+    </div><!-- /E4 -->
+
+    <!-- ══ E5: SEGUIMIENTO ══ -->
+    <div class="etapa-panel" id="ep4">
+      <div class="ph">
+        <div class="ph-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5ECAC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+          </svg>
+        </div>
+        <div>
+          <div class="ph-pre">Etapa 5 · Diálogo continuo</div>
+          <div class="ph-title">Seguimiento de la visita</div>
+          <span class="ph-tag bd">El paso más importante del ciclo de visita</span>
+        </div>
+      </div>
+
+      <div class="note" style="margin-bottom:16px">El seguimiento de la implementación de las recomendaciones podría ser <strong>el paso más importante</strong> de las visitas. Sin él, los hallazgos no se traducen en cambios reales.</div>
+
+      <div class="sub-list">
+        <div class="sub-item open" id="e5s1">
+          <div class="sub-head" onclick="etapaSub('e5s1')">
+            <div class="sub-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div class="sub-name">Diálogo con autoridades</div>
+            <span class="sub-chev">▾</span>
+          </div>
+          <div class="sub-body">
+            <div class="bul-list">
+              <div class="bul-item"><div class="bul-dot"></div><span>Analizar la actitud, reacción y respuesta de quienes reciben los informes.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span>Brindar tiempo razonable para que las autoridades tomen posición frente a las recomendaciones.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span>Verificar en visitas subsiguientes si las respuestas oficiales corresponden a la situación real en terreno.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span>Buscar otras vías de presión cuando sea necesario: legisladores, sociedad civil, medios, organismos internacionales.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-item" id="e5s2">
+          <div class="sub-head" onclick="etapaSub('e5s2')">
+            <div class="sub-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="sub-name">Cronograma de seguimiento</div>
+            <span class="sub-chev">▾</span>
+          </div>
+          <div class="sub-body">
+            <p>Se elabora un <strong>Cronograma de seguimiento</strong> con tres columnas mínimas:</p>
+            <div class="g2">
+              <div class="ic"><div class="ic-lbl">Actividades</div><div class="ic-body">Qué acciones específicas se realizarán para dar seguimiento a cada recomendación.</div></div>
+              <div class="ic"><div class="ic-lbl">Encargados y tiempos</div><div class="ic-body">Quién es responsable de cada acción y en qué plazo debe concretarse.</div></div>
+            </div>
+            <div class="call" style="margin-top:12px">
+              <div class="call-ico">→</div>
+              <div>La metodología específica de seguimiento y los niveles de cumplimiento se detallan en el módulo <strong>Metodología de Recomendaciones</strong>.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-foot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#5ECAC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        <div class="panel-foot-txt">El ciclo completo <strong>E1 → E2 → E3 → E4 → E5</strong> es iterativo: cada visita de seguimiento reinicia el proceso desde la etapa de preparación, construyendo evidencia acumulativa.</div>
+      </div>
+    </div><!-- /E5 -->
+
+  </div><!-- /panels-wrap -->
+
+  <!-- PAGINACIÓN INFERIOR -->
+  <div class="bottom-bar">
+    <div class="bb-dot active" onclick="etapaSwitch(0)" id="bd0"></div>
+    <div class="bb-dot" onclick="etapaSwitch(1)" id="bd1"></div>
+    <div class="bb-dot" onclick="etapaSwitch(2)" id="bd2"></div>
+    <div class="bb-dot" onclick="etapaSwitch(3)" id="bd3"></div>
+    <div class="bb-dot" onclick="etapaSwitch(4)" id="bd4"></div>
+  </div>
+
+</div><!-- /scope-etapas -->
+
+<script>
+function etapaSwitch(n){
+  for(var i=0;i<5;i++){
+    var s=document.querySelector('.scope-etapas .flow-step:nth-child('+(i+1)+')');
+    var p=document.getElementById('ep'+i);
+    var d=document.getElementById('bd'+i);
+    if(s) s.classList.toggle('active',i===n);
+    if(p) p.classList.toggle('active',i===n);
+    if(d) d.classList.toggle('active',i===n);
+  }
+}
+function etapaSub(id){
+  var el=document.getElementById(id);
+  if(el) el.classList.toggle('open');
+}
+</script>
+
+      </div>
+    </div>
+  </div>
+</div>
 
         <div class="stepper">
 
@@ -4505,7 +5054,6 @@ function smToggle(sec, idx) {
                 <div class="plazo-time">3–5 años</div>
                 <div class="plazo-desc">Transformaciones estructurales: reformas legislativas, aumento de dotación, cambios culturales sostenidos.</div>
               </div>
-            </div>
             </div>
 
             <div class="callout">
@@ -7315,7 +7863,6 @@ function renderTimeline(){
 document.querySelectorAll('.ph-mod-btn').forEach(btn=>{
   btn.addEventListener('click', ()=>{
     const mod = btn.dataset.mod;
-    if(mod === currentMod) return;
     currentMod = mod;
     visited.clear();
     document.querySelectorAll('.ph-mod-btn').forEach(b=>b.classList.toggle('active', b.dataset.mod===mod));
