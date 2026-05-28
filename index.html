@@ -1760,34 +1760,36 @@ footer strong{color:var(--navy);font-weight:800}
 .cs-footer strong { color:var(--navy); }
 
 /* ══ PER-MODULE ACCENT OVERRIDES ══ */
-/* Manual: keeps default teal (--accent) */
-#mod-manual .intro-block{border:3px solid rgba(94,202,196,.55)}
+/* Manual: pizarra navy */
+#mod-manual .intro-block{border:3px solid rgba(30,58,95,.55)}
+#mod-manual .intro-kicker{color:#5A80B0}
+.ph-mod-btn[data-mod="manual"].active{background:#1E3A5F;box-shadow:0 2px 8px rgba(30,58,95,.4)}
 
-/* Casos Críticos: red-salmon */
-#mod-criticos .sec-tag{color:#C0392B;border-color:rgba(192,57,43,.3);background:rgba(192,57,43,.07)}
-#mod-criticos .card-title .num{background:#C0392B}
-#mod-criticos .callout{border-left-color:#C0392B}
-#mod-criticos .intro-block{border:3px solid rgba(192,57,43,.65)}
-#mod-criticos .intro-kicker{color:#FF8080}
-.ph-mod-btn[data-mod="criticos"].active{background:#C0392B;box-shadow:0 2px 8px rgba(192,57,43,.4)}
+/* Casos: cobre bronce */
+#mod-criticos .sec-tag{color:#7A4A18;border-color:rgba(122,74,24,.3);background:rgba(122,74,24,.07)}
+#mod-criticos .card-title .num{background:#7A4A18}
+#mod-criticos .callout{border-left-color:#7A4A18}
+#mod-criticos .intro-block{border:3px solid rgba(122,74,24,.65)}
+#mod-criticos .intro-kicker{color:#C49060}
+.ph-mod-btn[data-mod="criticos"].active{background:#7A4A18;box-shadow:0 2px 8px rgba(122,74,24,.4)}
 
-/* Elaboración de Informes: mustard/gold */
-#mod-informes .sec-tag{color:#92620A;border-color:rgba(146,98,10,.3);background:rgba(146,98,10,.07)}
-#mod-informes .card-title .num{background:#B7791F}
-#mod-informes .callout{border-left-color:#B7791F}
-#mod-informes .intro-block{border:3px solid rgba(183,121,31,.65)}
-#mod-informes .intro-kicker{color:#FCD34D}
-#mod-informes .infog-modal-trigger-ico{background:#B7791F}
-.ph-mod-btn[data-mod="informes"].active{background:#B7791F;box-shadow:0 2px 8px rgba(183,121,31,.4)}
+/* Elaboración de Informes: teal CPT profundo */
+#mod-informes .sec-tag{color:#0D5E5A;border-color:rgba(13,94,90,.3);background:rgba(13,94,90,.07)}
+#mod-informes .card-title .num{background:#0D5E5A}
+#mod-informes .callout{border-left-color:#0D5E5A}
+#mod-informes .intro-block{border:3px solid rgba(13,94,90,.65)}
+#mod-informes .intro-kicker{color:#5ECAC4}
+#mod-informes .infog-modal-trigger-ico{background:#0D5E5A}
+.ph-mod-btn[data-mod="informes"].active{background:#0D5E5A;box-shadow:0 2px 8px rgba(13,94,90,.4)}
 
-/* Recomendaciones: purple */
-#mod-reco .sec-tag{color:#5B21B6;border-color:rgba(91,33,182,.3);background:rgba(91,33,182,.07)}
-#mod-reco .card-title .num{background:#6D28D9}
-#mod-reco .callout{border-left-color:#6D28D9}
-#mod-reco .intro-block{border:3px solid rgba(109,40,217,.65)}
-#mod-reco .intro-kicker{color:#C4B5FD}
-#mod-reco .infog-modal-trigger-ico{background:#6D28D9}
-.ph-mod-btn[data-mod="reco"].active{background:#6D28D9;box-shadow:0 2px 8px rgba(109,40,217,.4)}
+/* Recomendaciones: celeste */
+#mod-reco .sec-tag{color:#0A5F8A;border-color:rgba(10,95,138,.3);background:rgba(10,95,138,.07)}
+#mod-reco .card-title .num{background:#0A5F8A}
+#mod-reco .callout{border-left-color:#0A5F8A}
+#mod-reco .intro-block{border:3px solid rgba(10,95,138,.65)}
+#mod-reco .intro-kicker{color:#7AC8E8}
+#mod-reco .infog-modal-trigger-ico{background:#0A5F8A}
+.ph-mod-btn[data-mod="reco"].active{background:#0A5F8A;box-shadow:0 2px 8px rgba(10,95,138,.4)}
 
 </style>
 </head>
@@ -1803,7 +1805,8 @@ footer strong{color:var(--navy);font-weight:800}
     <div class="ph-meta">
       <span class="ph-pill">Ley 21.154 · OPCAT</span>
       <div class="ph-mod-toggle">
-        <button class="ph-mod-btn active" data-mod="manual">Manual de Visita</button>
+        <button class="ph-mod-btn active" data-mod="intro">Introducción</button>
+        <button class="ph-mod-btn" data-mod="manual">Manual de Visita</button>
         <button class="ph-mod-btn" data-mod="criticos">Casos particulares, derivación y denuncia</button>
         <button class="ph-mod-btn" data-mod="informes">Elaboración de Informes</button>
         <button class="ph-mod-btn" data-mod="reco">Recomendaciones</button>
@@ -1830,10 +1833,188 @@ footer strong{color:var(--navy);font-weight:800}
     <!-- ═══════════════════════════════════════════════════
          MÓDULO 1 · MANUAL GENERAL DE VISITA PREVENTIVA
          ═══════════════════════════════════════════════════ -->
-    <div class="mod-section active" id="mod-manual">
+    <!-- ═══════════════════════════════════════════════════
+         MÓDULO INTRO · BIENVENIDA Y GUÍA DE MÓDULOS
+         ═══════════════════════════════════════════════════ -->
+    <div class="mod-section active" id="mod-intro">
+      <div id="intro-overview"></div>
+      <div class="intro-block">
+        <div class="intro-kicker">Plataforma CPT · 4 módulos de formación</div>
+        <h2>Capacitación en visitas preventivas del CPT</h2>
+        <p class="desc">Esta plataforma reúne los cuatro módulos de formación del Comité para la Prevención de la Tortura. Recorre cada módulo en el orden sugerido o ingresa directamente al que necesitas.</p>
+      </div>
+
+<style>
+.intrmod{all:initial;display:block;font-family:'Atkinson Hyperlegible Next',sans-serif}
+.intrmod *{box-sizing:border-box}
+.intrmod .ig{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-bottom:36px}
+.intrmod .ic{border-radius:14px;overflow:hidden;box-shadow:0 3px 16px rgba(0,0,0,.10);display:flex;flex-direction:column;background:white}
+.intrmod .ih{padding:22px 20px 18px}
+.intrmod .inum{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;opacity:.75;margin-bottom:6px}
+.intrmod .ititle{font-size:17px;font-weight:900;line-height:1.25}
+.intrmod .idesc{font-size:12.5px;opacity:.88;margin-top:8px;line-height:1.45}
+.intrmod .ib{padding:18px 20px 20px;flex:1;display:flex;flex-direction:column}
+.intrmod .isub{font-size:10.5px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:#6B7280;margin-bottom:10px}
+.intrmod .itags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.intrmod .itag{font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;background:#F3F4F6;color:#374151}
+.intrmod .iul{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:6px}
+.intrmod .ili{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#374151;line-height:1.4}
+.intrmod .icheck{flex-shrink:0;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.intrmod .ibtn{display:block;text-align:center;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:800;color:white;cursor:pointer;border:none;width:100%;margin-top:auto;transition:opacity .18s}
+.intrmod .ibtn:hover{opacity:.88}
+.intrmod .howto{background:#F8FAFC;border:2px solid #E5E7EB;border-radius:14px;padding:24px 28px;margin-bottom:10px}
+.intrmod .howto h3{font-size:15px;font-weight:900;color:#0D1F47;margin:0 0 14px}
+.intrmod .hsteps{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.intrmod .hstep{display:flex;align-items:flex-start;gap:12px}
+.intrmod .hnum{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:#0D1F47;color:white;font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.intrmod .htxt{font-size:12.5px;color:#374151;line-height:1.4}
+.intrmod .htxt strong{display:block;font-weight:800;color:#0D1F47;margin-bottom:2px}
+</style>
+<div class="intrmod">
+  <div class="ig">
+
+    <!-- ── 01 Manual de Visita ── -->
+    <div class="ic">
+      <div class="ih" style="background:#EEF1F6;border-bottom:1px solid #C4CEE0;color:#10243C">
+        <div class="inum">Módulo 01</div>
+        <div class="ititle">Manual General de Visita</div>
+        <div class="idesc">El ciclo completo de la visita preventiva: desde los fundamentos legales hasta el seguimiento post-visita.</div>
+      </div>
+      <div class="ib">
+        <div class="isub">Contenidos</div>
+        <div class="itags">
+          <span class="itag">Marco conceptual</span>
+          <span class="itag">Principios OPCAT</span>
+          <span class="itag">Programa Anual</span>
+          <span class="itag">Etapas de la visita</span>
+          <span class="itag">Dimensiones CPT</span>
+          <span class="itag">Cursos APT</span>
+        </div>
+        <div class="isub">Vas a aprender</div>
+        <ul class="iul">
+          <li class="ili"><span class="icheck" style="background:#D6DFF0"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#2B5288" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>El marco legal que habilita al CPT a realizar visitas preventivas</li>
+          <li class="ili"><span class="icheck" style="background:#D6DFF0"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#2B5288" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Los principios OPCAT que rigen cada etapa de la visita</li>
+          <li class="ili"><span class="icheck" style="background:#D6DFF0"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#2B5288" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Cómo planificar, ejecutar y cerrar una visita preventiva</li>
+          <li class="ili"><span class="icheck" style="background:#D6DFF0"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#2B5288" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Las 9 dimensiones CPT y cómo monitorearlas en terreno</li>
+        </ul>
+        <button class="ibtn" style="background:#1E3A5F" onclick="document.querySelector('[data-mod=manual]').click()">Ir al módulo →</button>
+      </div>
+    </div>
+
+    <!-- ── 02 Casos particulares ── -->
+    <div class="ic">
+      <div class="ih" style="background:#F8F0E8;border-bottom:1px solid #E8CCA4;color:#4E2E08">
+        <div class="inum">Módulo 02</div>
+        <div class="ititle">Casos particulares, derivación y denuncia</div>
+        <div class="idesc">Protocolo de actuación ante situaciones críticas en terreno: tortura, riesgo vital o emergencias.</div>
+      </div>
+      <div class="ib">
+        <div class="isub">Contenidos</div>
+        <div class="itags">
+          <span class="itag">Marco legal</span>
+          <span class="itag">Facultades de denuncia</span>
+          <span class="itag">5 momentos en terreno</span>
+          <span class="itag">Criterios de consentimiento</span>
+        </div>
+        <div class="isub">Vas a aprender</div>
+        <ul class="iul">
+          <li class="ili"><span class="icheck" style="background:#F4DDB8"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#B07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Las facultades legales del CPT para denunciar ante casos graves</li>
+          <li class="ili"><span class="icheck" style="background:#F4DDB8"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#B07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Los 5 momentos de actuación ante una situación crítica</li>
+          <li class="ili"><span class="icheck" style="background:#F4DDB8"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#B07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Cómo evaluar consentimiento y riesgo en contextos de privación de libertad</li>
+          <li class="ili"><span class="icheck" style="background:#F4DDB8"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#B07030" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>El flujo de derivación y documentación interna</li>
+        </ul>
+        <button class="ibtn" style="background:#7A4A18" onclick="document.querySelector('[data-mod=criticos]').click()">Ir al módulo →</button>
+      </div>
+    </div>
+
+    <!-- ── 03 Elaboración de Informes ── -->
+    <div class="ic">
+      <div class="ih" style="background:#E4F5F4;border-bottom:1px solid #A8DEDA;color:#073938">
+        <div class="inum">Módulo 03</div>
+        <div class="ititle">Elaboración de Informes de Visita</div>
+        <div class="idesc">Convierte lo levantado en terreno en un informe que documenta, analiza y recomienda con rigor.</div>
+      </div>
+      <div class="ib">
+        <div class="isub">Contenidos</div>
+        <div class="itags">
+          <span class="itag">Tipos de informe</span>
+          <span class="itag">Triangulación de fuentes</span>
+          <span class="itag">Matrices por dimensión</span>
+          <span class="itag">Descripción del hallazgo</span>
+          <span class="itag">Análisis CPT</span>
+          <span class="itag">Distribución</span>
+        </div>
+        <div class="isub">Vas a aprender</div>
+        <ul class="iul">
+          <li class="ili"><span class="icheck" style="background:#C2EDEA"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A9490" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Los 5 tipos de informe CPT y cuándo usar cada uno</li>
+          <li class="ili"><span class="icheck" style="background:#C2EDEA"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A9490" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Cómo triangular fuentes para sustentar hallazgos</li>
+          <li class="ili"><span class="icheck" style="background:#C2EDEA"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A9490" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Cómo llenar matrices de vaciado por dimensión</li>
+          <li class="ili"><span class="icheck" style="background:#C2EDEA"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1A9490" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>La estructura y flujo de distribución de un informe de visita</li>
+        </ul>
+        <button class="ibtn" style="background:#0D5E5A" onclick="document.querySelector('[data-mod=informes]').click()">Ir al módulo →</button>
+      </div>
+    </div>
+
+    <!-- ── 04 Recomendaciones ── -->
+    <div class="ic">
+      <div class="ih" style="background:#E8F5FD;border-bottom:1px solid #A8D8F0;color:#053D5C">
+        <div class="inum">Módulo 04</div>
+        <div class="ititle">Metodología de Recomendaciones</div>
+        <div class="idesc">Produce recomendaciones que logran ser implementadas, con el método Double-SMART y un ciclo de seguimiento efectivo.</div>
+      </div>
+      <div class="ib">
+        <div class="isub">Contenidos</div>
+        <div class="itags">
+          <span class="itag">Fundamento</span>
+          <span class="itag">Método Double-SMART</span>
+          <span class="itag">Temporalidad</span>
+          <span class="itag">Flujo de elaboración</span>
+          <span class="itag">Seguimiento</span>
+          <span class="itag">Evaluación de cumplimiento</span>
+        </div>
+        <div class="isub">Vas a aprender</div>
+        <ul class="iul">
+          <li class="ili"><span class="icheck" style="background:#C0E4F5"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1488C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Por qué la mayoría de las recomendaciones no se implementan</li>
+          <li class="ili"><span class="icheck" style="background:#C0E4F5"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1488C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>El método Double-SMART para recomendaciones accionables</li>
+          <li class="ili"><span class="icheck" style="background:#C0E4F5"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1488C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Cómo definir plazos realistas y asignar responsables</li>
+          <li class="ili"><span class="icheck" style="background:#C0E4F5"><svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#1488C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>El ciclo de seguimiento y cómo evaluar el cumplimiento</li>
+        </ul>
+        <button class="ibtn" style="background:#0A5F8A" onclick="document.querySelector('[data-mod=reco]').click()">Ir al módulo →</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Cómo usar esta plataforma ── -->
+  <div class="howto">
+    <h3>📖 Cómo usar esta plataforma</h3>
+    <div class="hsteps">
+      <div class="hstep">
+        <div class="hnum">1</div>
+        <div class="htxt"><strong>Selecciona un módulo</strong>Usa los botones de la barra superior para navegar entre los cuatro módulos.</div>
+      </div>
+      <div class="hstep">
+        <div class="hnum">2</div>
+        <div class="htxt"><strong>Sigue la ruta</strong>El menú lateral izquierdo muestra las fases o etapas del módulo en orden sugerido.</div>
+      </div>
+      <div class="hstep">
+        <div class="hnum">3</div>
+        <div class="htxt"><strong>Explora los modales</strong>Los botones de infografía abren ventanas con contenido ampliado, esquemas y recursos descargables.</div>
+      </div>
+      <div class="hstep">
+        <div class="hnum">4</div>
+        <div class="htxt"><strong>Accede a los formatos</strong>Cada módulo enlaza a las plantillas oficiales en Google Docs para uso directo en tu trabajo.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div><!-- fin mod-intro -->
+
+    <div class="mod-section" id="mod-manual">
 
       <div class="intro-block">
-        <div class="intro-kicker">Módulo Metodológico 01 / 02</div>
+        <div class="intro-kicker">Módulo 01 · Manual de Visita</div>
         <h2>Manual General de Visita Preventiva</h2>
         <p class="desc">Capacitación cronológica sobre el marco conceptual, los principios y el ciclo operativo completo de la visita preventiva del CPT. Recorra las seis etapas desde los fundamentos legales hasta el seguimiento post-visita.</p>
         <div class="intro-resources">
@@ -3331,7 +3512,7 @@ function etapaSub(id){
     <div class="mod-section" id="mod-reco">
 
       <div class="intro-block">
-        <div class="intro-kicker">Módulo Metodológico 02 / 02</div>
+        <div class="intro-kicker">Módulo 04 · Recomendaciones</div>
         <h2>Metodología de elaboración y seguimiento de recomendaciones</h2>
         <p class="desc">Guía interna del CPT (marzo 2026) para producir recomendaciones que sí logren ser implementadas. Recorre el método Double-SMART, los plazos, el flujo de elaboración y el ciclo de seguimiento hasta la evaluación del cumplimiento.</p>
         <div class="intro-resources">
@@ -7394,7 +7575,7 @@ function psToggleScale() {
     <div class="mod-section" id="mod-criticos">
 
       <div class="intro-block">
-        <div class="intro-kicker">Módulo Específico 03 / 03</div>
+        <div class="intro-kicker">Módulo 02 · Casos particulares</div>
         <h2>Casos particulares, derivación y denuncia</h2>
         <p class="desc">Protocolo de toma de decisiones en terreno ante situaciones de tortura, tratos crueles, riesgo vital o emergencias médicas. Marco legal, 5 momentos de actuación y criterios de consentimiento diferenciado.</p>
         <div class="intro-resources">
@@ -7835,7 +8016,7 @@ function psToggleScale() {
     <div class="mod-section" id="mod-informes">
 
       <div class="intro-block">
-        <div class="intro-kicker">Módulo Metodológico 04 / 04</div>
+        <div class="intro-kicker">Módulo 03 · Elaboración de Informes</div>
         <h2>Elaboración de Informes de Visita</h2>
         <p class="desc">Cómo convertir lo levantado en terreno en un documento que documenta, analiza y recomienda. Desde la triangulación de fuentes hasta la publicación: paso a paso para elaborar informes rigurosos, útiles y con impacto.</p>
         <div class="intro-resources">
@@ -8116,7 +8297,7 @@ function psToggleScale() {
         <div class="tr"><div class="tl">A quién mandar</div><div class="tv">Autoridad local del recinto y/o contraparte técnica <em>(CC autoridad central de la institución)</em></div></div>
         <div class="tr"><div class="tl">Cómo mandar</div><div class="tv">Vía Oficio, explicando el flujo de seguimiento y los pasos siguientes</div></div>
         <div class="tr"><div class="tl">Público</div><div class="tv"><span class="pub">🌐 Siempre salvo votación en Comité</span></div></div>
-        <div class="link-row"><a class="dl" href="#" target="_blank" style="opacity:.45;pointer-events:none">📎 Formato 2025 (link pendiente)</a></div>
+        <div class="link-row"><a class="dl" href="https://docs.google.com/document/d/1gkieqj6o9mRd5G_MTdWNnQqTwlpDuq4F9xqyDirSw54/edit?tab=t.0" target="_blank" rel="noopener">📎 Formato 2025</a></div>
       </div>
     </div>
 
@@ -8681,6 +8862,9 @@ function psToggleScale() {
 <script>
 // ════════════ NAV TIMELINE ════════════
 const SECTIONS = {
+  intro: [
+    {id:'intro-overview', num:'', name:'Guía de módulos'},
+  ],
   manual: [
     {id:'fase-1', num:'Fase 01', name:'Marco conceptual'},
     {id:'fase-2', num:'Fase 02', name:'Principios básicos'},
@@ -8715,13 +8899,14 @@ const SECTIONS = {
 };
 
 const TITLES = {
+  intro:{label:'CPT · Programa de Capacitación', title:'Módulos de formación'},
   manual:{label:'Manual General de Visita', title:'Ruta de capacitación'},
   reco:{label:'Metodología de Recomendaciones', title:'Ruta de capacitación'},
   criticos:{label:'Casos particulares, derivación y denuncia', title:'Flujo de actuación'},
   informes:{label:'Elaboración de Informes de Visita', title:'Ruta de elaboración'}
 };
 
-let currentMod = 'manual';
+let currentMod = 'intro';
 let visited = new Set();
 
 function renderTimeline(){
