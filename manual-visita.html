@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manual General de Visita — CPT</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Libre+Franklin:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --paper: #F4EDE0; --card: #FCF9F2; --ink: #2A241D; --soft: #6F6557; --line: #E6DCCA;
+    --f0t:#FBEBE0; --f0f:#B5572E; --f0s:#D2764A;
+    --f1t:#DDF1E8; --f1f:#2E876B; --f1s:#46B08C;
+    --f2t:#FBF0C9; --f2f:#A8841C; --f2s:#DEB534;
+    --f3t:#FADDE8; --f3f:#B25A7E; --f3s:#E081A6;
+    --f4t:#ECE8FB; --f4f:#6354C4; --f4s:#8979E6;
+    --f5t:#D9EBFA; --f5f:#3A77A6; --f5s:#5BA0D6;
+    --rad: 20px; --base: 16px;
+    --head: 'Spectral', Georgia, serif;
+    --body: 'Atkinson Hyperlegible Next', system-ui, sans-serif;
+    --dur: 0.6s; --ease: cubic-bezier(.2,.7,.3,1);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--body); background: var(--paper); color: var(--ink); font-size: var(--base);
+    -webkit-font-smoothing: antialiased; line-height: 1.5; }
+  .ti { font-family: 'tabler-icons' !important; font-style: normal; line-height: 1; }
+  ::selection { background: var(--f2t); }
+
+  /* ── entrance engine (gated behind html[data-armed]; clock-independent safety disarm) ── */
+  @media (prefers-reduced-motion: no-preference) {
+    html[data-armed][data-anim="suave"] [data-rise] { opacity: 0; transform: translateY(18px); }
+    html[data-armed][data-anim="pop"]   [data-rise] { opacity: 0; transform: scale(.85); }
+    html[data-armed] [data-go] [data-rise] { opacity: 1; transform: none;
+      transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease); transition-delay: var(--d,0ms); }
+    html[data-armed] [data-grow] { transform: scaleX(0); transform-origin: left center; }
+    html[data-armed] [data-go] [data-grow] { transform: scaleX(1); transition: transform calc(var(--dur) + .15s) cubic-bezier(.65,0,.35,1); transition-delay: var(--d,0ms); }
+    html[data-armed] [data-growy] { transform: scaleY(0); transform-origin: top center; }
+    html[data-armed] [data-go] [data-growy] { transform: scaleY(1); transition: transform calc(var(--dur) + .2s) cubic-bezier(.65,0,.35,1); transition-delay: var(--d,0ms); }
+    html[data-armed] [data-pop] { opacity: 0; transform: scale(.55); }
+    html[data-armed] [data-go] [data-pop] { opacity: 1; transform: scale(1); transition: opacity .5s ease, transform .55s cubic-bezier(.34,1.56,.64,1); transition-delay: var(--d,0ms); }
+  }
+</style>
+<script>
+  (function () {
+    var h = document.documentElement;
+    h.setAttribute('data-anim', 'suave');
+    if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      h.setAttribute('data-armed', '');
+    }
+    setTimeout(function () { window.__epDisarmed = true; h.removeAttribute('data-armed'); }, 2600);
+  })();
+</script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="tipos-visita.jsx"></script>
+</body>
+</html>
