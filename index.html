@@ -2382,13 +2382,45 @@ footer strong{color:var(--navy);font-weight:800}
               <span class="step-tag">Priorización</span>
             </div>
             <div class="step-body">
-              <p>Se preseleccionan los problemas (no más de 10–15) y se les asigna peso usando tres dimensiones:</p>
-              <ul class="bullets">
-                <li><strong>Gravedad:</strong> nivel de daño que produce el problema.</li>
-                <li><strong>Magnitud:</strong> cantidad de personas afectadas.</li>
-                <li><strong>Evolución en el tiempo:</strong> qué pasa si no se interviene.</li>
-              </ul>
-              <p>Criterios para elegir lugares: <span class="hl">factores de riesgo</span> (alta rotación, interrogatorios, vulnerabilidad), <span class="hl">falta de información</span> (lugares cerrados al escrutinio público), y <span class="hl">información disponible sobre malos tratos</span> (denuncias, sobrepoblación, aislamiento).</p>
+              <p style="margin-bottom:14px">Se preseleccionan los problemas (no más de 10–15) y se les asigna peso usando <strong>tres dimensiones</strong>:</p>
+
+              <!-- Tres dimensiones: tarjetas pastel -->
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px">
+                <div style="background:#FBF0C9;border-radius:14px;padding:16px 14px;display:flex;flex-direction:column;align-items:flex-start;gap:8px">
+                  <span style="font-size:26px">⚠️</span>
+                  <div style="font-size:12px;font-weight:800;color:#7A5A08;text-transform:uppercase;letter-spacing:.08em">Gravedad</div>
+                  <div style="font-size:12.5px;color:#5A4208;line-height:1.5">Nivel de daño que produce el problema en las personas.</div>
+                </div>
+                <div style="background:#DDF1E8;border-radius:14px;padding:16px 14px;display:flex;flex-direction:column;align-items:flex-start;gap:8px">
+                  <span style="font-size:26px">👥</span>
+                  <div style="font-size:12px;font-weight:800;color:#1E6B50;text-transform:uppercase;letter-spacing:.08em">Magnitud</div>
+                  <div style="font-size:12.5px;color:#185040;line-height:1.5">Cantidad de personas afectadas por la situación.</div>
+                </div>
+                <div style="background:#ECE8FB;border-radius:14px;padding:16px 14px;display:flex;flex-direction:column;align-items:flex-start;gap:8px">
+                  <span style="font-size:26px">📈</span>
+                  <div style="font-size:12px;font-weight:800;color:#4A3CA0;text-transform:uppercase;letter-spacing:.08em">Evolución en el tiempo</div>
+                  <div style="font-size:12.5px;color:#382E80;line-height:1.5">¿Qué pasa si no se interviene? Tendencia del problema.</div>
+                </div>
+              </div>
+
+              <!-- Criterios para elegir lugares -->
+              <div style="background:var(--cream);border-radius:12px;padding:16px 18px">
+                <div style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:12px">Criterios para elegir lugares</div>
+                <div style="display:flex;flex-direction:column;gap:9px">
+                  <div style="display:flex;gap:12px;align-items:flex-start">
+                    <span style="font-size:18px;flex-shrink:0">🔴</span>
+                    <div><span style="font-size:13px;font-weight:700;color:var(--navy)">Factores de riesgo</span><span style="font-size:12.5px;color:var(--gray)"> — alta rotación, interrogatorios, vulnerabilidad de la población.</span></div>
+                  </div>
+                  <div style="display:flex;gap:12px;align-items:flex-start">
+                    <span style="font-size:18px;flex-shrink:0">🔍</span>
+                    <div><span style="font-size:13px;font-weight:700;color:var(--navy)">Falta de información</span><span style="font-size:12.5px;color:var(--gray)"> — lugares cerrados al escrutinio público sin datos disponibles.</span></div>
+                  </div>
+                  <div style="display:flex;gap:12px;align-items:flex-start">
+                    <span style="font-size:18px;flex-shrink:0">📢</span>
+                    <div><span style="font-size:13px;font-weight:700;color:var(--navy)">Información sobre malos tratos</span><span style="font-size:12.5px;color:var(--gray)"> — denuncias previas, sobrepoblación, aislamiento documentado.</span></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
