@@ -668,22 +668,39 @@ main{
 .detail-content{padding:10px 0 0;font-size:12.5px;color:var(--text);line-height:1.6}
 
 /* TYPE OF VISIT CARDS */
-.visit-types{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
-  gap:14px;
-}
+/* ── Tipos de visita: diseño dos columnas ── */
+.visit-types{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px}
+.vt-col{border-radius:16px;padding:18px 16px 20px;position:relative;overflow:hidden}
+.vt-col[data-kind="prog"]{background:#DDF1E8}
+.vt-col[data-kind="no-prog"]{background:#FBEBE0}
+.vt-col-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.vt-col-label{display:flex;align-items:center;gap:7px}
+.vt-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.vt-col[data-kind="prog"] .vt-dot{background:#2E876B}
+.vt-col[data-kind="no-prog"] .vt-dot{background:#B5572E}
+.vt-col-name{font-size:17px;font-weight:800;line-height:1.2}
+.vt-col[data-kind="prog"] .vt-col-name{color:#2E876B}
+.vt-col[data-kind="no-prog"] .vt-col-name{color:#B5572E}
+.vt-col-sub{font-size:11.5px;padding-left:17px;margin-top:2px;opacity:.75}
+.vt-col[data-kind="prog"] .vt-col-sub{color:#2E876B}
+.vt-col[data-kind="no-prog"] .vt-col-sub{color:#B5572E}
+.vt-count{font-size:64px;font-weight:900;line-height:1;opacity:.1;margin-top:-6px;user-select:none}
+.vt-col[data-kind="prog"] .vt-count{color:#2E876B}
+.vt-col[data-kind="no-prog"] .vt-count{color:#B5572E}
+.vt-cards{display:flex;flex-direction:column;gap:9px}
 .vt-card{
-  background:white;
-  border:1px solid var(--cream-dark);
-  border-radius:10px;
-  padding:18px 20px;
-  position:relative;
-  transition:all 0.16s;
+  background:#FFFCF7;
+  border-radius:12px;
+  padding:12px 14px;
+  display:flex;gap:12px;align-items:flex-start;
+  box-shadow:0 1px 3px rgba(42,36,29,.07);
+  border:none;
+  transition:box-shadow .15s;
 }
-.vt-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 6px 20px rgba(20,46,102,0.08)}
-.vt-card[data-kind="prog"]{border-top:3px solid var(--accent)}
-.vt-card[data-kind="no-prog"]{border-top:3px solid var(--accent-comp)}
+.vt-card:hover{box-shadow:0 3px 10px rgba(42,36,29,.12)}
+.vt-ico{width:38px;height:38px;min-width:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.vt-col[data-kind="prog"] .vt-ico{background:#2E876B}
+.vt-col[data-kind="no-prog"] .vt-ico{background:#B5572E}
 .vt-cat{
   font-size:10px;
   font-weight:800;
@@ -691,10 +708,8 @@ main{
   text-transform:uppercase;
   margin-bottom:6px;
 }
-.vt-card[data-kind="prog"] .vt-cat{color:var(--accent)}
-.vt-card[data-kind="no-prog"] .vt-cat{color:var(--accent-comp)}
-.vt-card h4{font-size:14.5px;font-weight:800;color:var(--navy);margin-bottom:8px}
-.vt-card p{font-size:12.5px;color:var(--text);line-height:1.55}
+.vt-card h4{font-size:13.5px;font-weight:700;color:#2A241D;margin-bottom:3px}
+.vt-card p{font-size:12px;color:#6F6557;line-height:1.55;margin:0}
 
 /* DIMENSIONS TABLE */
 .dim-grid{
@@ -2407,36 +2422,60 @@ footer strong{color:var(--navy);font-weight:800}
     </div>
   </div>
 </div>
-              <div class="visit-types" style="margin-top:12px">
-                <div class="vt-card" data-kind="prog">
-                  <div class="vt-cat">Programada · 01</div>
-                  <h4>Visita de presentación</h4>
-                  <p>Cuando el MNPT se instala o cambia de composición. Objetivo: darse a conocer, explicar facultades, ajustar expectativas y establecer canales.</p>
+              <div class="visit-types" style="margin-top:14px">
+                <!-- Columna Programadas -->
+                <div class="vt-col" data-kind="prog">
+                  <div class="vt-col-head">
+                    <div>
+                      <div class="vt-col-label">
+                        <span class="vt-dot"></span>
+                        <span class="vt-col-name">Programadas</span>
+                      </div>
+                      <div class="vt-col-sub">Dentro del Programa Anual de Monitoreo</div>
+                    </div>
+                    <span class="vt-count">4</span>
+                  </div>
+                  <div class="vt-cards">
+                    <div class="vt-card">
+                      <div class="vt-ico">👋</div>
+                      <div><h4>De presentación</h4><p>Cuando el MNPT se instala o cambia de composición: darse a conocer, explicar facultades, ajustar expectativas y establecer canales.</p></div>
+                    </div>
+                    <div class="vt-card">
+                      <div class="vt-ico">🔍</div>
+                      <div><h4>En profundidad</h4><p>Analiza todos los aspectos del funcionamiento de un lugar. Requiere equipo multidisciplinar; puede durar varios días o semanas.</p></div>
+                    </div>
+                    <div class="vt-card">
+                      <div class="vt-ico">🎯</div>
+                      <div><h4>Temática</h4><p>Analiza una cuestión específica en varios lugares: aislamiento, contención, primeras horas. Breve, enfocada, equipo especializado.</p></div>
+                    </div>
+                    <div class="vt-card">
+                      <div class="vt-ico">📋</div>
+                      <div><h4>De seguimiento</h4><p>Basada en informes y recomendaciones previas. La forma más fiable de comprobar si las recomendaciones del CPT se han aplicado.</p></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="vt-card" data-kind="prog">
-                  <div class="vt-cat">Programada · 02</div>
-                  <h4>Visita en profundidad</h4>
-                  <p>Analiza todos los aspectos del funcionamiento de un lugar. Por su naturaleza es preventiva. Requiere equipo multidisciplinar; en grandes instalaciones puede durar varios días o semanas.</p>
-                </div>
-                <div class="vt-card" data-kind="prog">
-                  <div class="vt-cat">Programada · 03</div>
-                  <h4>Visita temática</h4>
-                  <p>Analiza una cuestión específica en varios lugares: aislamiento, uso de contención, primeras horas de detención. Breve y enfocada, con equipo especializado.</p>
-                </div>
-                <div class="vt-card" data-kind="prog">
-                  <div class="vt-cat">Programada · 04</div>
-                  <h4>Visita de seguimiento</h4>
-                  <p>Basada en informes y recomendaciones previas. La forma más fiable de comprobar si las recomendaciones del CPT se han aplicado.</p>
-                </div>
-                <div class="vt-card" data-kind="no-prog">
-                  <div class="vt-cat">No programada · 05</div>
-                  <h4>Visita ad hoc</h4>
-                  <p>No prevista en el programa. Tras eventos importantes (incendio, huelga) o ante patrones detectados. Breve, sin aviso, con equipo pequeño y efecto disuasivo.</p>
-                </div>
-                <div class="vt-card" data-kind="no-prog">
-                  <div class="vt-cat">No programada · 06</div>
-                  <h4>Visita reactiva</h4>
-                  <p>Reacciona a una denuncia específica. Debe ser excepcional para no desviar al CPT de su mandato preventivo.</p>
+                <!-- Columna No programadas -->
+                <div class="vt-col" data-kind="no-prog">
+                  <div class="vt-col-head">
+                    <div>
+                      <div class="vt-col-label">
+                        <span class="vt-dot"></span>
+                        <span class="vt-col-name">No programadas</span>
+                      </div>
+                      <div class="vt-col-sub">Respuesta a contingencias y denuncias</div>
+                    </div>
+                    <span class="vt-count">2</span>
+                  </div>
+                  <div class="vt-cards">
+                    <div class="vt-card">
+                      <div class="vt-ico">⚡</div>
+                      <div><h4>Ad hoc</h4><p>Tras eventos importantes (incendio, huelga) o ante patrones detectados. Sin aviso, con equipo pequeño y efecto disuasivo.</p></div>
+                    </div>
+                    <div class="vt-card">
+                      <div class="vt-ico">🔔</div>
+                      <div><h4>Reactiva</h4><p>Reacciona a una denuncia específica. Excepcional, para no desviar al CPT de su mandato preventivo.</p></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
