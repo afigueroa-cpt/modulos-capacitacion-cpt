@@ -8670,16 +8670,38 @@ function psToggleScale() {
           <h3>Cuatro formatos (más el de seguimiento) para documentar el monitoreo</h3>
           <p class="sec-desc">El CPT produce distintos tipos de informes según el contexto de la visita, el público y el objetivo. Elegir el formato correcto es el primer paso antes de redactar.</p>
         </div>
-        <button class="infog-modal-trigger" onclick="openInfog('modal-inf-tipos')">
-          <div class="infog-modal-trigger-ico" style="background:#B7791F">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="11" width="16" height="12" rx="2" fill="white" opacity=".25"/><rect x="3" y="8" width="16" height="12" rx="2" fill="white" opacity=".45"/><rect x="1" y="5" width="16" height="12" rx="2" fill="white" opacity=".65"/><rect y="2" width="16" height="12" rx="2" fill="white"/><line x1="3" y1="6" x2="13" y2="6" stroke="#B7791F" stroke-width="1.5" stroke-linecap="round"/><line x1="3" y1="9" x2="13" y2="9" stroke="#B7791F" stroke-width="1.2" stroke-linecap="round"/><line x1="3" y1="12" x2="10" y2="12" stroke="#B7791F" stroke-width="1.2" stroke-linecap="round"/><circle cx="21" cy="21" r="5" fill="#B7791F"/><text x="21" y="25" text-anchor="middle" fill="white" font-size="7" font-weight="800">5</text></svg>
+        <div class="report-grid">
+          <div class="report">
+            <div class="report-head" style="background:linear-gradient(135deg,#C4885A 0%,#A06238 100%)">
+              <div class="num">Tipo 01</div>
+              <h4>Informe de visita</h4>
+            </div>
+            <div class="report-body">
+              <p class="obj">Resultado directo de cada visita. Documenta hallazgos y dirige recomendaciones a las autoridades del recinto. Abre el ciclo de diálogo con la institución visitada.</p>
+              <div class="meta">1 recinto · Confidencial → Público</div>
+            </div>
           </div>
-          <div class="infog-modal-trigger-body">
-            <div class="infog-modal-trigger-title">Los 5 tipos de informe CPT — comparativa completa</div>
-            <div class="infog-modal-trigger-sub">Visita · Resumen Ejecutivo · Ad Hoc · Temático · Seguimiento · Con links a formatos oficiales</div>
+          <div class="report">
+            <div class="report-head" style="background:linear-gradient(135deg,#5BA0D6 0%,#3A77A6 100%)">
+              <div class="num">Tipo 02</div>
+              <h4>Informe temático</h4>
+            </div>
+            <div class="report-body">
+              <p class="obj">Análisis transversal sobre un tema o un tipo de institución a partir de una serie de visitas. Recomendaciones dirigidas a múltiples actores con competencia.</p>
+              <div class="meta">N recintos · 1 tema · Público</div>
+            </div>
           </div>
-          <span class="infog-modal-trigger-arr">→</span>
-        </button>
+          <div class="report">
+            <div class="report-head" style="background:linear-gradient(135deg,#8B6620 0%,#6B4C10 100%)">
+              <div class="num">Tipo 03</div>
+              <h4>Informe anual</h4>
+            </div>
+            <div class="report-body">
+              <p class="obj">Mandato legal del art. 3 Ley 21.154. Síntesis pública del trabajo del año con recomendaciones sistémicas. Aprobado por 2/3 del Comité.</p>
+              <div class="meta">Nacional · Obligatorio</div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="section" id="inf-fase-2" data-mod="informes">
