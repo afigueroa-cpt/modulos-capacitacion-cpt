@@ -3037,10 +3037,11 @@ footer strong{color:var(--navy);font-weight:800}
           </div>
           <div class="sub-body">
             <div class="g2">
-              <div class="ic"><div class="ic-lbl">Habilidades profesionales</div><div class="ic-body">Idealmente al menos una persona con formación <strong>jurídica</strong> y una con formación <strong>médica</strong> (especialmente importante ante casos de tortura y malos tratos).</div></div>
+              <div class="ic"><div class="ic-lbl">Habilidades profesionales</div><div class="ic-body">Evaluar según el tipo de recinto. Garantizar, en lo posible, la <strong>interdisciplinariedad</strong> del equipo y priorizar a personas con conocimientos y experiencia en intervención o abordaje directo con las personas bajo cuidado o custodia. Toda persona que va a la visita debe haber participado en procesos de <strong>inducción / formación previa</strong> sobre criterios de actuación ante imprevistos o denuncias y distribución de roles.</div></div>
               <div class="ic"><div class="ic-lbl">Habilidades personales</div><div class="ic-body">Sensibilidad, respeto por la dignidad humana, capacidades lingüísticas adecuadas al contexto del recinto.</div></div>
               <div class="ic"><div class="ic-lbl">Sin conflicto de intereses</div><div class="ic-body">Los miembros no deben tener vínculo laboral, familiar o afectivo con los establecimientos a visitar. Se sugiere firmar declaración jurada simple.</div></div>
-              <div class="ic"><div class="ic-lbl">Paridad de género</div><div class="ic-body">Facilita las entrevistas privadas, sobre todo en develaciones de abuso o violencia sexual. Es un requisito operativo de protección.</div></div>
+              <div class="ic"><div class="ic-lbl">Enfoque de género</div><div class="ic-body">Facilita las entrevistas privadas, sobre todo en develaciones de abuso o violencia sexual. Es un requisito operativo de protección.</div></div>
+              <div class="ic" style="grid-column:span 2"><div class="ic-lbl">Otros especialistas</div><div class="ic-body">En algunos casos se puede requerir facilitadores interculturales o especialistas determinados según el objetivo de la visita y la población a entrevistar.</div></div>
             </div>
           </div>
         </div>
@@ -3059,7 +3060,7 @@ footer strong{color:var(--navy);font-weight:800}
               <div class="bul-item"><div class="bul-dot"></div><span>Objetivos específicos de la visita.</span></div>
               <div class="bul-item"><div class="bul-dot"></div><span>Tamaño y complejidad del establecimiento.</span></div>
               <div class="bul-item"><div class="bul-dot"></div><span>Conocimiento previo del lugar y su población.</span></div>
-              <div class="bul-item"><div class="bul-dot"></div><span>Restricciones impuestas por las autoridades del recinto.</span></div>
+              <div class="bul-item"><div class="bul-dot"></div><span>Tipo de visita.</span></div>
             </div>
           </div>
         </div>
@@ -3403,6 +3404,20 @@ footer strong{color:var(--navy);font-weight:800}
           </div>
         </div>
       </div>
+
+      <!-- Botón módulo informes -->
+      <button onclick="document.querySelector('[data-mod=informes]').click();document.querySelector('#mod-informes').scrollIntoView({behavior:'smooth'})" style="width:100%;margin-top:20px;background:linear-gradient(135deg,#0D5E5A 0%,#1A8A84 100%);border:none;border-radius:12px;padding:18px 24px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 3px 12px rgba(13,94,90,.25);transition:opacity .15s">
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 9 10 12 13 15 10 15 15"/></svg>
+          </div>
+          <div style="text-align:left">
+            <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px">Módulo complementario</div>
+            <div style="font-size:16px;font-weight:800;color:white;line-height:1.2">Ir al módulo Elaboración de Informe de Visita →</div>
+          </div>
+        </div>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
     </div><!-- /E4 -->
 
     <!-- ══ E5: SEGUIMIENTO ══ -->
