@@ -2880,8 +2880,10 @@ footer strong{color:var(--navy);font-weight:800}
 .scope-etapas .sub-item.open .sub-ico{background:var(--teal);}.scope-etapas .sub-item.open .sub-ico svg path,.scope-etapas .sub-item.open .sub-ico svg rect,.scope-etapas .sub-item.open .sub-ico svg circle,.scope-etapas .sub-item.open .sub-ico svg polyline{stroke:white}
 .scope-etapas .sub-ico svg{width:15px;height:15px}
 .scope-etapas .sub-name{font-size:13.5px;font-weight:700;color:var(--navy);flex:1;line-height:1.3}
-.scope-etapas .sub-chev{font-size:11px;color:var(--gray);transition:transform .2s;flex-shrink:0}
-.scope-etapas .sub-item.open .sub-chev{transform:rotate(180deg)}
+.scope-etapas .sub-chev{font-size:16px;font-weight:400;color:var(--gray);flex-shrink:0;line-height:1;transition:color .15s;width:18px;text-align:center}
+.scope-etapas .sub-chev::after{content:'+'}
+.scope-etapas .sub-item.open .sub-chev::after{content:'−'}
+.scope-etapas .sub-item.open .sub-chev{color:#2DA8A2}
 .scope-etapas .sub-body{display:none;padding:0 16px 16px 58px}
 .scope-etapas .sub-item.open .sub-body{display:block}
 .scope-etapas .sub-body p{font-size:13px;color:#3A4A60;line-height:1.65;margin-bottom:8px}
@@ -3025,13 +3027,13 @@ footer strong{color:var(--navy);font-weight:800}
       </div>
 
       <div class="sub-list">
-        <div class="sub-item open" id="e1s1">
+        <div class="sub-item" id="e1s1">
           <div class="sub-head" onclick="etapaSub('e1s1')">
             <div class="sub-ico">
               <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
             </div>
             <div class="sub-name">Composición del equipo</div>
-            <span class="sub-chev">▾</span>
+            <span class="sub-chev"></span>
           </div>
           <div class="sub-body">
             <div class="g2">
@@ -3050,7 +3052,7 @@ footer strong{color:var(--navy);font-weight:800}
               <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
             </div>
             <div class="sub-name">Tamaño del equipo</div>
-            <span class="sub-chev">▾</span>
+            <span class="sub-chev"></span>
           </div>
           <div class="sub-body">
             <p>Entre <strong>3 y 8 personas</strong> (expertos/as y apoyo). La cifra depende de cuatro factores:</p>
@@ -3069,7 +3071,7 @@ footer strong{color:var(--navy);font-weight:800}
               <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
             </div>
             <div class="sub-name">Capacitación del equipo</div>
-            <span class="sub-chev">▾</span>
+            <span class="sub-chev"></span>
           </div>
           <div class="sub-body">
             <div class="g2">
@@ -3085,7 +3087,7 @@ footer strong{color:var(--navy);font-weight:800}
               <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
             </div>
             <div class="sub-name">Cuidado profesional del equipo</div>
-            <span class="sub-chev">▾</span>
+            <span class="sub-chev"></span>
           </div>
           <div class="sub-body">
             <div class="warn">El monitoreo expone a <strong>trauma secundario, estrés postraumático y desgaste profesional</strong>. Estudios muestran alta correlación entre actividades en DDHH y síntomas de estrés/depresión.</div>
@@ -3119,13 +3121,13 @@ footer strong{color:var(--navy);font-weight:800}
       </div>
 
       <div class="sub-list">
-        <div class="sub-item open" id="e2s1">
+        <div class="sub-item" id="e2s1">
           <div class="sub-head" onclick="etapaSub('e2s1')">
             <div class="sub-ico">
               <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </div>
             <div class="sub-name">Preparación documental y entrevistas previas</div>
-            <span class="sub-chev">▾</span>
+            <span class="sub-chev"></span>
           </div>
           <div class="sub-body">
             <p>Reunir información disponible: informes anteriores del CPT, informes de otros órganos de monitoreo, prensa, universidades. Entrevistas previas con ONGs, personas que estuvieron bajo cuidado o custodia y familiares (caso a caso).</p>
@@ -3143,7 +3145,7 @@ footer strong{color:var(--navy);font-weight:800}
               <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
             </div>
             <div class="sub-name">Preparación logística · decisiones metodológicas</div>
-            <span class="sub-chev">▾</span>
+            <span class="sub-chev"></span>
           </div>
           <div class="sub-body">
             <div class="met-grid">
@@ -3167,7 +3169,7 @@ footer strong{color:var(--navy);font-weight:800}
               <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             </div>
             <div class="sub-name">Preparación operativa</div>
-            <span class="sub-chev">▾</span>
+            <span class="sub-chev"></span>
           </div>
           <div class="sub-body">
             <p>Reunión previa con <strong>todo el equipo</strong> para acordar la coordinación interna, revisar las decisiones metodológicas y repartir instrumentos y materiales. Ningún miembro debe llegar al recinto sin haber participado en esta instancia.</p>
@@ -3349,13 +3351,13 @@ footer strong{color:var(--navy);font-weight:800}
       </div>
 
       <div class="sub-list">
-        <div class="sub-item open" id="e4s1">
+        <div class="sub-item" id="e4s1">
           <div class="sub-head" onclick="etapaSub('e4s1')">
             <div class="sub-ico">
               <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
             </div>
             <div class="sub-name">Metodología de análisis</div>
-            <span class="sub-chev">▾</span>
+            <span class="sub-chev"></span>
           </div>
           <div class="sub-body">
             <div class="bul-list">
@@ -3372,7 +3374,7 @@ footer strong{color:var(--navy);font-weight:800}
               <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
             </div>
             <div class="sub-name">Contenido mínimo del informe</div>
-            <span class="sub-chev">▾</span>
+            <span class="sub-chev"></span>
           </div>
           <div class="sub-body">
             <div class="bul-list">
@@ -3391,7 +3393,7 @@ footer strong{color:var(--navy);font-weight:800}
               <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             </div>
             <div class="sub-name">Advertencia sobre terminología</div>
-            <span class="sub-chev">▾</span>
+            <span class="sub-chev"></span>
           </div>
           <div class="sub-body">
             <div class="call">
@@ -3437,13 +3439,13 @@ footer strong{color:var(--navy);font-weight:800}
       <div class="note" style="margin-bottom:16px">El seguimiento de la implementación de las recomendaciones podría ser <strong>el paso más importante</strong> de las visitas. Sin él, los hallazgos no se traducen en cambios reales.</div>
 
       <div class="sub-list">
-        <div class="sub-item open" id="e5s1">
+        <div class="sub-item" id="e5s1">
           <div class="sub-head" onclick="etapaSub('e5s1')">
             <div class="sub-ico">
               <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <div class="sub-name">Diálogo con autoridades</div>
-            <span class="sub-chev">▾</span>
+            <span class="sub-chev"></span>
           </div>
           <div class="sub-body">
             <div class="bul-list">
@@ -3461,7 +3463,7 @@ footer strong{color:var(--navy);font-weight:800}
               <svg viewBox="0 0 24 24" fill="none" stroke="#2DA8A2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             </div>
             <div class="sub-name">Cronograma de seguimiento</div>
-            <span class="sub-chev">▾</span>
+            <span class="sub-chev"></span>
           </div>
           <div class="sub-body">
             <p>Se elabora un <strong>Cronograma de seguimiento</strong> con tres columnas mínimas:</p>
