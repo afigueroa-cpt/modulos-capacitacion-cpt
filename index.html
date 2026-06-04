@@ -123,7 +123,7 @@ body{
 
 /* ══════════════ NAV TIMELINE (SIDEBAR) ══════════════ */
 .layout{
-  max-width:1280px;
+  max-width:1600px;
   margin:0 auto;
   display:grid;
   grid-template-columns:280px 1fr;
@@ -2060,8 +2060,8 @@ footer strong{color:var(--navy);font-weight:800}
           <div class="card-body">
             <p>El Estado de Chile ratificó el <strong>Protocolo Facultativo de la Convención de las Naciones Unidas contra la Tortura (OPCAT)</strong> en 2009. En abril de 2019 se publicó la <strong>Ley 21.154</strong>, que designa al Instituto Nacional de Derechos Humanos como el Mecanismo Nacional de Prevención contra la Tortura (MNPT), y crea un <strong>Comité de Expertos/as autónomo</strong> — el CPT — para actuar como mecanismo en la función de prevención.</p>
             <div class="cite">
-              El Protocolo Facultativo no pretende culpar a Estados individuales por las violaciones, sino trabajar de manera <em>constructiva</em> con ellos en la implementación de mejoras sostenidas.
-              <span class="src">Manual General de Visita Preventiva · CPT 2024</span>
+              El Protocolo Facultativo no pretende culpar a Estados individuales por las vulneraciones, sino trabajar de manera <em>constructiva</em> con ellos en la implementación de mejoras sostenidas.
+              <span class="src">Manual General de Visita Preventiva · CPT 2021</span>
             </div>
           </div>
         </div>
@@ -2069,8 +2069,16 @@ footer strong{color:var(--navy);font-weight:800}
         <div class="card">
           <div class="card-title"><span class="num">02</span>¿Qué se entiende por tortura y trato cruel?</div>
           <div class="card-body">
-            <p>La Ley 21.154 define la <strong>tortura</strong> como todo acto que inflija intencionalmente dolores o sufrimientos graves — físicos, sexuales o psíquicos — con fines de obtener información, castigar, intimidar, coaccionar o discriminar. También se considera tortura la aplicación intencional de métodos tendientes a anular la personalidad de la víctima o disminuir su voluntad.</p>
-            <p>El <strong>trato o pena cruel, inhumano o degradante</strong> es todo acto que, sin constituir tortura, vulnere el derecho a la integridad o dignidad de las personas bajo custodia o cuidado del Estado.</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+              <div style="background:#E8F4FD;border-radius:12px;padding:20px 22px;border-top:3px solid #2A7ABF">
+                <div style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#2A7ABF;margin-bottom:8px">Tortura</div>
+                <p style="font-size:13.5px;color:#1A3A5C;line-height:1.65;margin:0">La Ley 21.154 define la <strong>tortura</strong> como todo acto que inflija intencionalmente dolores o sufrimientos graves — físicos, sexuales o psíquicos — con fines de obtener información, castigar, intimidar, coaccionar o discriminar. También se considera tortura la aplicación intencional de métodos tendientes a anular la personalidad de la víctima o disminuir su voluntad.</p>
+              </div>
+              <div style="background:#E8F4FD;border-radius:12px;padding:20px 22px;border-top:3px solid #4AADCF">
+                <div style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#4AADCF;margin-bottom:8px">Trato o pena cruel, inhumano o degradante</div>
+                <p style="font-size:13.5px;color:#1A3A5C;line-height:1.65;margin:0">El <strong>trato o pena cruel, inhumano o degradante</strong> es todo acto que, sin constituir tortura, vulnere el derecho a la integridad o dignidad de las personas bajo custodia o cuidado del Estado.</p>
+              </div>
+            </div>
             <div class="callout">
               <div class="callout-ico">!</div>
               <div class="callout-body">La definición de la Ley 21.154 es <strong>más amplia que el Código Penal chileno</strong>: no exige la participación de un/a funcionario/a público y contiene una causal genérica sobre la finalidad. Esto amplía la facultad de monitoreo del CPT para detectar riesgos.</div>
@@ -2083,12 +2091,12 @@ footer strong{color:var(--navy);font-weight:800}
           <div class="card-body">
             <p>Todo lugar — inmueble o mueble, incluidos medios de transporte — administrado por el Estado o por particulares con función pública, donde haya personas que no puedan abandonar libremente. Esto incluye:</p>
             <ul class="bullets">
-              <li><strong>Sistema penitenciario:</strong> cárceles, CCP, prisiones preventivas.</li>
-              <li><strong>Sistema policial:</strong> comisarías, retenes, vehículos policiales.</li>
-              <li><strong>Sistema NNA:</strong> centros para menores infractores y residencias de protección.</li>
-              <li><strong>Sistema de salud mental:</strong> unidades psiquiátricas de corta, mediana y larga estadía.</li>
-              <li><strong>Persona mayor:</strong> residencias de larga estadía (ELEAM).</li>
-              <li><strong>Migrantes y otros:</strong> centros de detención migratoria, puestos fronterizos, zonas de tránsito.</li>
+              <li><strong>Sistema penitenciario:</strong> cárceles, unidades penales semi abiertas, unidades forenses al interior de recintos penitenciarios.</li>
+              <li><strong>Función policial:</strong> comisarías, cuarteles, vehículos policiales.</li>
+              <li><strong>Niñez y adolescencia:</strong> centros de justicia juvenil y residencias de protección.</li>
+              <li><strong>Salud mental:</strong> unidades de corta, mediana y larga estadía, unidades forenses, residencias protegidas, entre otros.</li>
+              <li><strong>Personas mayores:</strong> establecimientos de larga estadía para personas mayores.</li>
+              <li><strong>Migrantes y otros:</strong> centros de detención migratoria, dispositivos fronterizos, zonas de tránsito.</li>
             </ul>
             <p class="hl">El CPT trabaja sobre <strong>fenómenos institucionales</strong> — las disposiciones, culturas y prácticas que permiten o incentivan la tortura — más que sobre casos individuales.</p>
           </div>
@@ -2097,135 +2105,144 @@ footer strong{color:var(--navy);font-weight:800}
         <div class="card">
           <div class="card-title"><span class="num">04</span>Funciones y atribuciones del CPT (Ley 21.154, art. 3)</div>
           <div class="card-body">
-            <ul class="checklist">
-              <li>Examinar periódicamente las condiciones de las personas bajo custodia o cuidado del Estado.</li>
-              <li>Realizar visitas preventivas no programadas y de monitoreo, con acceso inmediato y sin previo aviso.</li>
-              <li>Realizar visitas ad hoc ante denuncias específicas o por represalias.</li>
-              <li>Efectuar entrevistas confidenciales con personas bajo cuidado o custodia y personal.</li>
-              <li>Requerir información: número de personas, ficha clínica con consentimiento, registros, fotografías y cámaras.</li>
-              <li>Realizar recomendaciones a las autoridades competentes; las autoridades tienen el deber de considerarlas.</li>
-              <li>Colaborar con el Subcomité para la Prevención de la Tortura (SPT) y otros MNPT.</li>
-              <li>Proponer modificaciones legales o reglamentarias.</li>
-              <li>Confeccionar el informe anual público (aprobado por 2/3 del Comité).</li>
-              <li>Capacitar en prevención de la tortura a entidades públicas y privadas.</li>
-            </ul>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px">
+              <div style="background:var(--cream);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start">
+                <span style="min-width:28px;height:28px;background:var(--accent);color:white;border-radius:8px;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center">1</span>
+                <p style="font-size:13px;color:var(--navy);line-height:1.55;margin:0">Examinar periódicamente las condiciones de las personas bajo custodia o cuidado del Estado.</p>
+              </div>
+              <div style="background:var(--cream);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start">
+                <span style="min-width:28px;height:28px;background:var(--accent);color:white;border-radius:8px;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center">2</span>
+                <p style="font-size:13px;color:var(--navy);line-height:1.55;margin:0">Realizar visitas preventivas no programadas y de monitoreo, con acceso inmediato y sin previo aviso.</p>
+              </div>
+              <div style="background:var(--cream);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start">
+                <span style="min-width:28px;height:28px;background:var(--accent);color:white;border-radius:8px;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center">3</span>
+                <p style="font-size:13px;color:var(--navy);line-height:1.55;margin:0">Realizar visitas ad hoc ante denuncias específicas o por represalias.</p>
+              </div>
+              <div style="background:var(--cream);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start">
+                <span style="min-width:28px;height:28px;background:var(--accent);color:white;border-radius:8px;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center">4</span>
+                <p style="font-size:13px;color:var(--navy);line-height:1.55;margin:0">Efectuar entrevistas confidenciales con personas bajo cuidado o custodia y personal.</p>
+              </div>
+              <div style="background:var(--cream);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start">
+                <span style="min-width:28px;height:28px;background:var(--accent);color:white;border-radius:8px;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center">5</span>
+                <p style="font-size:13px;color:var(--navy);line-height:1.55;margin:0">Requerir información: número de personas, ficha clínica con consentimiento, registros, fotografías y cámaras.</p>
+              </div>
+              <div style="background:var(--cream);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start">
+                <span style="min-width:28px;height:28px;background:var(--accent);color:white;border-radius:8px;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center">6</span>
+                <p style="font-size:13px;color:var(--navy);line-height:1.55;margin:0">Realizar recomendaciones a las autoridades competentes; las autoridades tienen el deber de considerarlas.</p>
+              </div>
+              <div style="background:var(--cream);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start">
+                <span style="min-width:28px;height:28px;background:var(--accent);color:white;border-radius:8px;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center">7</span>
+                <p style="font-size:13px;color:var(--navy);line-height:1.55;margin:0">Colaborar con el Subcomité para la Prevención de la Tortura (SPT) y otros MNPT.</p>
+              </div>
+              <div style="background:var(--cream);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start">
+                <span style="min-width:28px;height:28px;background:var(--accent);color:white;border-radius:8px;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center">8</span>
+                <p style="font-size:13px;color:var(--navy);line-height:1.55;margin:0">Proponer modificaciones legales o reglamentarias.</p>
+              </div>
+              <div style="background:var(--cream);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start">
+                <span style="min-width:28px;height:28px;background:var(--accent);color:white;border-radius:8px;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center">9</span>
+                <p style="font-size:13px;color:var(--navy);line-height:1.55;margin:0">Confeccionar el informe anual público (aprobado por 2/3 del Comité).</p>
+              </div>
+              <div style="background:var(--cream);border-radius:12px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start">
+                <span style="min-width:28px;height:28px;background:var(--accent);color:white;border-radius:8px;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center">10</span>
+                <p style="font-size:13px;color:var(--navy);line-height:1.55;margin:0">Capacitar en prevención de la tortura a entidades públicas y privadas.</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <button class="infog-modal-trigger" onclick="openInfog('modal-monitoreo-prohib')" style="width:100%">
-          <div class="infog-modal-trigger-ico">📋</div>
-          <div class="infog-modal-trigger-body">
-            <div class="infog-modal-trigger-title">05 · ¿Por qué es importante el monitoreo? &nbsp;·&nbsp; 06 · Prohibiciones que establece la ley</div>
-            <div class="infog-modal-trigger-sub">Fundamento del mandato preventivo y garantías legales · Haz clic para leer en pantalla completa</div>
-          </div>
-          <span class="infog-modal-trigger-arr">→</span>
-        </button>
-<div class="infog-overlay" id="modal-monitoreo-prohib">
-  <div class="infog-modal-box">
-    <div class="infog-modal-topbar">
-      <div class="infog-modal-topbar-title">📋 Fundamento y garantías legales del monitoreo preventivo</div>
-      <button class="infog-modal-close" onclick="closeInfog('modal-monitoreo-prohib')" title="Cerrar">✕</button>
-    </div>
-    <div class="infog-modal-content" style="padding:32px 36px;display:flex;flex-direction:column;gap:28px">
+        <!-- Bloque 05 inline -->
+        <div class="card" style="margin-bottom:0">
+          <div class="card-title"><span class="num">05</span>¿Por qué es importante el monitoreo?</div>
+          <div class="card-body">
+            <p>La seguridad y bienestar de las personas bajo custodia o cuidado del Estado son responsabilidad de la autoridad que las retiene. Los recintos son cerrados: sus ocupantes quedan fuera del alcance de la sociedad y en riesgo permanente de torturas y malos tratos.</p>
+            <p style="font-weight:600;color:var(--navy);margin-bottom:14px">Las visitas regulares son sumamente eficaces para la prevención por las siguientes razones:</p>
 
-      <!-- Bloque 05 -->
-      <div>
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
-          <span style="background:var(--accent);color:white;font-size:11px;font-weight:800;padding:3px 10px;border-radius:4px;letter-spacing:.06em">05</span>
-          <h3 style="font-size:22px;font-weight:800;color:var(--navy)">¿Por qué es importante el monitoreo?</h3>
-        </div>
-        <p style="font-size:13.5px;color:var(--text);line-height:1.7;margin-bottom:6px">La seguridad y bienestar de las personas bajo custodia o cuidado del Estado son responsabilidad de la autoridad que las retiene. Los recintos son cerrados: sus occupantes quedan fuera del alcance de la sociedad y en riesgo permanente de torturas y malos tratos.</p>
-        <p style="font-size:13px;color:var(--gray);line-height:1.6;margin-bottom:14px;font-weight:600">Las visitas regulares son sumamente eficaces para la prevención por las siguientes razones:</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;margin-bottom:16px">
+              <div style="background:white;border:1px solid var(--cream-dark);border-radius:12px;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
+                <div style="width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4172B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1" fill="#4172B8"/></svg>
+                </div>
+                <p style="font-weight:800;font-size:12px;color:var(--navy);line-height:1.3">Acto de alto riesgo</p>
+                <p style="font-size:11.5px;color:var(--gray);line-height:1.5">Privar de libertad es un acto coercitivo con inherente riesgo de vulneraciones a los DDHH.</p>
+              </div>
+              <div style="background:white;border:1px solid var(--cream-dark);border-radius:12px;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
+                <div style="width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4172B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M6 6l6-1 6 1M9 11l-3 7M15 11l3 7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+                </div>
+                <p style="font-weight:800;font-size:12px;color:var(--navy);line-height:1.3">Diferencia de poder</p>
+                <p style="font-size:11.5px;color:var(--gray);line-height:1.5">El escrutinio externo permite intervenir ante abusos entre autoridad y persona custodiada.</p>
+              </div>
+              <div style="background:white;border:1px solid var(--cream-dark);border-radius:12px;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
+                <div style="width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4172B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2z"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                </div>
+                <p style="font-weight:800;font-size:12px;color:var(--navy);line-height:1.3">Dependencia total</p>
+                <p style="font-size:11.5px;color:var(--gray);line-height:1.5">La persona depende casi totalmente de las autoridades para su protección y subsistencia.</p>
+              </div>
+              <div style="background:white;border:1px solid var(--cream-dark);border-radius:12px;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
+                <div style="width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4172B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><path d="m21 21-4.35-4.35"/><path d="M10 7v6M7 10h6"/></svg>
+                </div>
+                <p style="font-weight:800;font-size:12px;color:var(--navy);line-height:1.3">Examen de primera mano</p>
+                <p style="font-size:11.5px;color:var(--gray);line-height:1.5">Expertos/as independientes examinan el trato y las condiciones sin intermediarios.</p>
+              </div>
+              <div style="background:white;border:1px solid var(--cream-dark);border-radius:12px;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
+                <div style="width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4172B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3C8 3 4.5 5 3 7c0 6 2.5 11 9 14 6.5-3 9-8 9-14-1.5-2-4.5-4-9-4z"/><path d="m9 12 2 2 4-4"/></svg>
+                </div>
+                <p style="font-weight:800;font-size:12px;color:var(--navy);line-height:1.3">Efecto disuasivo</p>
+                <p style="font-size:11.5px;color:var(--gray);line-height:1.5">El escrutinio inesperado inhibe abusos y puede ser apoyo moral para las personas.</p>
+              </div>
+              <div style="background:white;border:1px solid var(--cream-dark);border-radius:12px;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
+                <div style="width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4172B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                </div>
+                <p style="font-weight:800;font-size:12px;color:var(--navy);line-height:1.3">Transparencia y rendición de cuentas</p>
+                <p style="font-size:11.5px;color:var(--gray);line-height:1.5">Incrementa la legitimidad y la confianza pública en las instituciones.</p>
+              </div>
+              <div style="background:white;border:1px solid var(--cream-dark);border-radius:12px;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
+                <div style="width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center">
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4172B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v-2a2 2 0 0 1 2-2h1l3-3 3 3h1a2 2 0 0 1 2 2v2"/><path d="M4 12c2 2 3.5 3 4 4l2-1 2 1c.5-1 2-2 4-4"/><path d="M8 16c0 1.5.5 3 4 4 3.5-1 4-2.5 4-4"/></svg>
+                </div>
+                <p style="font-weight:800;font-size:12px;color:var(--navy);line-height:1.3">También beneficia al Estado</p>
+                <p style="font-size:11.5px;color:var(--gray);line-height:1.5">Ayuda a identificar cambios específicos y demuestra compromiso con la prevención.</p>
+              </div>
+            </div>
 
-        <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:10px">
-          <div style="background:white;border:1px solid var(--cream-dark);border-radius:12px;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
-            <div style="width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4172B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1" fill="#4172B8"/></svg>
+            <div class="cite">
+              El Protocolo Facultativo no pretende culpar a Estados individuales por las vulneraciones, sino trabajar de manera <em>constructiva</em> con ellos en la implementación de mejoras sostenidas.
+              <span class="src">APT / IIDH 2010 · Manual General de Visita Preventiva CPT 2021</span>
             </div>
-            <p style="font-weight:800;font-size:12px;color:var(--navy);line-height:1.3">Acto de alto riesgo</p>
-            <p style="font-size:11.5px;color:var(--gray);line-height:1.5">Privar de libertad es un acto coercitivo con inherente riesgo de violaciones a los DDHH.</p>
-          </div>
-          <div style="background:white;border:1px solid var(--cream-dark);border-radius:12px;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
-            <div style="width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4172B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M6 6l6-1 6 1M9 11l-3 7M15 11l3 7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
-            </div>
-            <p style="font-weight:800;font-size:12px;color:var(--navy);line-height:1.3">Diferencia de poder</p>
-            <p style="font-size:11.5px;color:var(--gray);line-height:1.5">El escrutinio externo permite intervenir ante abusos entre autoridad y persona custodiada.</p>
-          </div>
-          <div style="background:white;border:1px solid var(--cream-dark);border-radius:12px;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
-            <div style="width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4172B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2z"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-            </div>
-            <p style="font-weight:800;font-size:12px;color:var(--navy);line-height:1.3">Dependencia total</p>
-            <p style="font-size:11.5px;color:var(--gray);line-height:1.5">La persona depende casi totalmente de las autoridades para su protección y subsistencia.</p>
-          </div>
-          <div style="background:white;border:1px solid var(--cream-dark);border-radius:12px;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
-            <div style="width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4172B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><path d="m21 21-4.35-4.35"/><path d="M10 7v6M7 10h6"/></svg>
-            </div>
-            <p style="font-weight:800;font-size:12px;color:var(--navy);line-height:1.3">Examen de primera mano</p>
-            <p style="font-size:11.5px;color:var(--gray);line-height:1.5">Expertos/as independientes examinan el trato y las condiciones sin intermediarios.</p>
-          </div>
-          <div style="background:white;border:1px solid var(--cream-dark);border-radius:12px;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
-            <div style="width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4172B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3C8 3 4.5 5 3 7c0 6 2.5 11 9 14 6.5-3 9-8 9-14-1.5-2-4.5-4-9-4z"/><path d="m9 12 2 2 4-4"/></svg>
-            </div>
-            <p style="font-weight:800;font-size:12px;color:var(--navy);line-height:1.3">Efecto disuasivo</p>
-            <p style="font-size:11.5px;color:var(--gray);line-height:1.5">El escrutinio inesperado inhibe abusos y puede ser apoyo moral para las personas.</p>
-          </div>
-          <div style="background:white;border:1px solid var(--cream-dark);border-radius:12px;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
-            <div style="width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4172B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
-            </div>
-            <p style="font-weight:800;font-size:12px;color:var(--navy);line-height:1.3">Transparencia y rendición de cuentas</p>
-            <p style="font-size:11.5px;color:var(--gray);line-height:1.5">Incrementa la legitimidad y la confianza pública en las instituciones.</p>
-          </div>
-          <div style="background:white;border:1px solid var(--cream-dark);border-radius:12px;padding:16px 12px 14px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px">
-            <div style="width:48px;height:48px;border-radius:12px;background:#EEF2FF;display:flex;align-items:center;justify-content:center">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4172B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v-2a2 2 0 0 1 2-2h1l3-3 3 3h1a2 2 0 0 1 2 2v2"/><path d="M4 12c2 2 3.5 3 4 4l2-1 2 1c.5-1 2-2 4-4"/><path d="M8 16c0 1.5.5 3 4 4 3.5-1 4-2.5 4-4"/></svg>
-            </div>
-            <p style="font-weight:800;font-size:12px;color:var(--navy);line-height:1.3">También beneficia al Estado</p>
-            <p style="font-size:11.5px;color:var(--gray);line-height:1.5">Ayuda a identificar cambios específicos y demuestra compromiso con la prevención.</p>
           </div>
         </div>
 
-        <div class="cite" style="margin-top:16px">
-          El Protocolo Facultativo no pretende culpar a Estados individuales por las violaciones, sino trabajar de manera <em>constructiva</em> con ellos en la implementación de mejoras sostenidas.
-          <span class="src">APT / IIDH 2010 · Manual General de Visita Preventiva CPT 2024</span>
-        </div>
-      </div>
-
-      <!-- Bloque 06 · Banner azul -->
-      <div style="background:linear-gradient(135deg,#142E66 0%,#1A4080 100%);border-radius:16px;padding:24px 28px">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-          <span style="background:rgba(255,255,255,.15);color:white;font-size:11px;font-weight:800;padding:3px 10px;border-radius:4px;letter-spacing:.06em">06</span>
-          <h3 style="font-size:18px;font-weight:800;color:white">Prohibiciones que establece la ley</h3>
-        </div>
-        <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.65;margin-bottom:16px">El <strong style="color:white">Art. 15 OPCAT</strong> y el <strong style="color:white">Art. 4° Ley 21.154</strong> establecen que ninguna autoridad o funcionario podrá:</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
-          <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:16px 18px">
-            <div style="width:40px;height:40px;border-radius:10px;background:rgba(94,202,196,.2);display:flex;align-items:center;justify-content:center;margin-bottom:10px">
-              <i class="ti ti-hand-stop" style="font-size:20px;color:#5ECAC4"></i>
-            </div>
-            <p style="font-weight:700;font-size:13px;color:white;margin-bottom:5px">Impedir una visita</p>
-            <p style="font-size:12px;color:rgba(255,255,255,.72);line-height:1.55">Solo ante situación excepcional, grave, urgente y apremiante — y son los expertos/as quienes determinan la mantención o suspensión.</p>
+        <!-- Bloque 06 inline -->
+        <div style="background:linear-gradient(135deg,#142E66 0%,#1A4080 100%);border-radius:14px;padding:28px 32px;margin-top:20px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+            <span style="background:rgba(255,255,255,.15);color:white;font-size:11px;font-weight:800;padding:3px 10px;border-radius:4px;letter-spacing:.06em">06</span>
+            <h3 style="font-size:20px;font-weight:800;color:white;margin:0">Prohibiciones que establece la ley</h3>
           </div>
-          <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:16px 18px">
-            <div style="width:40px;height:40px;border-radius:10px;background:rgba(94,202,196,.2);display:flex;align-items:center;justify-content:center;margin-bottom:10px">
-              <i class="ti ti-alert-triangle" style="font-size:20px;color:#5ECAC4"></i>
+          <p style="font-size:13px;color:rgba(255,255,255,.82);line-height:1.65;margin-bottom:16px">El <strong style="color:white">Art. 15 OPCAT</strong> y el <strong style="color:white">Art. 4° Ley 21.154</strong> establecen que ninguna autoridad o funcionario podrá:</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+            <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:16px 18px">
+              <div style="width:40px;height:40px;border-radius:10px;background:rgba(94,202,196,.2);display:flex;align-items:center;justify-content:center;margin-bottom:10px">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5ECAC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              </div>
+              <p style="font-weight:700;font-size:13px;color:white;margin-bottom:5px">Impedir una visita</p>
+              <p style="font-size:12px;color:rgba(255,255,255,.72);line-height:1.55">Solo ante situación excepcional, grave, urgente y apremiante — y son los expertos/as quienes determinan la mantención o suspensión.</p>
             </div>
-            <p style="font-weight:700;font-size:13px;color:white;margin-bottom:5px">Ordenar represalias</p>
-            <p style="font-size:12px;color:rgba(255,255,255,.72);line-height:1.55">Contra expertos/as en el ejercicio de sus funciones, o contra quien comunique al CPT información sobre torturas u otros tratos o penas crueles, inhumanos o degradantes.</p>
+            <div style="background:rgba(255,255,255,.1);border-radius:12px;padding:16px 18px">
+              <div style="width:40px;height:40px;border-radius:10px;background:rgba(94,202,196,.2);display:flex;align-items:center;justify-content:center;margin-bottom:10px">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5ECAC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <p style="font-weight:700;font-size:13px;color:white;margin-bottom:5px">Ordenar represalias</p>
+              <p style="font-size:12px;color:rgba(255,255,255,.72);line-height:1.55">Contra expertos/as en el ejercicio de sus funciones, o contra quien comunique al CPT información sobre torturas u otros tratos o penas crueles, inhumanos o degradantes.</p>
+            </div>
+          </div>
+          <div style="background:rgba(255,255,255,.08);border-radius:10px;padding:12px 16px;border-left:3px solid #5ECAC4">
+            <p style="font-size:12.5px;color:rgba(255,255,255,.88);line-height:1.6"><strong style="color:white">⚠️ Infracción grave a la probidad:</strong> la inobservancia acarrea responsabilidad administrativa conforme al Estatuto Administrativo (DFL N° 29/2004), sin perjuicio de las sanciones penales que correspondan.</p>
           </div>
         </div>
-        <div style="background:rgba(255,255,255,.08);border-radius:10px;padding:12px 16px;border-left:3px solid #5ECAC4">
-          <p style="font-size:12.5px;color:rgba(255,255,255,.88);line-height:1.6"><strong style="color:white">⚠️ Infracción grave a la probidad:</strong> la inobservancia acarrea responsabilidad administrativa conforme al Estatuto Administrativo (DFL N° 29/2004), sin perjuicio de las sanciones penales que correspondan.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
       </section>
 
       <!-- ============ FASE 2: PRINCIPIOS BÁSICOS ============ -->
@@ -2236,23 +2253,10 @@ footer strong{color:var(--navy);font-weight:800}
           <p class="sec-desc">Trece principios que orientan toda visita del CPT. Sin ellos, una visita mal planificada o mal conducida puede causar <em>perjuicios reales</em> a las personas que pretendía proteger.</p>
         </div>
 
-        <button class="infog-modal-trigger" onclick="openInfog('modal-principios')" style="margin-bottom:16px">
-  <div class="infog-modal-trigger-ico">⚖️</div>
-  <div class="infog-modal-trigger-body">
-    <div class="infog-modal-trigger-title">Los 13 principios del monitoreo preventivo</div>
-    <div class="infog-modal-trigger-sub">Marco de conducta del equipo · Haz clic para ver en pantalla completa</div>
-  </div>
-  <span class="infog-modal-trigger-arr">→</span>
-</button>
-<div class="infog-overlay" id="modal-principios">
-  <div class="infog-modal-box">
-    <div class="infog-modal-topbar">
-      <div class="infog-modal-topbar-title">⚖️ Los 13 principios del monitoreo preventivo</div>
-      <button class="infog-modal-close" onclick="closeInfog('modal-principios')" title="Cerrar">✕</button>
-    </div>
-    <div class="infog-modal-content" style="padding:28px 32px">
-      <p style="font-size:13px;color:var(--gray);line-height:1.6;margin-bottom:22px">Trece principios que orientan <em>toda</em> visita del CPT. Sin ellos, una visita mal conducida puede causar perjuicios reales a quienes pretendía proteger.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px">
+        <div style="font-size:11px;color:var(--gray);letter-spacing:.08em;text-transform:uppercase;font-weight:700;margin-bottom:4px">Fuentes</div>
+        <div style="font-size:12.5px;color:var(--gray);margin-bottom:20px">Manual General de Visita Preventiva · CPT 2021 &nbsp;·&nbsp; Manual de Capacitación para la Fiscalización de los Derechos Humanos · ONU, 2001</div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px">
 
         <div style="background:white;border:1px solid var(--cream-dark);border-left:3px solid var(--accent);border-radius:8px;padding:18px 20px">
           <h4 style="font-size:14px;font-weight:800;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:8px"><span>🛡️</span>No causar daño</h4>
@@ -2393,64 +2397,6 @@ footer strong{color:var(--navy);font-weight:800}
         </div>
 
       </div>
-    </div>
-  </div>
-</div>
-
-        <div class="principle-grid">
-          <div class="principle">
-            <h4><span class="ico">🛡️</span>No causar daño</h4>
-            <p>Las personas bajo cuidado o custodia del Estado son particularmente vulnerables. El equipo debe tener siempre en consideración su seguridad y no tomar ninguna medida que pueda ponerlas en riesgo. Ante denuncias de tortura o maltrato, los principios de confidencialidad, seguridad y sensibilidad son innegociables.</p>
-          </div>
-          <div class="principle">
-            <h4><span class="ico">🧠</span>Ejercer el buen juicio</h4>
-            <p>Los/as observadores/as deben conocer los estándares del monitoreo, pero las reglas no pueden sustituir el buen juicio personal y el sentido común en toda circunstancia.</p>
-          </div>
-          <div class="principle">
-            <h4><span class="ico">🤝</span>Respeto a autoridades y personal</h4>
-            <p>Sin una base mínima de respeto mutuo el trabajo en terreno se compromete. El equipo debe identificar niveles jerárquicos y responsabilidades, y reconocer que la raíz de muchos problemas está en el sistema, no en los individuos. El personal realiza un trabajo muy demandante, frecuentemente subvalorado.</p>
-          </div>
-          <div class="principle">
-            <h4><span class="ico">❤️</span>Respeto a las personas bajo cuidado o custodia</h4>
-            <p>Independiente de la razón de la privación de libertad, todas las personas bajo cuidado o custodia del Estado deben ser tratadas con respeto y cortesía. El/la visitador/a debe presentarse a sí mismo/a.</p>
-          </div>
-          <div class="principle">
-            <h4><span class="ico">⭐</span>Credibilidad</h4>
-            <p>El equipo debe explicar claramente a todas las personas entrevistadas los objetivos y limitaciones de la visita. No se deben hacer promesas que no puedan cumplirse, ni iniciar acciones a las que no pueda darse seguimiento.</p>
-          </div>
-          <div class="principle">
-            <h4><span class="ico">🔗</span>Respeto e integridad con el equipo</h4>
-            <p>Los miembros deben tratar a todas las personas con decencia y respeto. No deben estar motivados por interés personal y deben ser escrupulosamente honestos. Su comportamiento debe estar en conformidad con los estándares internacionales de DDHH.</p>
-          </div>
-          <div class="principle">
-            <h4><span class="ico">🔒</span>Respetar la confidencialidad</h4>
-            <p>Esencial para proteger a las víctimas de represalias, exposición y doble victimización. No se puede hablar a nombre de una persona bajo cuidado o custodia sin su consentimiento expreso e informado. Todo visitante está obligado a respetar la confidencialidad; el CPT debe contar con su propio sistema y cláusulas específicas en contratos de asesores.</p>
-          </div>
-          <div class="principle">
-            <h4><span class="ico">🔐</span>Respetar la seguridad</h4>
-            <p>Abarca la seguridad personal de los miembros del equipo y de las personas bajo cuidado o custodia. Los miembros deben mostrar su identificación al ingresar, respetar las reglas internas y no introducir ni sacar objetos sin consentimiento previo. En terreno, deben resguardar la confidencialidad de la información para no poner en riesgo a las personas.</p>
-          </div>
-          <div class="principle">
-            <h4><span class="ico">⏱️</span>Consistencia, persistencia y paciencia</h4>
-            <p>La legitimidad de un mecanismo de visita se establece con el tiempo. El monitoreo requiere regularidad y continuidad: visitar los mismos lugares, construir evidencia sólida y ser persistentes también en el seguimiento.</p>
-          </div>
-          <div class="principle">
-            <h4><span class="ico">🎯</span>Ser exactos y precisos</h4>
-            <p>Durante la visita in situ es fundamental recoger información sólida y precisa para emitir informes bien documentados y recomendaciones relevantes y bien fundamentadas.</p>
-          </div>
-          <div class="principle">
-            <h4><span class="ico">💚</span>Ser sensibles</h4>
-            <p>El equipo debe ser cuidadoso en el trato con personas bajo cuidado o custodia, especialmente NNA, personas con discapacidad mental o física. Hay que conducir las entrevistas con sensibilidad al estado de ánimo y necesidades personales, y tomar medidas para proteger su seguridad. Ante denuncias de malos tratos, estar conscientes de los riesgos de retraumatización o revictimización.</p>
-          </div>
-          <div class="principle">
-            <h4><span class="ico">⚖️</span>Ser objetivo e imparcial</h4>
-            <p>El equipo debe esmerarse en registrar los hechos reales, sin sesgos por sentimientos u opiniones preconcebidas. El CPT adopta el estándar de objetividad del Código Procesal Penal: investigar con igual celo los hechos que permitan determinar tanto la culpabilidad como la inocencia. La imparcialidad es parte de la legitimidad del Comité y de la rigurosidad del mandato.</p>
-          </div>
-          <div class="principle">
-            <h4><span class="ico">👁️</span>Ser visible</h4>
-            <p>Dentro del recinto, el equipo debe asegurar que el personal y las personas bajo cuidado o custodia del Estado estén en conocimiento de la metodología y el mandato del CPT, y que sepan cómo acercarse. Todo miembro debe portar un medio de identificación. Universalidad: el monitoreo debe ser integral, apuntando a erradicar todas las prácticas de tortura o tratos degradantes.</p>
-          </div>
-        </div>
       </section>
 
       <!-- ============ FASE 3: SOCIEDAD CIVIL ============ -->
@@ -2480,7 +2426,7 @@ footer strong{color:var(--navy);font-weight:800}
             <p>Una adecuada comunicación y colaboración con la sociedad civil ha sido <strong>crucial en la prevención de la tortura</strong>. Se recomienda construir relaciones sostenibles que ayuden a legitimar y fortalecer el cumplimiento del mandato, asegurando transparencia e inclusividad, sin afectar la imparcialidad, independencia y confidencialidad del CPT.</p>
             <div class="cite">
               La sociedad civil es el aliado más estratégico para impulsar las recomendaciones del MNPT en términos de prevención, sobre todo ante la tendencia de muchos gobiernos de impulsar políticas de seguridad divorciadas de la prevención.
-              <span class="src">Experiencias comparadas MNPT Latinoamérica · Manual CPT 2024</span>
+              <span class="src">Experiencias comparadas MNPT Latinoamérica · Manual CPT 2021</span>
             </div>
             <p><strong>Primer paso:</strong> conformar un registro del CPT de organismos de monitoreo y OSC vinculadas a la materia, evaluando la pertinencia de un llamado nacional público a inscribirse.</p>
           </div>
