@@ -2730,12 +2730,65 @@ footer strong{color:var(--navy);font-weight:800}
               <span class="step-tag">Tiempo</span>
             </div>
             <div class="step-body">
-              <p>La visita debe ser tan larga como sea necesario para un trabajo profesional. Mínimos sugeridos:</p>
-              <ul class="bullets">
-                <li>Lugar pequeño: al menos <strong>un día completo</strong>.</li>
-                <li>Visita en profundidad o establecimiento &gt; 100 personas: <strong>al menos varios días</strong>; hasta dos semanas o más.</li>
-                <li>Se recomienda incluir <strong>visitas nocturnas y de fines de semana</strong>.</li>
-              </ul>
+              <p>Tiempos promedio de referencia sobre duración de una visita.</p>
+
+              <!-- Tabla de duraciones -->
+              <div style="overflow-x:auto;margin-top:14px">
+                <table style="width:100%;border-collapse:collapse;font-size:13px;background:white;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06)">
+                  <thead>
+                    <tr>
+                      <th style="background:var(--navy);color:white;padding:11px 16px;text-align:left;font-size:12px;font-weight:700;width:22%">Tipo de visita</th>
+                      <th style="background:var(--navy);color:white;padding:11px 16px;text-align:center;font-size:12px;font-weight:700">Pequeño<br><span style="font-weight:400;font-size:11px;opacity:.8">(1–99 pers.)</span></th>
+                      <th style="background:var(--navy);color:white;padding:11px 16px;text-align:center;font-size:12px;font-weight:700">Mediano<br><span style="font-weight:400;font-size:11px;opacity:.8">(100–490 pers.)</span></th>
+                      <th style="background:var(--navy);color:white;padding:11px 16px;text-align:center;font-size:12px;font-weight:700;background:var(--accent)!important">Grande<br><span style="font-weight:400;font-size:11px;opacity:.85">(500+ pers.)</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="background:#F0F4FF">
+                      <td colspan="4" style="padding:8px 16px;font-size:11px;font-weight:800;color:var(--navy);letter-spacing:.08em;text-transform:uppercase;text-align:center;border-bottom:1px solid var(--cream-dark)">Visitas programadas</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--cream-dark)">
+                      <td style="padding:10px 16px;font-weight:600;color:var(--navy)">De presentación</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray)">0.5 días</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray)">0.5 a 1 día</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray);background:#F0F4FF">1 día</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--cream-dark);background:var(--cream)">
+                      <td style="padding:10px 16px;font-weight:600;color:var(--navy)">En profundidad</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray)">2 días</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray)">3 días</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray);background:#E8EDF8;font-weight:600;color:var(--navy)">1 semana o más</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid var(--cream-dark)">
+                      <td style="padding:10px 16px;font-weight:600;color:var(--navy)">Temática</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray)">0.5 a 1 día</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray)">2 días</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray);background:#F0F4FF">3 días</td>
+                    </tr>
+                    <tr style="border-bottom:2px solid var(--navy)">
+                      <td style="padding:10px 16px;font-weight:600;color:var(--navy)">De seguimiento</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray)">0.5 a 1 día</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray)">1 a 2 días</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray);background:#F0F4FF">2 a 3 días</td>
+                    </tr>
+                    <tr style="background:#FFF4EE">
+                      <td colspan="4" style="padding:8px 16px;font-size:11px;font-weight:800;color:#B5572E;letter-spacing:.08em;text-transform:uppercase;text-align:center;border-bottom:1px solid #F5D5C0">Visitas no programadas</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #F5D5C0;background:#FFF8F4">
+                      <td style="padding:10px 16px;font-weight:600;color:var(--navy)">Ad hoc</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray)">0.5 a 1 día</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray)">0.5 a 1 día</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray);background:#FDEEE5">0.5 a 1 día</td>
+                    </tr>
+                    <tr style="background:#FFF4EE">
+                      <td style="padding:10px 16px;font-weight:600;color:var(--navy)">Reactiva</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray)">0.5 a 1 día</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray)">0.5 a 1 día</td>
+                      <td style="padding:10px 16px;text-align:center;color:var(--gray);background:#FDEEE5">0.5 a 1 día</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
 
