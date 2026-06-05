@@ -7914,18 +7914,58 @@ function psToggleScale() {
             </div>
               </div>
             </div>
+            <!-- flecha conectora -->
+            <div style="display:flex;justify-content:center;margin:8px 0 4px;opacity:.45">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </div>
             <div class="conf-grid">
-              <div class="cc cc-std">
-                <div class="cc-tit">Regla general</div>
-                <div class="cc-txt">La denuncia debe ajustarse al deber de confidencialidad y al consentimiento de la víctima. Se denuncia <strong>únicamente con su consentimiento expreso</strong>.<br><span style="display:inline-block;margin-top:8px;background:#C0392B;color:white;font-weight:800;font-size:11.5px;padding:4px 10px;border-radius:5px;letter-spacing:.03em">⚠ NO SE PUEDE DENUNCIAR SIN EL CONSENTIMIENTO DE LA VÍCTIMA</span></div>
+              <!-- Regla general -->
+              <div class="cc cc-std" style="padding:0;overflow:hidden">
+                <div style="display:flex;align-items:center;gap:10px;padding:11px 14px;background:#D6E8F7;border-bottom:1px solid #B0CFE8">
+                  <div style="flex-shrink:0;width:32px;height:32px;background:#2A6DB5;border-radius:8px;display:flex;align-items:center;justify-content:center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  </div>
+                  <span style="font-size:12px;font-weight:800;color:#1A4A80">Regla general</span>
+                </div>
+                <div style="padding:11px 14px;font-size:11.5px;color:var(--text);line-height:1.55">
+                  La denuncia debe ajustarse al deber de confidencialidad y al consentimiento de la víctima. Se denuncia <strong>únicamente con su consentimiento expreso</strong>.
+                  <div style="margin-top:9px;display:flex;align-items:center;gap:7px;background:#C0392B;color:white;font-weight:800;font-size:11px;padding:6px 10px;border-radius:6px;letter-spacing:.02em">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    Sin consentimiento de la víctima, no se denuncia
+                  </div>
+                </div>
               </div>
-              <div class="cc cc-nna">
-                <div class="cc-tit">NNA</div>
-                <div class="cc-txt">La confidencialidad es <strong>relativa</strong>. Si existe interés superior de protección, no se requiere consentimiento para denunciar. Se informa al NNA que situaciones de riesgo vital serán denunciadas.</div>
+              <!-- NNA -->
+              <div class="cc cc-nna" style="padding:0;overflow:hidden">
+                <div style="display:flex;align-items:center;gap:10px;padding:11px 14px;background:#FDE9B0;border-bottom:1px solid #F0CC70">
+                  <div style="flex-shrink:0;width:32px;height:32px;background:#D4941A;border-radius:8px;display:flex;align-items:center;justify-content:center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  </div>
+                  <span style="font-size:12px;font-weight:800;color:#7A4A08">NNA</span>
+                </div>
+                <div style="padding:11px 14px;font-size:11.5px;color:var(--text);line-height:1.55">
+                  La confidencialidad es <strong>relativa</strong>. Si existe interés superior de protección, no se requiere consentimiento para denunciar.
+                  <div style="margin-top:9px;display:flex;align-items:flex-start;gap:7px;font-size:11px;color:#7A4A08;background:#FEF3C7;padding:7px 10px;border-radius:6px">
+                    <svg style="flex-shrink:0;margin-top:1px" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#D4941A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    Se informa al NNA que situaciones de riesgo vital serán denunciadas.
+                  </div>
+                </div>
               </div>
-              <div class="cc cc-lim">
-                <div class="cc-tit">Límite al deber</div>
-                <div class="cc-txt">Aunque haya consentimiento y deber legal, si denunciar pondría en <strong>grave riesgo a la víctima</strong>, el integrante del CPT puede decidir <strong>no denunciar</strong>. Tanto por estándares internacionales como por experiencia comparada, el CPT debe dar <strong>prioridad y prevalencia a la protección de la persona</strong> que ha entregado información (APT, 2010).</div>
+              <!-- Límite al deber -->
+              <div class="cc cc-lim" style="padding:0;overflow:hidden">
+                <div style="display:flex;align-items:center;gap:10px;padding:11px 14px;background:#E8E8E8;border-bottom:1px solid #CCC">
+                  <div style="flex-shrink:0;width:32px;height:32px;background:#555;border-radius:8px;display:flex;align-items:center;justify-content:center">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+                  </div>
+                  <span style="font-size:12px;font-weight:800;color:#333">Límite al deber</span>
+                </div>
+                <div style="padding:11px 14px;font-size:11.5px;color:var(--text);line-height:1.55">
+                  Aunque haya consentimiento y deber legal, si denunciar pondría en <strong>grave riesgo a la víctima</strong>, el integrante del CPT puede decidir <strong>no denunciar</strong>.
+                  <div style="margin-top:9px;display:flex;align-items:flex-start;gap:7px;font-size:11px;color:#444;background:#F0F0F0;padding:7px 10px;border-radius:6px">
+                    <svg style="flex-shrink:0;margin-top:1px" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    El CPT debe dar <strong>prioridad a la protección de la persona</strong> que entregó información (APT, 2010).
+                  </div>
+                </div>
               </div>
             </div>
         </div>
