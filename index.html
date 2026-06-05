@@ -8747,127 +8747,232 @@ function hcToggle(i){
           <p class="sec-desc">El CPT produce distintos tipos de informes según el contexto de la visita, el público y el objetivo. Elegir el formato correcto es el primer paso antes de redactar.</p>
         </div>
 <style>
-.si{all:initial;display:block;font-family:'Atkinson Hyperlegible Next',sans-serif}
-.si *{box-sizing:border-box}
-.si .tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
-.si .tc{border-radius:10px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);display:flex;flex-direction:column}
-.si .th{padding:16px 14px;color:white;text-align:center}
-.si .ti{font-size:22px;margin-bottom:6px}
-.si .tn{font-size:12px;font-weight:800;letter-spacing:.02em;line-height:1.2}
-.si .tb{padding:0 0 6px;background:white;flex:1;display:flex;flex-direction:column}
-.si .tr{display:flex;flex-direction:column;gap:2px;padding:7px 12px;border-bottom:1px solid #F3F4F6;font-size:11.5px}
-.si .tr:last-of-type{border-bottom:none}
-.si .tl{font-weight:700;color:#374151;font-size:10px;letter-spacing:.06em;text-transform:uppercase}
-.si .tv{color:#4B5563;margin-top:2px;line-height:1.45}
-.si .ba{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:700}
-.si .bp{background:#D1FAE5;color:#065F46}
-.si .bu{background:#FEE2E2;color:#991B1B}
-.si .bo{background:#FEF3C7;color:#92400E}
-.si .bpu{background:#F3E8FF;color:#5B21B6}
-.si .link-row{padding:8px 12px;margin-top:auto;border-top:1px solid #F3F4F6}
-.si .dl{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;background:#F0F9F8;border:1px solid #A7D7D4;border-radius:6px;color:#0D6E69;font-size:11px;font-weight:700;text-decoration:none}
-.si .dl:hover{background:#D4F0EE}
-.si .pub{background:#EDE9FE;border-radius:5px;padding:3px 8px;font-size:10.5px;font-weight:700;color:#5B21B6;display:inline-flex;align-items:center;gap:4px}
+.tiw{display:flex;flex-direction:column;gap:14px;font-family:'Atkinson Hyperlegible Next',sans-serif}
+.tiw *{box-sizing:border-box}
+.tic{border-radius:14px;overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.09)}
+.tich{display:flex;align-items:center;gap:16px;padding:18px 22px;cursor:pointer;user-select:none;transition:opacity .15s}
+.tich:hover{opacity:.93}
+.tich-ico{flex-shrink:0;width:52px;height:52px;border-radius:13px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
+.tich-lbl{flex:1}
+.tich-name{font-size:16px;font-weight:800;color:white;line-height:1.2}
+.tich-sub{font-size:12px;color:rgba(255,255,255,.75);margin-top:3px}
+.tich-plus{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.2);color:white;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .22s}
+.tic.open .tich-plus{transform:rotate(45deg)}
+.tic-body{display:none;background:#FAFAFA;border-top:1px solid rgba(0,0,0,.07)}
+.tic.open .tic-body{display:block}
+/* sub-items */
+.tsg{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:12px;padding:18px}
+.tsb{border-radius:10px;overflow:hidden;border:1.5px solid #E5E7EB;background:white}
+.tsbh{display:flex;align-items:center;gap:11px;padding:12px 15px;cursor:pointer;transition:background .15s}
+.tsbh:hover{background:#F9FAFB}
+.tsb-ico{flex-shrink:0;width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center}
+.tsb-name{flex:1;font-size:13px;font-weight:700;color:#0D1F47;line-height:1.3}
+.tsb-plus{color:#9CA3AF;font-size:17px;line-height:1;transition:transform .2s}
+.tsb.open .tsb-plus{transform:rotate(45deg);color:#2DAA9E}
+.tsbd{display:none;padding:0 14px 14px}
+.tsb.open .tsbd{display:block}
+.tir{display:flex;flex-direction:column;gap:2px;padding:6px 0;border-bottom:1px solid #F3F4F6;font-size:11.5px}
+.tir:last-of-type{border-bottom:none}
+.til{font-weight:700;color:#374151;font-size:10px;letter-spacing:.06em;text-transform:uppercase}
+.tiv{color:#4B5563;margin-top:2px;line-height:1.45}
+.tipub{background:#EDE9FE;border-radius:5px;padding:3px 8px;font-size:10.5px;font-weight:700;color:#5B21B6;display:inline-flex;align-items:center;gap:4px}
+.tidl{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;background:#F0F9F8;border:1px solid #A7D7D4;border-radius:6px;color:#0D6E69;font-size:11px;font-weight:700;text-decoration:none;margin-top:8px}
+.tidl:hover{background:#D4F0EE}
+/* detail panel for Temático & Anual */
+.tidp{padding:18px 22px;display:flex;flex-direction:column;gap:3px}
 </style>
-<div class="si">
-  <div class="tg">
-    <div class="tc">
-      <div class="th" style="background:linear-gradient(135deg,#0D1F47,#142E66)">
-        <div class="ti">📄</div><div class="tn">Informe de Visita</div>
+
+<div class="tiw">
+
+  <!-- ══ 1. INFORMES DE VISITA ══ -->
+  <div class="tic" id="tic0">
+    <div class="tich" style="background:linear-gradient(135deg,#0D1F47,#1A3F7A)" onclick="ticToggle(0)">
+      <div class="tich-ico">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/>
+        </svg>
       </div>
-      <div class="tb">
-        <div class="tr"><div class="tl">Cuándo</div><div class="tv">Después de cada visita programada (caso a caso según gravedad de hallazgos)</div></div>
-        <div class="tr"><div class="tl">Extensión</div><div class="tv">~25 páginas</div></div>
-        <div class="tr"><div class="tl">Propósito</div><div class="tv">Describir hallazgos y formular recomendaciones a las autoridades del recinto</div></div>
-        <div class="tr"><div class="tl">Contenido</div><div class="tv">Contexto · Objetivos · Metodología · Hallazgos principales · Recomendaciones · Seguimiento · Referencias</div></div>
-        <div class="tr"><div class="tl">Quién elabora</div><div class="tv">Analista encargado/a del informe de visita</div></div>
-        <div class="tr"><div class="tl">A quién mandar</div><div class="tv">Autoridad local del recinto <em>(CC autoridad central de la institución)</em></div></div>
-        <div class="tr"><div class="tl">Cómo mandar</div><div class="tv">Vía Oficio</div></div>
-        <div class="tr"><div class="tl">Público</div><div class="tv"><span class="pub">🌐 Siempre salvo votación en Comité</span></div></div>
-        <div class="link-row"><a class="dl" href="https://docs.google.com/document/d/1GwtNwLSZe8D9KWATD-QsuY-hCIQ2qgcx1xZ2AIFov8E/edit" target="_blank">📎 Formato 2025</a></div>
+      <div class="tich-lbl">
+        <div class="tich-name">Informes de Visita</div>
+        <div class="tich-sub">Informe de Visita · Resumen Ejecutivo · Informe Reactiva · Informe de Seguimiento</div>
       </div>
+      <div class="tich-plus">+</div>
     </div>
-    <div class="tc">
-      <div class="th" style="background:linear-gradient(135deg,#1A5F7A,#2D8FA8)">
-        <div class="ti">📋</div><div class="tn">Resumen Ejecutivo</div>
-      </div>
-      <div class="tb">
-        <div class="tr"><div class="tl">Cuándo</div><div class="tv">Tras el Oficio Post Visita o tras el Informe de Visita definitivo</div></div>
-        <div class="tr"><div class="tl">Extensión</div><div class="tv">~3 páginas</div></div>
-        <div class="tr"><div class="tl">Propósito</div><div class="tv">Documento breve e informativo para autoridades, incidencia y comunicaciones. Puede usarse como formato para Informes Ad Hoc.</div></div>
-        <div class="tr"><div class="tl">Contenido</div><div class="tv">Contexto · Objetivos · Metodología · Hallazgos principales · Recomendaciones (opcional)</div></div>
-        <div class="tr"><div class="tl">Quién elabora</div><div class="tv">Analista encargado/a del informe de visita</div></div>
-        <div class="tr"><div class="tl">A quién mandar</div><div class="tv">Comunicaciones · Coordinación · Secretario/a Ejecutivo/a</div></div>
-        <div class="tr"><div class="tl">Cómo mandar</div><div class="tv">Distribución interna vía correo o plataforma institucional</div></div>
-        <div class="tr"><div class="tl">Público</div><div class="tv"><span class="pub">🌐 Siempre salvo votación en Comité</span></div></div>
-        <div class="link-row"><a class="dl" href="https://docs.google.com/document/d/1mLUGlIXNofD8ZMml4C0_1TA-id0mhKECkrfKEK4tNMs/edit" target="_blank">📎 Formato</a></div>
-      </div>
-    </div>
-    <div class="tc">
-      <div class="th" style="background:linear-gradient(135deg,#7C3AED,#9B5CF0)">
-        <div class="ti">⚡</div><div class="tn">Informe Ad Hoc</div>
-      </div>
-      <div class="tb">
-        <div class="tr"><div class="tl">Cuándo</div><div class="tv">Tras visita no programada motivada por denuncia o contingencia específica</div></div>
-        <div class="tr"><div class="tl">Extensión</div><div class="tv">~3 páginas (puede extenderse para posicionar temática)</div></div>
-        <div class="tr"><div class="tl">Propósito</div><div class="tv">Registrar hallazgos de visita urgente. Puede incluir recomendaciones urgentes ante violaciones graves.</div></div>
-        <div class="tr"><div class="tl">Contenido</div><div class="tv">Contexto · Objetivos · Metodología · Hallazgos · Recomendaciones urgentes (si corresponde)</div></div>
-        <div class="tr"><div class="tl">Quién elabora</div><div class="tv">Analista encargado/a de la visita</div></div>
-        <div class="tr"><div class="tl">A quién mandar</div><div class="tv">Comunicaciones · Coordinación · Secretario/a Ejecutivo/a</div></div>
-        <div class="tr"><div class="tl">Cómo mandar</div><div class="tv">Vía Oficio, resguardando confidencialidad del/la denunciante</div></div>
-        <div class="tr"><div class="tl">Público</div><div class="tv"><span class="pub">🌐 Siempre salvo votación en Comité</span></div></div>
-        <div class="link-row"><a class="dl" href="https://docs.google.com/document/d/1aTM_KITojbbYFVIVxH1m3chKjDARNDospyvMvt6e1C8/edit" target="_blank">📎 Formato</a></div>
-      </div>
-    </div>
-    <div class="tc">
-      <div class="th" style="background:linear-gradient(135deg,#065F46,#059669)">
-        <div class="ti">🔬</div><div class="tn">Informe Temático</div>
-      </div>
-      <div class="tb">
-        <div class="tr"><div class="tl">Cuándo</div><div class="tv">Después de varias visitas que identifican un patrón sistémico sobre un tema específico</div></div>
-        <div class="tr"><div class="tl">Extensión</div><div class="tv">~25 páginas (varía según objetivo y publicación)</div></div>
-        <div class="tr"><div class="tl">Propósito</div><div class="tv">Análisis profundo de problemática sistémica para incidencia, cambio legislativo o de política pública</div></div>
-        <div class="tr"><div class="tl">Contenido</div><div class="tv">Resumen ejecutivo · Introducción · Antecedentes · Problematización · Conclusiones y desafíos · Recomendaciones (opcional) · Referencias</div></div>
-        <div class="tr"><div class="tl">Quién elabora</div><div class="tv">Analistas y/o expertos/as del CPT</div></div>
-        <div class="tr"><div class="tl">A quién mandar</div><div class="tv">Múltiples instituciones, Congreso, OSC y medios de comunicación</div></div>
-        <div class="tr"><div class="tl">Cómo mandar</div><div class="tv">Lanzamiento formal: presentación pública, conferencia de prensa, reuniones con autoridades y actores clave</div></div>
-        <div class="tr"><div class="tl">Público</div><div class="tv"><span class="pub">🌐 Siempre salvo votación en Comité</span></div></div>
-        <div class="link-row"><a class="dl" href="https://docs.google.com/document/d/1QzL44_woEpLkmMsEcJxW0g_w1JntBvsr9w9Xs9el_3o/edit" target="_blank">📎 Formato</a></div>
-      </div>
-    </div>
-    <div class="tc">
-      <div class="th" style="background:linear-gradient(135deg,#92400E,#B45309)">
-        <div class="ti">🔄</div><div class="tn">Informe de Seguimiento</div>
-      </div>
-      <div class="tb">
-        <div class="tr"><div class="tl">Cuándo</div><div class="tv">Tras mesas de seguimiento (6, 12 meses) o visita de seguimiento post-informe original</div></div>
-        <div class="tr"><div class="tl">Extensión</div><div class="tv">15–25 páginas (variable según cantidad de recomendaciones)</div></div>
-        <div class="tr"><div class="tl">Propósito</div><div class="tv">Evaluar el nivel de cumplimiento de las recomendaciones formuladas por el CPT</div></div>
-        <div class="tr"><div class="tl">Contenido</div><div class="tv">Introducción · Antecedentes del proceso · Objetivos · Metodología · Análisis de cumplimiento por recomendación · Conclusiones y nuevas recomendaciones</div></div>
-        <div class="tr"><div class="tl">Quién elabora</div><div class="tv">Equipos de cada área/eje — o conjuntamente con la SE para informes anuales/nivel central</div></div>
-        <div class="tr"><div class="tl">A quién mandar</div><div class="tv">Autoridad local del recinto y/o contraparte técnica <em>(CC autoridad central de la institución)</em></div></div>
-        <div class="tr"><div class="tl">Cómo mandar</div><div class="tv">Vía Oficio, explicando el flujo de seguimiento y los pasos siguientes</div></div>
-        <div class="tr"><div class="tl">Público</div><div class="tv"><span class="pub">🌐 Siempre salvo votación en Comité</span></div></div>
-        <div class="link-row"><a class="dl" href="https://docs.google.com/document/d/1gkieqj6o9mRd5G_MTdWNnQqTwlpDuq4F9xqyDirSw54/edit?tab=t.0" target="_blank" rel="noopener">📎 Formato 2025</a></div>
-      </div>
-    </div>
-    <div class="tc">
-      <div class="th" style="background:linear-gradient(135deg,#8B6620,#6B4C10)">
-        <div class="ti">📅</div><div class="tn">Informe Anual</div>
-      </div>
-      <div class="tb">
-        <div class="tr"><div class="tl">Cuándo</div><div class="tv">Al cierre del año (mandato legal)</div></div>
-        <div class="tr"><div class="tl">Extensión</div><div class="tv">Variable</div></div>
-        <div class="tr"><div class="tl">Propósito</div><div class="tv">Mandato legal del art. 3 Ley 21.154. Síntesis pública del trabajo del año con recomendaciones sistémicas.</div></div>
-        <div class="tr"><div class="tl">Contenido</div><div class="tv">Balance anual de visitas · Recomendaciones sistémicas · Aprobado por 2/3 del Comité</div></div>
-        <div class="tr"><div class="tl">Quién elabora</div><div class="tv">Secretaría Ejecutiva + Comité CPT</div></div>
-        <div class="tr"><div class="tl">A quién mandar</div><div class="tv">Presidencia, Congreso, autoridades competentes</div></div>
-        <div class="tr"><div class="tl">Cómo mandar</div><div class="tv">Presentación pública institucional</div></div>
-        <div class="tr"><div class="tl">Público</div><div class="tv"><span class="pub">🌐 Nacional · Obligatorio</span></div></div>
+    <div class="tic-body">
+      <div class="tsg">
+
+        <!-- Informe de Visita -->
+        <div class="tsb" id="tsb0" onclick="tsbToggle(0)">
+          <div class="tsbh">
+            <div class="tsb-ico" style="background:#E8EEF8">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0D1F47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+            <div class="tsb-name">Informe de Visita</div>
+            <span class="tsb-plus">+</span>
+          </div>
+          <div class="tsbd">
+            <div class="tir"><div class="til">Cuándo</div><div class="tiv">Después de cada visita programada (caso a caso según gravedad de hallazgos)</div></div>
+            <div class="tir"><div class="til">Extensión</div><div class="tiv">~25 páginas</div></div>
+            <div class="tir"><div class="til">Propósito</div><div class="tiv">Describir hallazgos y formular recomendaciones a las autoridades del recinto</div></div>
+            <div class="tir"><div class="til">Contenido</div><div class="tiv">Contexto · Objetivos · Metodología · Hallazgos · Recomendaciones · Seguimiento · Referencias</div></div>
+            <div class="tir"><div class="til">Quién elabora</div><div class="tiv">Analista encargado/a del informe de visita</div></div>
+            <div class="tir"><div class="til">A quién mandar</div><div class="tiv">Autoridad local del recinto <em>(CC autoridad central)</em></div></div>
+            <div class="tir"><div class="til">Cómo mandar</div><div class="tiv">Vía Oficio</div></div>
+            <div class="tir"><div class="til">Público</div><div class="tiv"><span class="tipub">🌐 Siempre salvo votación en Comité</span></div></div>
+            <a class="tidl" href="https://docs.google.com/document/d/1GwtNwLSZe8D9KWATD-QsuY-hCIQ2qgcx1xZ2AIFov8E/edit" target="_blank">📎 Formato 2025</a>
+          </div>
+        </div>
+
+        <!-- Resumen Ejecutivo -->
+        <div class="tsb" id="tsb1" onclick="tsbToggle(1)">
+          <div class="tsbh">
+            <div class="tsb-ico" style="background:#E0F2FE">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1A5F7A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/>
+              </svg>
+            </div>
+            <div class="tsb-name">Resumen Ejecutivo</div>
+            <span class="tsb-plus">+</span>
+          </div>
+          <div class="tsbd">
+            <div class="tir"><div class="til">Cuándo</div><div class="tiv">Tras el Oficio Post Visita o tras el Informe de Visita definitivo</div></div>
+            <div class="tir"><div class="til">Extensión</div><div class="tiv">~3 páginas</div></div>
+            <div class="tir"><div class="til">Propósito</div><div class="tiv">Documento breve para autoridades, incidencia y comunicaciones. Puede usarse como formato para Informes Reactivos.</div></div>
+            <div class="tir"><div class="til">Contenido</div><div class="tiv">Contexto · Objetivos · Metodología · Hallazgos principales · Recomendaciones (opcional)</div></div>
+            <div class="tir"><div class="til">Quién elabora</div><div class="tiv">Analista encargado/a del informe de visita</div></div>
+            <div class="tir"><div class="til">A quién mandar</div><div class="tiv">Comunicaciones · Coordinación · Secretario/a Ejecutivo/a</div></div>
+            <div class="tir"><div class="til">Cómo mandar</div><div class="tiv">Distribución interna vía correo o plataforma institucional</div></div>
+            <div class="tir"><div class="til">Público</div><div class="tiv"><span class="tipub">🌐 Siempre salvo votación en Comité</span></div></div>
+            <a class="tidl" href="https://docs.google.com/document/d/1mLUGlIXNofD8ZMml4C0_1TA-id0mhKECkrfKEK4tNMs/edit" target="_blank">📎 Formato</a>
+          </div>
+        </div>
+
+        <!-- Informe Reactiva -->
+        <div class="tsb" id="tsb2" onclick="tsbToggle(2)">
+          <div class="tsbh">
+            <div class="tsb-ico" style="background:#F3E8FF">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+            </div>
+            <div class="tsb-name">Informe Reactiva</div>
+            <span class="tsb-plus">+</span>
+          </div>
+          <div class="tsbd">
+            <div class="tir"><div class="til">Cuándo</div><div class="tiv">Tras visita no programada motivada por denuncia o contingencia específica</div></div>
+            <div class="tir"><div class="til">Extensión</div><div class="tiv">~3 páginas (puede extenderse para posicionar temática)</div></div>
+            <div class="tir"><div class="til">Propósito</div><div class="tiv">Registrar hallazgos de visita urgente. Puede incluir recomendaciones urgentes ante violaciones graves.</div></div>
+            <div class="tir"><div class="til">Contenido</div><div class="tiv">Contexto · Objetivos · Metodología · Hallazgos · Recomendaciones urgentes (si corresponde)</div></div>
+            <div class="tir"><div class="til">Quién elabora</div><div class="tiv">Analista encargado/a de la visita</div></div>
+            <div class="tir"><div class="til">A quién mandar</div><div class="tiv">Comunicaciones · Coordinación · Secretario/a Ejecutivo/a</div></div>
+            <div class="tir"><div class="til">Cómo mandar</div><div class="tiv">Vía Oficio, resguardando confidencialidad del/la denunciante</div></div>
+            <div class="tir"><div class="til">Público</div><div class="tiv"><span class="tipub">🌐 Siempre salvo votación en Comité</span></div></div>
+            <a class="tidl" href="https://docs.google.com/document/d/1aTM_KITojbbYFVIVxH1m3chKjDARNDospyvMvt6e1C8/edit" target="_blank">📎 Formato</a>
+          </div>
+        </div>
+
+        <!-- Informe de Seguimiento -->
+        <div class="tsb" id="tsb3" onclick="tsbToggle(3)">
+          <div class="tsbh">
+            <div class="tsb-ico" style="background:#FEF3C7">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#92400E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/>
+                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+              </svg>
+            </div>
+            <div class="tsb-name">Informe de Seguimiento</div>
+            <span class="tsb-plus">+</span>
+          </div>
+          <div class="tsbd">
+            <div class="tir"><div class="til">Cuándo</div><div class="tiv">Tras mesas de seguimiento (6, 12 meses) o visita de seguimiento post-informe original</div></div>
+            <div class="tir"><div class="til">Extensión</div><div class="tiv">15–25 páginas (variable según cantidad de recomendaciones)</div></div>
+            <div class="tir"><div class="til">Propósito</div><div class="tiv">Evaluar el nivel de cumplimiento de las recomendaciones formuladas por el CPT</div></div>
+            <div class="tir"><div class="til">Contenido</div><div class="tiv">Introducción · Antecedentes · Objetivos · Metodología · Análisis de cumplimiento · Conclusiones y nuevas recomendaciones</div></div>
+            <div class="tir"><div class="til">Quién elabora</div><div class="tiv">Equipos de cada área/eje — o conjuntamente con la SE para informes anuales/nivel central</div></div>
+            <div class="tir"><div class="til">A quién mandar</div><div class="tiv">Autoridad local del recinto y/o contraparte técnica <em>(CC autoridad central)</em></div></div>
+            <div class="tir"><div class="til">Cómo mandar</div><div class="tiv">Vía Oficio, explicando el flujo de seguimiento y los pasos siguientes</div></div>
+            <div class="tir"><div class="til">Público</div><div class="tiv"><span class="tipub">🌐 Siempre salvo votación en Comité</span></div></div>
+            <a class="tidl" href="https://docs.google.com/document/d/1gkieqj6o9mRd5G_MTdWNnQqTwlpDuq4F9xqyDirSw54/edit?tab=t.0" target="_blank">📎 Formato 2025</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
+
+  <!-- ══ 2. INFORME TEMÁTICO ══ -->
+  <div class="tic" id="tic1">
+    <div class="tich" style="background:linear-gradient(135deg,#065F46,#059669)" onclick="ticToggle(1)">
+      <div class="tich-ico">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+        </svg>
+      </div>
+      <div class="tich-lbl">
+        <div class="tich-name">Informe Temático</div>
+        <div class="tich-sub">Análisis sistémico · Múltiples recintos · Incidencia pública</div>
+      </div>
+      <div class="tich-plus">+</div>
+    </div>
+    <div class="tic-body">
+      <div class="tidp">
+        <div class="tir"><div class="til">Cuándo</div><div class="tiv">Después de varias visitas que identifican un patrón sistémico sobre un tema específico</div></div>
+        <div class="tir"><div class="til">Extensión</div><div class="tiv">~25 páginas (varía según objetivo y publicación)</div></div>
+        <div class="tir"><div class="til">Propósito</div><div class="tiv">Análisis profundo de problemática sistémica para incidencia, cambio legislativo o de política pública</div></div>
+        <div class="tir"><div class="til">Contenido</div><div class="tiv">Resumen ejecutivo · Introducción · Antecedentes · Problematización · Conclusiones y desafíos · Recomendaciones (opcional) · Referencias</div></div>
+        <div class="tir"><div class="til">Quién elabora</div><div class="tiv">Analistas y/o expertos/as del CPT</div></div>
+        <div class="tir"><div class="til">A quién mandar</div><div class="tiv">Múltiples instituciones, Congreso, OSC y medios de comunicación</div></div>
+        <div class="tir"><div class="til">Cómo mandar</div><div class="tiv">Lanzamiento formal: presentación pública, conferencia de prensa, reuniones con autoridades y actores clave</div></div>
+        <div class="tir"><div class="til">Público</div><div class="tiv"><span class="tipub">🌐 Siempre salvo votación en Comité</span></div></div>
+        <a class="tidl" href="https://docs.google.com/document/d/1QzL44_woEpLkmMsEcJxW0g_w1JntBvsr9w9Xs9el_3o/edit" target="_blank">📎 Formato</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 3. INFORME ANUAL ══ -->
+  <div class="tic" id="tic2">
+    <div class="tich" style="background:linear-gradient(135deg,#8B6620,#6B4C10)" onclick="ticToggle(2)">
+      <div class="tich-ico">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+          <line x1="8" y1="14" x2="8" y2="14" stroke-width="3" stroke-linecap="round"/>
+          <line x1="12" y1="14" x2="16" y2="14"/><line x1="8" y1="18" x2="16" y2="18"/>
+        </svg>
+      </div>
+      <div class="tich-lbl">
+        <div class="tich-name">Informe Anual</div>
+        <div class="tich-sub">Mandato legal · Art. 3 Ley 21.154 · Nacional · Obligatorio</div>
+      </div>
+      <div class="tich-plus">+</div>
+    </div>
+    <div class="tic-body">
+      <div class="tidp">
+        <div class="tir"><div class="til">Cuándo</div><div class="tiv">Al cierre del año (mandato legal)</div></div>
+        <div class="tir"><div class="til">Extensión</div><div class="tiv">Variable</div></div>
+        <div class="tir"><div class="til">Propósito</div><div class="tiv">Mandato legal del art. 3 Ley 21.154. Síntesis pública del trabajo del año con recomendaciones sistémicas.</div></div>
+        <div class="tir"><div class="til">Contenido</div><div class="tiv">Balance anual de visitas · Recomendaciones sistémicas · Aprobado por 2/3 del Comité</div></div>
+        <div class="tir"><div class="til">Quién elabora</div><div class="tiv">Secretaría Ejecutiva + Comité CPT</div></div>
+        <div class="tir"><div class="til">A quién mandar</div><div class="tiv">Presidencia, Congreso, autoridades competentes</div></div>
+        <div class="tir"><div class="til">Cómo mandar</div><div class="tiv">Presentación pública institucional</div></div>
+        <div class="tir"><div class="til">Público</div><div class="tiv"><span class="tipub">🌐 Nacional · Obligatorio</span></div></div>
+      </div>
+    </div>
+  </div>
+
 </div>
+
+<script>
+function ticToggle(i){document.getElementById('tic'+i).classList.toggle('open')}
+function tsbToggle(i){document.getElementById('tsb'+i).classList.toggle('open')}
+</script>
       </section>
 
       <section class="section" id="inf-fase-2" data-mod="informes">
