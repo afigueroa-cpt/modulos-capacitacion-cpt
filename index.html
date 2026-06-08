@@ -5666,7 +5666,7 @@ function smToggle(sec, idx) {
           </div>
         </div>
 
-        <button class="infog-modal-trigger" onclick="openInfog('modal-seguimiento')">
+        <button class="infog-modal-trigger" onclick="toggleInline('modal-seguimiento')" data-inline="modal-seguimiento">
   <div class="infog-modal-trigger-ico">📊</div>
   <div class="infog-modal-trigger-body">
     <div class="infog-modal-trigger-title">Etapas del seguimiento y diálogo</div>
@@ -5675,13 +5675,8 @@ function smToggle(sec, idx) {
   <span class="infog-modal-trigger-arr">→</span>
 </button>
 
-<div class="infog-overlay" id="modal-seguimiento">
-  <div class="infog-modal-box">
-    <div class="infog-modal-topbar">
-      <div class="infog-modal-topbar-title">📊 Etapas del seguimiento y diálogo</div>
-      <button class="infog-modal-close" onclick="closeInfog('modal-seguimiento')" title="Cerrar">✕</button>
-    </div>
-    <div class="infog-modal-content">
+<div class="inline-panel" id="modal-seguimiento">
+  <div style="padding:4px 0">
       <div class="infog-embed-outer">
   <style>
 
@@ -6664,8 +6659,6 @@ function smToggle(sec, idx) {
 
 </div>
   
-</div>
-    </div>
   </div>
 </div>
 
