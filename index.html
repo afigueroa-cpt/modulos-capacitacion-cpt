@@ -8091,8 +8091,21 @@ function psToggleScale() {
 .ibody .ick{display:flex;flex-direction:column;gap:5px;margin-top:8px}
 .ibody .ici{display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.5}
 .ibody .icbx{flex-shrink:0;width:18px;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:white;margin-top:1px}
+.terreno-zone{background:#F6EEE2;border:1px solid #E7D8C3;border-radius:16px;padding:6px 20px 20px;margin-bottom:18px}
+.terreno-zone .terreno-head{display:flex;align-items:center;gap:9px;padding:14px 4px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7A4A18}
+.terreno-zone .terreno-head svg{width:16px;height:16px;flex-shrink:0}
+.terreno-div{display:flex;align-items:center;gap:12px;margin:22px 2px 2px;font-size:10.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#7A4A18}
+.terreno-div::before,.terreno-div::after{content:'';height:1px;background:#E0CDB3;flex:1}
+.hflow--inter{grid-template-columns:repeat(2,1fr) !important;max-width:600px;margin:6px auto 0}
+.hflow--inter::before{left:25% !important;right:25% !important}
+.hflow--4{grid-template-columns:repeat(4,1fr) !important}
 </style>
 
+<div class="terreno-zone">
+  <div class="terreno-head">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+    Todo esto sucede en terreno
+  </div>
 <div class="iflow" id="iflow-pasos">
 
   <!-- 1 · Llegada -->
@@ -8266,12 +8279,54 @@ function psToggleScale() {
 
 </div><!-- /iflow -->
 
+  <div class="terreno-div">Cierre del caso · en terreno</div>
+
+  <div class="hflow hflow--inter" id="hflow-inter">
+    <div class="hcard" id="hc0" onclick="hcToggle(0)">
+      <div class="hcard-arrow">→</div>
+      <div class="hcard-ico" style="background:white;overflow:hidden">
+        <img src="paso6-triangulaci%C3%B3n.png" alt="Triangulación" style="width:54px;height:54px;object-fit:contain;">
+      </div>
+      <div class="hcard-badge">En terreno</div>
+      <div class="hcard-title">Triangulación del caso</div>
+      <div class="hcard-btn"><span class="hplus">+</span> Ver</div>
+    </div>
+    <div class="hcard" id="hc1" onclick="hcToggle(1)">
+      <div class="hcard-ico" style="background:white;overflow:hidden">
+        <img src="paso7-direcci%C3%B3n.png" alt="Cierre con Dirección" style="width:54px;height:54px;object-fit:contain;">
+      </div>
+      <div class="hcard-badge">En terreno</div>
+      <div class="hcard-title">Cierre con Dirección</div>
+      <div class="hcard-btn"><span class="hplus">+</span> Ver</div>
+    </div>
+    <div class="hbody-wrap" id="hb0">
+      <div class="hbody">
+        <strong>Triangular información</strong> sobre los casos y revisar registros complementarios (fichas clínicas, registros de contenciones, etc.), previo consentimiento de la persona.<br><br>
+        <strong>Triangulación del caso:</strong> todos los integrantes de la visita socializan información. Jefatura decide en función del consentimiento de la persona.
+      </div>
+    </div>
+    <div class="hbody-wrap" id="hb1">
+      <div class="hbody">
+        <strong>Cierre con Dirección:</strong> el/la experto/a encargado/a transmite las medidas urgentes o inmediatas a tomar en casos particulares, <strong>siempre y cuando</strong> se cuente con información triangulada en equipo y el consentimiento de la persona.
+      </div>
+    </div>
+  </div>
+
+</div><!-- /.terreno-zone -->
+
 <script>
 function icToggle(i){
   var card=document.getElementById('ic'+i);
   var body=document.getElementById('ib'+i);
   card.classList.toggle('open');
   body.classList.toggle('open');
+}
+function hcToggle(i){
+  var card=document.getElementById('hc'+i);
+  var body=document.getElementById('hb'+i);
+  var wasOpen=card.classList.contains('open');
+  document.querySelectorAll('.hcard,.hbody-wrap').forEach(function(el){el.classList.remove('open');});
+  if(!wasOpen){card.classList.add('open');body.classList.add('open');}
 }
 </script>
 
@@ -8315,32 +8370,10 @@ function icToggle(i){
 .hbody li{color:#374151}
 </style>
 
-<div class="hflow" id="hflow-seg">
+<div class="hflow hflow--4" id="hflow-seg">
 
-  <!-- 1: Triangulación del caso -->
-  <div class="hcard" id="hc0" onclick="hcToggle(0)">
-    <div class="hcard-arrow">→</div>
-    <div class="hcard-ico" style="background:white;overflow:hidden">
-      <img src="paso6-triangulaci%C3%B3n.png" alt="Triangulación" style="width:54px;height:54px;object-fit:contain;">
-    </div>
-    <div class="hcard-badge">En terreno</div>
-    <div class="hcard-title">Triangulación del caso</div>
-    <div class="hcard-btn"><span class="hplus">+</span> Ver</div>
-  </div>
-
-  <!-- 2: Cierre con Dirección -->
-  <div class="hcard" id="hc1" onclick="hcToggle(1)">
-    <div class="hcard-arrow">→</div>
-    <div class="hcard-ico" style="background:white;overflow:hidden">
-      <img src="paso7-direcci%C3%B3n.png" alt="Cierre con Dirección" style="width:54px;height:54px;object-fit:contain;">
-    </div>
-    <div class="hcard-badge">En terreno</div>
-    <div class="hcard-title">Cierre con Dirección</div>
-    <div class="hcard-btn"><span class="hplus">+</span> Ver</div>
-  </div>
-
-  <!-- 3: 24 horas -->
-  <div class="hcard" id="hc2" onclick="hcToggle(2)">
+  <!-- 1: 24 horas -->
+  <div class="hcard" id="hcs0" onclick="hcsToggle(0)">
     <div class="hcard-arrow">→</div>
     <div class="hcard-ico" style="background:white;overflow:hidden">
       <img src="paso8-denuncia.png" alt="Denuncia penal" style="width:54px;height:54px;object-fit:contain;">
@@ -8350,8 +8383,8 @@ function icToggle(i){
     <div class="hcard-btn"><span class="hplus">+</span> Ver</div>
   </div>
 
-  <!-- 4: 48 horas -->
-  <div class="hcard" id="hc3" onclick="hcToggle(3)">
+  <!-- 2: 48 horas -->
+  <div class="hcard" id="hcs1" onclick="hcsToggle(1)">
     <div class="hcard-arrow">→</div>
     <div class="hcard-ico" style="background:white;overflow:hidden">
       <img src="paso9-registro.png" alt="Registro y triangulación" style="width:54px;height:54px;object-fit:contain;">
@@ -8361,8 +8394,8 @@ function icToggle(i){
     <div class="hcard-btn"><span class="hplus">+</span> Ver</div>
   </div>
 
-  <!-- 5: 15 días -->
-  <div class="hcard" id="hc4" onclick="hcToggle(4)">
+  <!-- 3: 15 días -->
+  <div class="hcard" id="hcs2" onclick="hcsToggle(2)">
     <div class="hcard-arrow">→</div>
     <div class="hcard-ico" style="background:white;overflow:hidden">
       <img src="paso10-oficio.png" alt="Oficios y derivaciones" style="width:54px;height:54px;object-fit:contain;">
@@ -8372,8 +8405,8 @@ function icToggle(i){
     <div class="hcard-btn"><span class="hplus">+</span> Ver</div>
   </div>
 
-  <!-- 6: Seguimiento -->
-  <div class="hcard" id="hc5" onclick="hcToggle(5)">
+  <!-- 4: Seguimiento -->
+  <div class="hcard" id="hcs3" onclick="hcsToggle(3)">
     <div class="hcard-ico" style="background:white;overflow:hidden">
       <img src="paso11-seguimiento.png" alt="Seguimiento de derivaciones" style="width:54px;height:54px;object-fit:contain;">
     </div>
@@ -8382,35 +8415,24 @@ function icToggle(i){
     <div class="hcard-btn"><span class="hplus">+</span> Ver</div>
   </div>
 
-  <!-- Cuerpos expandibles (ocupan la fila completa) -->
-  <div class="hbody-wrap" id="hb0">
-    <div class="hbody">
-      <strong>Triangular información</strong> sobre los casos y revisar registros complementarios (fichas clínicas, registros de contenciones, etc.), previo consentimiento de la persona.<br><br>
-      <strong>Triangulación del caso:</strong> todos los integrantes de la visita socializan información. Jefatura decide en función del consentimiento de la persona.
-    </div>
-  </div>
-  <div class="hbody-wrap" id="hb1">
-    <div class="hbody">
-      <strong>Cierre con Dirección:</strong> el/la experto/a encargado/a transmite las medidas urgentes o inmediatas a tomar en casos particulares, <strong>siempre y cuando</strong> se cuente con información triangulada en equipo y el consentimiento de la persona.
-    </div>
-  </div>
-  <div class="hbody-wrap" id="hb2">
+  <!-- Cuerpos expandibles -->
+  <div class="hbody-wrap" id="hbs0">
     <div class="hbody">Elaborar y deducir <strong>denuncia penal</strong> si corresponde, siguiendo el Protocolo de actuación ante situaciones de tortura del MNPT.</div>
   </div>
-  <div class="hbody-wrap" id="hb3">
+  <div class="hbody-wrap" id="hbs1">
     <div class="hbody">
       <div style="margin-bottom:8px"><a class="dl" href="https://docs.google.com/spreadsheets/d/1QSMm0WgEfUEnpFSAG6vWUS-98YF0cuAs-QtZCiM7_fg/edit?gid=0#gid=0" target="_blank" rel="noopener">📊 Planilla de registro de casos críticos</a></div>
       Registro de todos los casos levantados durante la visita. Triangulación de fuentes documentales para cada situación.
     </div>
   </div>
-  <div class="hbody-wrap" id="hb4">
+  <div class="hbody-wrap" id="hbs2">
     <div class="hbody">
       <div style="margin-bottom:6px"><a class="dl" href="oficio-direccion-hallazgos-preliminares.pdf" download>📄 Oficio a Dirección</a> con casos levantados durante la visita.</div>
       <div style="margin-bottom:6px"><a class="dl" href="https://docs.google.com/document/d/1eFc6fdVwQzDzWl9dyjQyJr3T2gz-rFqj/edit" target="_blank" rel="noopener">📄 Oficio o memo a instituciones de protección</a></div>
       Seguimiento oficio a Jefatura: si no hay respuesta, enviar correo preguntando por medidas sobre casos urgentes. Si hubo respuesta pero no se tomaron medidas correctas: reiterar y evaluar derivación según consentimiento.
     </div>
   </div>
-  <div class="hbody-wrap" id="hb5">
+  <div class="hbody-wrap" id="hbs3">
     <div class="hbody">
       <ul>
         <li>Seguimiento cada <strong>15 días</strong> luego de la derivación, confirmando la derivación efectiva y las gestiones realizadas.</li>
@@ -8424,11 +8446,11 @@ function icToggle(i){
 </div><!-- /.hflow -->
 
 <script>
-function hcToggle(i){
-  var card=document.getElementById('hc'+i);
-  var body=document.getElementById('hb'+i);
+function hcsToggle(i){
+  var card=document.getElementById('hcs'+i);
+  var body=document.getElementById('hbs'+i);
   var wasOpen=card.classList.contains('open');
-  for(var j=0;j<6;j++){var c=document.getElementById('hc'+j);var b=document.getElementById('hb'+j);if(c&&b){c.classList.remove('open');b.classList.remove('open');}}
+  for(var j=0;j<4;j++){var c=document.getElementById('hcs'+j);var b=document.getElementById('hbs'+j);if(c&&b){c.classList.remove('open');b.classList.remove('open');}}
   if(!wasOpen){card.classList.add('open');body.classList.add('open');}
 }
 </script>
@@ -8731,7 +8753,7 @@ function hcToggle(i){
             <div style="padding:14px 18px 16px 72px;font-size:12.5px;color:#374151;line-height:1.6">
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
                 <div>
-                  <p style="font-weight:700;color:#3B0764;margin:0 0 6px;font-size:13px">Técnica de respiración (4-4-4)</p>
+                  <p style="font-weight:700;color:#3B0764;margin:0 0 6px;font-size:13px;display:flex;align-items:center;gap:7px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>Técnica de respiración (4-4-4)</p>
                   <div style="background:#F5F3FF;border-radius:8px;padding:12px 14px;font-size:12px;color:#4C1D95;line-height:1.7;border:1px solid #DDD6FE">
                     <div>INSPIRAR durante <strong>4 tiempos</strong></div>
                     <div>BOTAR el aire durante <strong>4 tiempos</strong></div>
@@ -8743,7 +8765,7 @@ function hcToggle(i){
                   <p style="font-weight:700;color:#3B0764;margin:0 0 6px;font-size:13px">Abordaje de ideación suicida</p>
                   <div style="background:#FFF1F2;border-radius:8px;padding:12px 14px;font-size:12px;color:#374151;line-height:1.6;border:1px solid #FCA5A5">
                     <p style="margin:0 0 5px"><strong>Señales de alerta:</strong> "no veo futuro", "quiero desaparecer", "ya no quiero seguir".</p>
-                    <p style="margin:0 0 5px"><strong>Preguntar directamente:</strong> ¿Ha pensado en quitarse la vida? ¿Cómo? ¿Qué le detiene?</p>
+                    <p style="margin:0 0 5px"><strong>Preguntar directamente:</strong> ¿Ha pensado en quitarse la vida?</p>
                     <p style="margin:0"><strong>No dejar sola a la persona.</strong> No prometer cosas que no se pueden cumplir. Devolver la dignidad: <em>"Tu vida es importante."</em></p>
                   </div>
                 </div>
