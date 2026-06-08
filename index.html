@@ -9405,16 +9405,58 @@ function tsbToggle(i){document.getElementById('tsb'+i).classList.toggle('open')}
           <h3>Del borrador a la publicación: distribución y uso estratégico</h3>
           <p class="sec-desc">El informe no termina cuando se firma. La secuencia de envío, la publicación y el seguimiento son parte constitutiva del proceso de monitoreo.</p>
         </div>
-        <button class="infog-modal-trigger" onclick="openInfog('modal-inf-dist')">
-          <div class="infog-modal-trigger-ico" style="background:#B7791F">
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="8" width="22" height="14" rx="3" fill="none" stroke="white" stroke-width="1.8"/><polyline points="2,8 13,17 24,8" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="6" r="5" fill="#B7791F" stroke="white" stroke-width="1.5"/><polyline points="17,6 19,8 23,4" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div style="border-radius:12px;border:1.5px solid #E5E7EB;overflow:hidden;margin-top:4px">
+          <div onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.querySelector('.dist-plus').textContent=this.nextElementSibling.style.display==='none'?'+':'−'" style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:#FEF3C7;cursor:pointer;user-select:none">
+            <div style="flex-shrink:0;width:42px;height:42px;border-radius:10px;background:#B7791F;display:flex;align-items:center;justify-content:center">
+              <svg width="22" height="22" viewBox="0 0 26 26" fill="none"><rect x="2" y="8" width="22" height="14" rx="3" fill="none" stroke="white" stroke-width="1.8"/><polyline points="2,8 13,17 24,8" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div style="flex:1">
+              <div style="font-size:14px;font-weight:800;color:#78350F">Distribución, publicación y seguimiento del informe</div>
+              <div style="font-size:12px;color:#92400E;margin-top:2px">Secuencia post-visita · Ética de publicación · Distribución interna · El informe como punto de partida</div>
+            </div>
+            <div class="dist-plus" style="width:28px;height:28px;border-radius:50%;background:#B7791F;color:white;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;flex-shrink:0">+</div>
           </div>
-          <div class="infog-modal-trigger-body">
-            <div class="infog-modal-trigger-title">Distribución, publicación y seguimiento del informe</div>
-            <div class="infog-modal-trigger-sub">Secuencia post-visita · Ética de publicación · Distribución interna · El informe como punto de partida</div>
+          <div style="display:none;padding:20px 22px">
+            <div class="sd2">
+  <div style="font-size:12px;font-weight:800;color:#0D1F47;margin-bottom:12px;text-transform:uppercase;letter-spacing:.04em">Secuencia de entrega post-visita</div>
+  <div class="fl">
+    <div class="fs"><div class="fi">📍</div><div class="ft">Visita CPT</div><div class="fd">El equipo realiza la visita y levanta información</div></div>
+    <div class="fs"><div class="fi">✉️</div><div class="ft">Oficio Post Visita</div><div class="fd">Hallazgos preliminares urgentes a autoridad</div><div class="fb">Inmediato</div></div>
+    <div class="fs"><div class="fi">📄</div><div class="ft">Informe completo</div><div class="fd">Análisis completo por dimensión</div><div class="fb">15 días post-visita</div></div>
+    <div class="fs"><div class="fi">💬</div><div class="ft">OPCIONAL: Comentarios contraparte</div><div class="fd">Autoridad puede responder antes de publicación</div><div class="fb">Tiempo razonable</div></div>
+    <div class="fs"><div class="fi">🌐</div><div class="ft">Publicación web</div><div class="fd">Siempre en sitio institucional CPT</div></div>
+  </div>
+  <div class="eg">
+    <div class="ec" style="background:#F9FAFB;border:1px solid #E5E7EB">
+      <div class="et" style="color:#374151">Consideraciones éticas</div>
+      <ul>
+        <li><strong>Confidencialidad permanente:</strong> identidades de entrevistados nunca se revelan, ni en el informe ni en comunicaciones posteriores.</li>
+        <li><strong>Protección contra represalias:</strong> si publicar podría exponer a alguien, omitir o generalizar el hallazgo.</li>
+        <li><strong>Consentimiento informado:</strong> toda persona entrevistada debe haber sido informada antes de la entrevista.</li>
+        <li><strong>Nota de limitaciones:</strong> incluir que los hallazgos retratan un momento específico y que la presencia del equipo pudo modificar las dinámicas observadas.</li>
+      </ul>
+    </div>
+    <div class="ec" style="background:#F0F9F8;border:1.5px solid #A7D7D4">
+      <div class="et" style="color:#1E8A85">El informe como punto de partida</div>
+      <ul>
+        <li>Las recomendaciones se monitorean en visitas de seguimiento</li>
+        <li>Se puede solicitar informe de avance por escrito a la autoridad con fecha límite</li>
+        <li>Si no hay implementación y las causas exceden al responsable local → elevar a informe temático o anual dirigido a nivel de autoridad distinto</li>
+        <li>Cuando necesario: acercarse a medios, legisladores o sociedad civil para ampliar el impacto</li>
+      </ul>
+    </div>
+  </div>
+  <div class="dist">
+    <div class="dl">Distribución del Resumen Ejecutivo</div>
+    <div class="dc">
+      <div class="dp"><div class="di">📢</div><div class="dn">Comunicaciones</div><div class="dd">mureta@mnpt.cl</div></div>
+      <div class="dp"><div class="di">🗂️</div><div class="dn">Coordinación</div><div class="dd">afigueroa@mnpt.cl</div></div>
+      <div class="dp"><div class="di">📋</div><div class="dn">Secretaría Ejecutiva</div><div class="dd">rcardenas@mnpt.cl</div></div>
+    </div>
+  </div>
+</div>
           </div>
-          <span class="infog-modal-trigger-arr">→</span>
-        </button>
+        </div>
       </section>
 
     </div><!-- fin mod-informes -->
@@ -9950,77 +9992,6 @@ function tsbToggle(i){document.getElementById('tsb'+i).classList.toggle('open')}
     </div>
 
     <!-- ══ MODAL INF-7: DISTRIBUCIÓN ══ -->
-    <div class="infog-overlay" id="modal-inf-dist">
-      <div class="infog-modal-box">
-        <div class="infog-modal-topbar">
-          <div class="infog-modal-topbar-title">📬 Distribución, publicación y seguimiento del informe</div>
-          <button class="infog-modal-close" onclick="closeInfog('modal-inf-dist')" title="Cerrar">✕</button>
-        </div>
-        <div class="infog-modal-content" style="padding:28px 32px">
-<style>
-.sd2{all:initial;display:block;font-family:'Atkinson Hyperlegible Next',sans-serif}
-.sd2 *{box-sizing:border-box}
-.sd2 .fl{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-bottom:20px;position:relative}
-.sd2 .fs{background:white;border:1.5px solid #E5E7EB;border-radius:10px;padding:14px 12px;text-align:center;position:relative;z-index:1}
-.sd2 .fs:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-size:14px;font-weight:800;color:#B7791F;z-index:2}
-.sd2 .fi{font-size:24px;margin-bottom:8px}
-.sd2 .ft{font-size:12px;font-weight:700;color:#0D1F47;margin-bottom:4px;line-height:1.3}
-.sd2 .fd{font-size:10.5px;color:#6B7280;line-height:1.4}
-.sd2 .fb{font-size:10px;font-weight:700;color:#B7791F;margin-top:6px}
-.sd2 .eg{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
-.sd2 .ec{border-radius:8px;padding:14px}
-.sd2 .et{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
-.sd2 ul{margin:0;padding-left:14px}
-.sd2 li{font-size:12px;line-height:1.55;margin-bottom:4px}
-.sd2 .dist{background:#F0F9F8;border-radius:8px;padding:14px;margin-bottom:0}
-.sd2 .dl{font-size:12px;font-weight:800;color:#0D1F47;margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em}
-.sd2 .dc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.sd2 .dp{background:white;border-radius:6px;padding:10px;text-align:center;border:1px solid #A7D7D4}
-.sd2 .di{font-size:18px;margin-bottom:4px}
-.sd2 .dn{font-size:11.5px;font-weight:700;color:#0D1F47;margin-bottom:2px}
-.sd2 .dd{font-size:10.5px;color:#6B7280}
-</style>
-<div class="sd2">
-  <div style="font-size:12px;font-weight:800;color:#0D1F47;margin-bottom:12px;text-transform:uppercase;letter-spacing:.04em">Secuencia de entrega post-visita</div>
-  <div class="fl">
-    <div class="fs"><div class="fi">📍</div><div class="ft">Visita CPT</div><div class="fd">El equipo realiza la visita y levanta información</div></div>
-    <div class="fs"><div class="fi">✉️</div><div class="ft">Oficio Post Visita</div><div class="fd">Hallazgos preliminares urgentes a autoridad</div><div class="fb">Inmediato</div></div>
-    <div class="fs"><div class="fi">📄</div><div class="ft">Informe completo</div><div class="fd">Análisis completo por dimensión</div><div class="fb">15 días post-visita</div></div>
-    <div class="fs"><div class="fi">💬</div><div class="ft">OPCIONAL: Comentarios contraparte</div><div class="fd">Autoridad puede responder antes de publicación</div><div class="fb">Tiempo razonable</div></div>
-    <div class="fs"><div class="fi">🌐</div><div class="ft">Publicación web</div><div class="fd">Siempre en sitio institucional CPT</div></div>
-  </div>
-  <div class="eg">
-    <div class="ec" style="background:#F9FAFB;border:1px solid #E5E7EB">
-      <div class="et" style="color:#374151">Consideraciones éticas</div>
-      <ul>
-        <li><strong>Confidencialidad permanente:</strong> identidades de entrevistados nunca se revelan, ni en el informe ni en comunicaciones posteriores.</li>
-        <li><strong>Protección contra represalias:</strong> si publicar podría exponer a alguien, omitir o generalizar el hallazgo.</li>
-        <li><strong>Consentimiento informado:</strong> toda persona entrevistada debe haber sido informada antes de la entrevista.</li>
-        <li><strong>Nota de limitaciones:</strong> incluir que los hallazgos retratan un momento específico y que la presencia del equipo pudo modificar las dinámicas observadas.</li>
-      </ul>
-    </div>
-    <div class="ec" style="background:#F0F9F8;border:1.5px solid #A7D7D4">
-      <div class="et" style="color:#1E8A85">El informe como punto de partida</div>
-      <ul>
-        <li>Las recomendaciones se monitorean en visitas de seguimiento</li>
-        <li>Se puede solicitar informe de avance por escrito a la autoridad con fecha límite</li>
-        <li>Si no hay implementación y las causas exceden al responsable local → elevar a informe temático o anual dirigido a nivel de autoridad distinto</li>
-        <li>Cuando necesario: acercarse a medios, legisladores o sociedad civil para ampliar el impacto</li>
-      </ul>
-    </div>
-  </div>
-  <div class="dist">
-    <div class="dl">Distribución del Resumen Ejecutivo</div>
-    <div class="dc">
-      <div class="dp"><div class="di">📢</div><div class="dn">Comunicaciones</div><div class="dd">mureta@mnpt.cl</div></div>
-      <div class="dp"><div class="di">🗂️</div><div class="dn">Coordinación</div><div class="dd">afigueroa@mnpt.cl</div></div>
-      <div class="dp"><div class="di">📋</div><div class="dn">Secretaría Ejecutiva</div><div class="dd">gdiaz@mnpt.cl</div></div>
-    </div>
-  </div>
-</div>
-        </div>
-      </div>
-    </div>
 </main>
 </div>
 
