@@ -8290,7 +8290,7 @@ function icToggle(i){
 
 <style>
 /* ── Flujo horizontal de seguimiento ── */
-.hflow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative;margin-top:4px}
+.hflow{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;margin-top:4px}
 .hflow::before{content:'';position:absolute;top:40px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,#2DAA9E,#1A7840);z-index:0;opacity:.3}
 .hcard{display:flex;flex-direction:column;align-items:center;position:relative;z-index:1}
 .hcard-arrow{position:absolute;top:34px;right:-8px;font-size:14px;color:#2DAA9E;font-weight:800;z-index:2}
@@ -8315,8 +8315,26 @@ function icToggle(i){
 
 <div class="hflow" id="hflow-seg">
 
-  <!-- 1: Durante la visita -->
+  <!-- 1: Triangulación del caso -->
   <div class="hcard" id="hc0" onclick="hcToggle(0)">
+    <div class="hcard-arrow">→</div>
+    <div class="hcard-ico" style="background:linear-gradient(135deg,#5B6FA8,#3B4F8A)">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="5" r="2.5"/>
+        <circle cx="4" cy="19" r="2.5"/>
+        <circle cx="20" cy="19" r="2.5"/>
+        <line x1="12" y1="7.5" x2="5.5" y2="17"/>
+        <line x1="12" y1="7.5" x2="18.5" y2="17"/>
+        <line x1="6.5" y1="19" x2="17.5" y2="19"/>
+      </svg>
+    </div>
+    <div class="hcard-badge">En terreno</div>
+    <div class="hcard-title">Triangulación del caso</div>
+    <div class="hcard-btn"><span class="hplus">+</span> Ver</div>
+  </div>
+
+  <!-- 2: Cierre con Dirección -->
+  <div class="hcard" id="hc1" onclick="hcToggle(1)">
     <div class="hcard-arrow">→</div>
     <div class="hcard-ico" style="background:linear-gradient(135deg,#2DAA9E,#1A8A85)">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -8330,8 +8348,8 @@ function icToggle(i){
     <div class="hcard-btn"><span class="hplus">+</span> Ver</div>
   </div>
 
-  <!-- 2: 24 horas -->
-  <div class="hcard" id="hc1" onclick="hcToggle(1)">
+  <!-- 3: 24 horas -->
+  <div class="hcard" id="hc2" onclick="hcToggle(2)">
     <div class="hcard-arrow">→</div>
     <div class="hcard-ico" style="background:linear-gradient(135deg,#1A5F7A,#2D8FA8)">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -8345,8 +8363,8 @@ function icToggle(i){
     <div class="hcard-btn"><span class="hplus">+</span> Ver</div>
   </div>
 
-  <!-- 3: 48 horas -->
-  <div class="hcard" id="hc2" onclick="hcToggle(2)">
+  <!-- 4: 48 horas -->
+  <div class="hcard" id="hc3" onclick="hcToggle(3)">
     <div class="hcard-arrow">→</div>
     <div class="hcard-ico" style="background:linear-gradient(135deg,#0D1F47,#1A3A6E)">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -8361,8 +8379,8 @@ function icToggle(i){
     <div class="hcard-btn"><span class="hplus">+</span> Ver</div>
   </div>
 
-  <!-- 4: 15 días -->
-  <div class="hcard" id="hc3" onclick="hcToggle(3)">
+  <!-- 5: 15 días -->
+  <div class="hcard" id="hc4" onclick="hcToggle(4)">
     <div class="hcard-arrow">→</div>
     <div class="hcard-ico" style="background:linear-gradient(135deg,#B7791F,#92400E)">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -8378,8 +8396,8 @@ function icToggle(i){
     <div class="hcard-btn"><span class="hplus">+</span> Ver</div>
   </div>
 
-  <!-- 5: Seguimiento -->
-  <div class="hcard" id="hc4" onclick="hcToggle(4)">
+  <!-- 6: Seguimiento -->
+  <div class="hcard" id="hc5" onclick="hcToggle(5)">
     <div class="hcard-ico" style="background:linear-gradient(135deg,#1A7840,#059669)">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="23 4 23 10 17 10"/>
@@ -8396,26 +8414,31 @@ function icToggle(i){
   <div class="hbody-wrap" id="hb0">
     <div class="hbody">
       <strong>Triangular información</strong> sobre los casos y revisar registros complementarios (fichas clínicas, registros de contenciones, etc.), previo consentimiento de la persona.<br><br>
-      <strong>Cierre con Dirección:</strong> el/la experto/a encargado/a transmite las medidas urgentes o inmediatas a tomar en casos particulares, <strong>siempre y cuando</strong> se cuente con información triangulada en equipo y el consentimiento de la persona.
-    </div>
-  </div>
-  <div class="hbody-wrap" id="hb1">
-    <div class="hbody">Elaborar y deducir <strong>denuncia penal</strong> si corresponde, siguiendo el Protocolo de actuación ante situaciones de tortura del MNPT.</div>
-  </div>
-  <div class="hbody-wrap" id="hb2">
-    <div class="hbody">
-      <div style="margin-bottom:8px"><a class="dl" href="https://docs.google.com/spreadsheets/d/1QSMm0WgEfUEnpFSAG6vWUS-98YF0cuAs-QtZCiM7_fg/edit?gid=0#gid=0" target="_blank" rel="noopener">📊 Planilla de registro de casos críticos</a></div>
       <strong>Triangulación del caso:</strong> todos los integrantes de la visita socializan información. Jefatura decide en función del consentimiento de la persona.
     </div>
   </div>
+  <div class="hbody-wrap" id="hb1">
+    <div class="hbody">
+      <strong>Cierre con Dirección:</strong> el/la experto/a encargado/a transmite las medidas urgentes o inmediatas a tomar en casos particulares, <strong>siempre y cuando</strong> se cuente con información triangulada en equipo y el consentimiento de la persona.
+    </div>
+  </div>
+  <div class="hbody-wrap" id="hb2">
+    <div class="hbody">Elaborar y deducir <strong>denuncia penal</strong> si corresponde, siguiendo el Protocolo de actuación ante situaciones de tortura del MNPT.</div>
+  </div>
   <div class="hbody-wrap" id="hb3">
+    <div class="hbody">
+      <div style="margin-bottom:8px"><a class="dl" href="https://docs.google.com/spreadsheets/d/1QSMm0WgEfUEnpFSAG6vWUS-98YF0cuAs-QtZCiM7_fg/edit?gid=0#gid=0" target="_blank" rel="noopener">📊 Planilla de registro de casos críticos</a></div>
+      Registro de todos los casos levantados durante la visita. Triangulación de fuentes documentales para cada situación.
+    </div>
+  </div>
+  <div class="hbody-wrap" id="hb4">
     <div class="hbody">
       <div style="margin-bottom:6px"><a class="dl" href="oficio-direccion-hallazgos-preliminares.pdf" download>📄 Oficio a Dirección</a> con casos levantados durante la visita.</div>
       <div style="margin-bottom:6px"><a class="dl" href="https://docs.google.com/document/d/1eFc6fdVwQzDzWl9dyjQyJr3T2gz-rFqj/edit" target="_blank" rel="noopener">📄 Oficio o memo a instituciones de protección</a></div>
       Seguimiento oficio a Jefatura: si no hay respuesta, enviar correo preguntando por medidas sobre casos urgentes. Si hubo respuesta pero no se tomaron medidas correctas: reiterar y evaluar derivación según consentimiento.
     </div>
   </div>
-  <div class="hbody-wrap" id="hb4">
+  <div class="hbody-wrap" id="hb5">
     <div class="hbody">
       <ul>
         <li>Seguimiento cada <strong>15 días</strong> luego de la derivación, confirmando la derivación efectiva y las gestiones realizadas.</li>
@@ -8433,8 +8456,8 @@ function hcToggle(i){
   var card=document.getElementById('hc'+i);
   var body=document.getElementById('hb'+i);
   var wasOpen=card.classList.contains('open');
-  card.classList.toggle('open',!wasOpen);
-  body.classList.toggle('open',!wasOpen);
+  for(var j=0;j<6;j++){var c=document.getElementById('hc'+j);var b=document.getElementById('hb'+j);if(c&&b){c.classList.remove('open');b.classList.remove('open');}}
+  if(!wasOpen){card.classList.add('open');body.classList.add('open');}
 }
 </script>
 
