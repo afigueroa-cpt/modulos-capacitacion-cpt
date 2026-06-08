@@ -10281,5 +10281,151 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 
+<style>
+.cptdock{position:fixed;top:0;right:0;height:100%;z-index:760;font-family:'Atkinson Hyperlegible Next',Arial,sans-serif;--dk:#1E3A5F;--dk-d:#13263d}
+.cptdock[hidden]{display:none}
+.cptdock__tab{position:absolute;top:50%;right:0;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:11px;padding:18px 10px;cursor:pointer;background:var(--dk);color:#fff;border:none;border-radius:13px 0 0 13px;box-shadow:-7px 0 22px rgba(13,31,71,.28);transition:transform .26s cubic-bezier(.2,.7,.3,1),padding-right .26s,box-shadow .26s;font-family:'Atkinson Hyperlegible Next',Arial,sans-serif}
+.cptdock__tab:hover{padding-right:15px;box-shadow:-10px 0 28px rgba(13,31,71,.4)}
+.cptdock__tab svg{width:19px;height:19px}
+.cptdock__tab span{writing-mode:vertical-rl;text-orientation:mixed;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.cptdock.is-open .cptdock__tab{transform:translateY(-50%) translateX(120%);pointer-events:none}
+.cptdock__scrim{position:fixed;inset:0;background:rgba(15,25,45,.42);opacity:0;pointer-events:none;transition:opacity .3s;z-index:-1}
+.cptdock.is-open .cptdock__scrim{opacity:1;pointer-events:auto}
+.cptdock__panel{position:absolute;top:0;right:0;height:100%;width:384px;max-width:88vw;background:#FBFAF7;border-left:1px solid #E6E2D8;box-shadow:-24px 0 56px rgba(13,31,71,.32);transform:translateX(100%);transition:transform .36s cubic-bezier(.22,.68,.3,1);display:flex;flex-direction:column}
+.cptdock.is-open .cptdock__panel{transform:none}
+.cptdock__head{padding:22px 22px 20px;background:var(--dk);color:#fff;display:flex;align-items:flex-start;gap:13px}
+.cptdock__fb{flex:none;width:44px;height:44px;border-radius:11px;background:rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center}
+.cptdock__fb svg{width:23px;height:23px}
+.cptdock__htext{flex:1;min-width:0}
+.cptdock__sub{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.78;margin-bottom:3px}
+.cptdock__title{font-size:19px;font-weight:800;line-height:1.15}
+.cptdock__close{flex:none;width:32px;height:32px;border-radius:9px;cursor:pointer;background:rgba(255,255,255,.12);border:none;color:#fff;display:flex;align-items:center;justify-content:center;transition:background .16s}
+.cptdock__close:hover{background:rgba(255,255,255,.26)}
+.cptdock__close svg{width:15px;height:15px}
+.cptdock__list{padding:14px;overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:9px}
+.cptdock__list::-webkit-scrollbar{width:8px}
+.cptdock__list::-webkit-scrollbar-thumb{background:rgba(13,31,71,.18);border-radius:8px}
+.cptdoc{display:flex;align-items:center;gap:13px;text-decoration:none;color:#1A2840;padding:13px 13px;border-radius:12px;background:#fff;border:1px solid #E9E5DB;box-shadow:0 1px 2px rgba(13,31,71,.04);transition:border-color .16s,box-shadow .16s,transform .16s}
+.cptdoc:hover{border-color:var(--dk);box-shadow:0 4px 14px rgba(13,31,71,.12);transform:translateX(-3px)}
+.cptdoc__ic{flex:none;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.cptdoc__ic svg{width:21px;height:21px}
+.cptdoc--docs .cptdoc__ic{background:#E3ECF7;color:#2B5288}
+.cptdoc--sheets .cptdoc__ic{background:#DCF1E7;color:#1A8F66}
+.cptdoc--pdf .cptdoc__ic{background:#FBE7D6;color:#B5572E}
+.cptdoc__body{min-width:0;flex:1}
+.cptdoc__name{font-weight:700;font-size:14px;line-height:1.25}
+.cptdoc__meta{color:#7A879B;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-top:3px}
+.cptdoc__go{flex:none;color:#B7BECB;transition:color .16s,transform .16s}
+.cptdoc:hover .cptdoc__go{color:var(--dk);transform:translateX(2px)}
+.cptdoc__go svg{width:17px;height:17px}
+.cptdock__foot{padding:13px 18px 16px;border-top:1px solid #E6E2D8;color:#9AA3B2;font-size:11px;text-align:center}
+@media (max-width:560px){.cptdock__panel{width:100%}.cptdock__tab span{font-size:11px}}
+</style>
+
+<div class="cptdock" id="cptdock" hidden>
+  <div class="cptdock__scrim" data-cptclose></div>
+  <button class="cptdock__tab" id="cptdockTab" type="button" aria-label="Abrir documentos del módulo">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" fill="currentColor"/></svg>
+    <span>Documentos del módulo</span>
+  </button>
+  <aside class="cptdock__panel" role="dialog" aria-label="Documentos del módulo">
+    <header class="cptdock__head">
+      <div class="cptdock__fb">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" fill="currentColor"/></svg>
+      </div>
+      <div class="cptdock__htext">
+        <div class="cptdock__sub" id="cptdockSub">Módulo</div>
+        <div class="cptdock__title">Documentos del módulo</div>
+      </div>
+      <button class="cptdock__close" type="button" data-cptclose aria-label="Cerrar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </header>
+    <div class="cptdock__list" id="cptdockList"></div>
+    <div class="cptdock__foot">Enlaces oficiales · Google Drive &amp; descargas</div>
+  </aside>
+</div>
+
+<script>
+(function(){
+  var CPTDOCS = {
+    manual: { sub:"Módulo 01 · Manual de Visita", accent:"#1E3A5F", items:[
+      {name:"Manual General de Visita Preventiva", meta:"Google Docs · documento fuente", type:"docs", url:"https://docs.google.com/document/d/1PfZWI36K5YTsqR4E52AMYh2tiKrVJN_n/edit"},
+      {name:"Ficha descriptiva del establecimiento", meta:"Google Docs · plantilla", type:"docs", url:"https://docs.google.com/document/d/16xVsAbtP0BDghuDN8mR8EXo58XxeCK5K/edit#heading=h.7wh1pe496b7v"},
+      {name:"Ficha Metodológica", meta:"Google Sheets · plantilla", type:"sheets", url:"https://docs.google.com/spreadsheets/d/1oOHQc17WrFGhJ2e8VuqRhpgkhmCgy1Da/edit?gid=284634834#gid=284634834"},
+      {name:"Cronograma de visita", meta:"Google Docs · plantilla", type:"docs", url:"https://docs.google.com/document/d/1LdDX8iqFNImgwSYENbQzpoRbQSQjB5_t/edit#heading=h.f658tlomueo"},
+      {name:"Ejemplo · Planificación de área", meta:"Google Sheets · ejemplo", type:"sheets", url:"https://docs.google.com/spreadsheets/d/170WyZJlyvpMEIzFHKGzBV91ShFq92wti/edit?gid=300354521#gid=300354521"},
+      {name:"Ejemplo · Planificación Anual Consolidada", meta:"Google Sheets · ejemplo", type:"sheets", url:"https://docs.google.com/spreadsheets/d/1kAKLD5BAmxhD2Xs7H0-B1fU73esq2U-4/edit?gid=3663861#gid=3663861"}
+    ]},
+    criticos: { sub:"Módulo 02 · Casos particulares", accent:"#7A4A18", items:[
+      {name:"Protocolo ante Tortura y Tratos Crueles", meta:"PDF · Área de Protocolos CPT", type:"pdf", url:"protocolo_tortura.pdf"},
+      {name:"Protocolo de Registro y Derivación de Casos Críticos", meta:"Google Docs · pauta y consentimientos", type:"docs", url:"https://docs.google.com/document/d/1GM9mbi6yVUefDkntp-FjmKw_rkxefQyl/edit#heading=h.fffuja6uycn3"},
+      {name:"Pauta de registro de casos particulares", meta:"Google Docs · incluye consentimientos", type:"docs", url:"https://docs.google.com/document/d/19QG-mnvFvxI75N-0n4w9u_wT9cmIe5PE/edit"},
+      {name:"Planilla de registro de casos críticos", meta:"Google Sheets · registro en terreno", type:"sheets", url:"https://docs.google.com/spreadsheets/d/1QSMm0WgEfUEnpFSAG6vWUS-98YF0cuAs-QtZCiM7_fg/edit?gid=0#gid=0"},
+      {name:"Oficio a Dirección · hallazgos preliminares", meta:"PDF · descarga", type:"pdf", url:"oficio-direccion-hallazgos-preliminares.pdf"},
+      {name:"Oficio o memo a instituciones de protección", meta:"Google Docs · plantilla", type:"docs", url:"https://docs.google.com/document/d/1eFc6fdVwQzDzWl9dyjQyJr3T2gz-rFqj/edit"},
+      {name:"Análisis Artículo 10 · Ley 21.154", meta:"PDF · descarga", type:"pdf", url:"analisis-articulo-10-ley-21154.pdf"}
+    ]},
+    informes: { sub:"Módulo 03 · Elaboración de Informes", accent:"#0D5E5A", items:[
+      {name:"Manual General de Visita Preventiva", meta:"Google Docs · fuente metodológica", type:"docs", url:"https://docs.google.com/document/d/1PfZWI36K5YTsqR4E52AMYh2tiKrVJN_n/edit"},
+      {name:"Formato Informe de Visita 2025", meta:"Google Docs · formato oficial", type:"docs", url:"https://docs.google.com/document/d/1GwtNwLSZe8D9KWATD-QsuY-hCIQ2qgcx1xZ2AIFov8E/edit"},
+      {name:"Formato Resumen Ejecutivo", meta:"Google Docs · formato oficial", type:"docs", url:"https://docs.google.com/document/d/1mLUGlIXNofD8ZMml4C0_1TA-id0mhKECkrfKEK4tNMs/edit"},
+      {name:"Formato Informe Ad Hoc", meta:"Google Docs · formato oficial", type:"docs", url:"https://docs.google.com/document/d/1aTM_KITojbbYFVIVxH1m3chKjDARNDospyvMvt6e1C8/edit"},
+      {name:"Formato Informes Temáticos", meta:"Google Docs · formato oficial", type:"docs", url:"https://docs.google.com/document/d/1QzL44_woEpLkmMsEcJxW0g_w1JntBvsr9w9Xs9el_3o/edit"},
+      {name:"Formato Informe de Seguimiento 2025", meta:"Google Docs · formato oficial", type:"docs", url:"https://docs.google.com/document/d/1gkieqj6o9mRd5G_MTdWNnQqTwlpDuq4F9xqyDirSw54/edit?tab=t.0"},
+      {name:"Matriz de vaciado por dimensión", meta:"Google Sheets · ejemplo", type:"sheets", url:"https://docs.google.com/spreadsheets/d/1qqdUZQt-vPzBRhzxcYeY3ZXDaVeljnlj/edit?gid=1801895816#gid=1801895816"}
+    ]},
+    reco: { sub:"Módulo 04 · Recomendaciones", accent:"#0A5F8A", items:[
+      {name:"Metodología de elaboración y seguimiento de recomendaciones", meta:"PDF · documento fuente CPT 2026", type:"pdf", url:"metodologia-recomendaciones-cpt-2026.pdf"},
+      {name:"Planilla de Registro de Recomendaciones 2026", meta:"Google Sheets · documento institucional", type:"sheets", url:"https://docs.google.com/spreadsheets/d/1RcjXh6FUIl4HRfTj5b185PjFn6tDoCww/edit?usp=sharing&ouid=102737521330978234783&rtpof=true&sd=true"}
+    ]}
+  };
+
+  var IC = {
+    docs:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v5h5"/><path d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M9 13h6M9 17h6"/></svg>',
+    sheets:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16"/></svg>',
+    pdf:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M5 19h14"/></svg>'
+  };
+  var GO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>';
+
+  var dock = document.getElementById('cptdock');
+  var list = document.getElementById('cptdockList');
+  var sub  = document.getElementById('cptdockSub');
+
+  function render(mod){
+    var data = CPTDOCS[mod];
+    if(!data || !data.items.length){ dock.setAttribute('hidden',''); dock.classList.remove('is-open'); return; }
+    dock.removeAttribute('hidden');
+    dock.style.setProperty('--dk', data.accent);
+    sub.textContent = data.sub;
+    list.innerHTML = '';
+    data.items.forEach(function(it){
+      var a = document.createElement('a');
+      a.className = 'cptdoc cptdoc--' + (it.type||'docs');
+      a.href = it.url; a.target = '_blank'; a.rel = 'noopener';
+      if(it.type==='pdf') a.setAttribute('download','');
+      a.innerHTML = '<div class="cptdoc__ic">'+(IC[it.type]||IC.docs)+'</div>'+
+        '<div class="cptdoc__body"><div class="cptdoc__name">'+it.name+'</div><div class="cptdoc__meta">'+it.meta+'</div></div>'+
+        '<div class="cptdoc__go">'+GO+'</div>';
+      list.appendChild(a);
+    });
+  }
+
+  function open(){ if(!dock.hasAttribute('hidden')) dock.classList.add('is-open'); }
+  function close(){ dock.classList.remove('is-open'); }
+
+  document.getElementById('cptdockTab').addEventListener('click', open);
+  dock.querySelectorAll('[data-cptclose]').forEach(function(el){ el.addEventListener('click', close); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+
+  document.querySelectorAll('.ph-mod-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){ close(); render(btn.dataset.mod); });
+  });
+
+  var active = document.querySelector('.ph-mod-btn.active');
+  render(active ? active.dataset.mod : 'intro');
+})();
+</script>
+
 </body>
 </html>
