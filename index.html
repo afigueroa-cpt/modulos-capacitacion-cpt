@@ -9404,7 +9404,7 @@ function tsbToggle(i){document.getElementById('tsb'+i).classList.toggle('open')}
           <p class="sec-desc">El informe no termina cuando se firma. La secuencia de envío, la publicación y el seguimiento son parte constitutiva del proceso de monitoreo.</p>
         </div>
         <div style="border-radius:12px;border:1.5px solid #E5E7EB;overflow:hidden;margin-top:4px">
-          <div onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none';this.querySelector('.dist-plus').textContent=this.nextElementSibling.style.display==='none'?'+':'−'" style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:#FEF3C7;cursor:pointer;user-select:none">
+          <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:#FEF3C7">
             <div style="flex-shrink:0;width:42px;height:42px;border-radius:10px;background:#B7791F;display:flex;align-items:center;justify-content:center">
               <svg width="22" height="22" viewBox="0 0 26 26" fill="none"><rect x="2" y="8" width="22" height="14" rx="3" fill="none" stroke="white" stroke-width="1.8"/><polyline points="2,8 13,17 24,8" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
@@ -9412,9 +9412,8 @@ function tsbToggle(i){document.getElementById('tsb'+i).classList.toggle('open')}
               <div style="font-size:14px;font-weight:800;color:#78350F">Distribución, publicación y seguimiento del informe</div>
               <div style="font-size:12px;color:#92400E;margin-top:2px">Secuencia post-visita · Ética de publicación · Distribución interna · El informe como punto de partida</div>
             </div>
-            <div class="dist-plus" style="width:28px;height:28px;border-radius:50%;background:#B7791F;color:white;font-size:18px;line-height:1;display:flex;align-items:center;justify-content:center;flex-shrink:0">+</div>
           </div>
-          <div style="display:none;padding:20px 22px">
+          <div style="display:block;padding:20px 22px">
             <div class="sd2">
   <div style="font-size:12px;font-weight:800;color:#0D1F47;margin-bottom:12px;text-transform:uppercase;letter-spacing:.04em">Secuencia de entrega post-visita</div>
   <div class="fl">
