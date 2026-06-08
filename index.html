@@ -3150,7 +3150,7 @@ footer strong{color:var(--navy);font-weight:800}
           <div class="sub-body">
             <div class="met-grid">
               <div class="met-item"><div class="met-name">Objetivos específicos</div><div class="met-desc">Precisar los objetivos del Programa Anual a partir de la información levantada.</div></div>
-              <div class="met-item"><div class="met-name">Unidades de observación</div><div class="met-desc">Carpetas de caso · PPL · Personal · Instalaciones · Familiares · Sociedad civil.</div></div>
+              <div class="met-item"><div class="met-name">Unidades de observación</div><div class="met-desc">Carpetas de caso · Residentes · Personal · Instalaciones · Familiares · Sociedad civil.</div></div>
               <div class="met-item"><div class="met-name">Técnicas</div><div class="met-desc">Solicitud de registros · Observación · Encuestas · Grupos focales · Entrevistas · Conversaciones informales.</div></div>
               <div class="met-item"><div class="met-name">Muestra</div><div class="met-desc">Método de selección con representatividad cualitativa, aleatoriedad y mínimo de confidencialidad.</div></div>
               <div class="met-item"><div class="met-name">Instrumentos y protocolos</div><div class="met-desc">Seleccionar y adaptar los instrumentos para el recinto específico.</div></div>
@@ -8309,6 +8309,8 @@ function icToggle(i){
 .hbody strong{color:#0D1F47}
 .hbody .dl{display:inline-flex;align-items:center;gap:5px;padding:5px 10px;background:#F0F9F8;border:1px solid #A7D7D4;border-radius:6px;color:#0D6E69;font-size:11px;font-weight:700;text-decoration:none;margin-top:4px}
 .hbody .dl:hover{background:#D4F0EE}
+.hcard-ico img{filter:saturate(0.55) brightness(1.04);opacity:.82;transition:filter .2s,opacity .2s}
+.hcard:hover .hcard-ico img{filter:saturate(0.75) brightness(1.0);opacity:.95}
 .hbody ul{margin:6px 0 0;padding-left:16px;display:flex;flex-direction:column;gap:4px}
 .hbody li{color:#374151}
 </style>
@@ -8341,7 +8343,7 @@ function icToggle(i){
   <div class="hcard" id="hc2" onclick="hcToggle(2)">
     <div class="hcard-arrow">→</div>
     <div class="hcard-ico" style="background:white;overflow:hidden">
-      <img src="paso8-denuncia.png" alt="Denuncia penal" style="width:68px;height:68px;object-fit:cover;">
+      <img src="paso8-denuncia.png" alt="Denuncia penal" style="width:52px;height:52px;object-fit:contain;">
     </div>
     <div class="hcard-badge">24 horas</div>
     <div class="hcard-title">Denuncia penal</div>
@@ -8583,34 +8585,40 @@ function hcToggle(i){
       <!-- ════════ PRIMEROS AUXILIOS PSICOLÓGICOS ════════ -->
       <section class="section" id="cc-pap" data-mod="criticos">
         <div class="sec-header">
-          <span class="sec-tag" style="background:#FEE2E2;color:#991B1B">Protocolo · PAP en terreno</span>
+          <span class="sec-tag" style="background:#EDE9FE;color:#4C1D95">Protocolo · PAP en terreno</span>
           <h3>Primeros auxilios psicológicos</h3>
           <p class="sec-desc">Guía para generar contención y calma a una persona que está en un momento de crisis durante la visita. Aplicable al catastro de personas en aislamiento y entrevistas individuales.</p>
         </div>
 
         <!-- ¿Qué son los PAP? -->
-        <div style="background:#FFF7ED;border-left:4px solid #F59E0B;border-radius:8px;padding:16px 20px;margin-bottom:20px;font-size:13.5px;color:#78350F;line-height:1.6">
-          <strong>¿Qué son los primeros auxilios psicológicos?</strong> Una guía para generar contención y calma a una persona que está en un momento de crisis. El objetivo de los PAP es brindar <strong>alivio emocional inmediato</strong> y prevenir secuelas futuras.
+        <div style="background:linear-gradient(135deg,#EDE9FE,#F5F3FF);border-left:4px solid #7C3AED;border-radius:10px;padding:16px 20px;margin-bottom:20px;font-size:13.5px;color:#3B0764;line-height:1.6;display:flex;align-items:flex-start;gap:14px">
+          <div style="flex-shrink:0;width:42px;height:42px;border-radius:12px;background:#7C3AED;display:flex;align-items:center;justify-content:center;margin-top:2px">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div><strong>¿Qué son los primeros auxilios psicológicos?</strong> Una guía para generar contención y calma a una persona que está en un momento de crisis. El objetivo de los PAP es brindar <strong>alivio emocional inmediato</strong> y prevenir secuelas futuras.</div>
         </div>
 
         <!-- Cuidado del equipo -->
-        <div style="background:#F0FDF4;border:1px solid #86EFAC;border-radius:10px;padding:16px 20px;margin-bottom:24px">
-          <p style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#166534;margin-bottom:10px">Antes de ir a la visita: autocuidado del equipo</p>
+        <div style="background:#F5F3FF;border:1px solid #DDD6FE;border-radius:10px;padding:16px 20px;margin-bottom:24px">
+          <p style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#5B21B6;margin-bottom:10px;display:flex;align-items:center;gap:7px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Antes de ir a la visita — autocuidado del equipo
+          </p>
           <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px">
-            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#14532D;line-height:1.5">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#4C1D95;line-height:1.5">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
               Respetar pausas y horarios de almuerzo.
             </div>
-            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#14532D;line-height:1.5">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#4C1D95;line-height:1.5">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
               Conversar con compañeros/as sobre el estado anímico del equipo.
             </div>
-            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#14532D;line-height:1.5">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#4C1D95;line-height:1.5">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
               Dejar 10 minutos entre entrevistas para desconectar el cerebro.
             </div>
-            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#14532D;line-height:1.5">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
+            <div style="display:flex;align-items:flex-start;gap:8px;font-size:12.5px;color:#4C1D95;line-height:1.5">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px"><polyline points="20 6 9 17 4 12"/></svg>
               Hablar sobre necesidades de descanso posteriores.
             </div>
           </div>
@@ -8635,9 +8643,9 @@ function hcToggle(i){
               </ul>
             </div>
           </div>
-          <div style="border-radius:10px;overflow:hidden;border:1px solid #86EFAC">
-            <div style="background:#D1FAE5;padding:12px 16px;font-size:12px;font-weight:800;color:#065F46;display:flex;align-items:center;gap:8px">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          <div style="border-radius:10px;overflow:hidden;border:1px solid #DDD6FE">
+            <div style="background:#EDE9FE;padding:12px 16px;font-size:12px;font-weight:800;color:#4C1D95;display:flex;align-items:center;gap:8px">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               Cuándo SÍ aplicar PAP
             </div>
             <div style="background:white;padding:14px 16px;font-size:12px;color:#374151;line-height:1.6">
@@ -8654,13 +8662,14 @@ function hcToggle(i){
         <!-- Pasos PAP -->
         <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:24px">
 
-          <div style="border-radius:12px;border:1px solid #E5E7EB;background:white;overflow:hidden">
-            <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:#FFFBF0;border-bottom:2px solid #FDE68A">
-              <div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#D4941A;display:flex;align-items:center;justify-content:center">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <!-- Paso 1 -->
+          <div style="border-radius:12px;border:1px solid #DDD6FE;background:white;overflow:hidden">
+            <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:linear-gradient(90deg,#EDE9FE,#F5F3FF);border-bottom:2px solid #C4B5FD">
+              <div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#6D28D9;display:flex;align-items:center;justify-content:center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
               </div>
               <div>
-                <div style="font-size:14px;font-weight:800;color:#0D1F47">1 · Preparar y observar</div>
+                <div style="font-size:14px;font-weight:800;color:#3B0764">1 · Preparar y observar</div>
                 <div style="font-size:12px;color:#6B7280;font-style:italic">¿Estoy preparado/a? ¿Es seguro atender aquí?</div>
               </div>
             </div>
@@ -8670,20 +8679,21 @@ function hcToggle(i){
             </div>
           </div>
 
-          <div style="border-radius:12px;border:1px solid #E5E7EB;background:white;overflow:hidden">
-            <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:#F0F6FB;border-bottom:2px solid #BFDBFE">
-              <div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#1A5E8A;display:flex;align-items:center;justify-content:center">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          <!-- Paso 2 -->
+          <div style="border-radius:12px;border:1px solid #DDD6FE;background:white;overflow:hidden">
+            <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:linear-gradient(90deg,#EDE9FE,#F5F3FF);border-bottom:2px solid #C4B5FD">
+              <div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#7C3AED;display:flex;align-items:center;justify-content:center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
               </div>
               <div>
-                <div style="font-size:14px;font-weight:800;color:#0D1F47">2 · Escucha activa</div>
+                <div style="font-size:14px;font-weight:800;color:#3B0764">2 · Escucha activa</div>
                 <div style="font-size:12px;color:#6B7280;font-style:italic">Foco: calma y reconexión. Dignificar el dolor del otro.</div>
               </div>
             </div>
             <div style="padding:14px 18px 16px 72px;font-size:12.5px;color:#374151;line-height:1.6">
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
-                <div style="background:#F0F9FF;border-left:3px solid #60A5FA;border-radius:6px;padding:10px 12px">
-                  <p style="font-size:11px;font-weight:800;color:#1E40AF;margin:0 0 5px;text-transform:uppercase;letter-spacing:.06em">Hacer</p>
+                <div style="background:#F5F3FF;border-left:3px solid #8B5CF6;border-radius:6px;padding:10px 12px">
+                  <p style="font-size:11px;font-weight:800;color:#5B21B6;margin:0 0 5px;text-transform:uppercase;letter-spacing:.06em">Hacer</p>
                   <ul style="margin:0;padding-left:14px;font-size:12px;color:#374151;display:flex;flex-direction:column;gap:3px">
                     <li>Dar sensación de seguridad: <em>"te estoy escuchando, estoy aquí"</em></li>
                     <li>Respetar el silencio y el ritmo de la persona</li>
@@ -8701,27 +8711,28 @@ function hcToggle(i){
                   </ul>
                 </div>
               </div>
-              <div style="background:#FEF9C3;border-left:3px solid #F59E0B;border-radius:6px;padding:10px 14px;font-size:12px;color:#78350F">
+              <div style="background:#EDE9FE;border-left:3px solid #7C3AED;border-radius:6px;padding:10px 14px;font-size:12px;color:#3B0764">
                 <strong>Victimización secundaria:</strong> tratos indignos, no escuchar con atención, menospreciar lo sucedido. El paso por el sistema puede ser tan o más traumático que la vivencia misma. <em>"Ustedes no solamente rellenan un papel. El acto de escuchar de forma consciente puede hacer la diferencia entre la reparación o una nueva victimización."</em>
               </div>
             </div>
           </div>
 
-          <div style="border-radius:12px;border:1px solid #E5E7EB;background:white;overflow:hidden">
-            <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:#FDF4FF;border-bottom:2px solid #E9D5FF">
-              <div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#7C3AED;display:flex;align-items:center;justify-content:center">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-1.14Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-1.14Z"/></svg>
+          <!-- Paso 3 -->
+          <div style="border-radius:12px;border:1px solid #DDD6FE;background:white;overflow:hidden">
+            <div style="display:flex;align-items:center;gap:14px;padding:14px 18px;background:linear-gradient(90deg,#EDE9FE,#F5F3FF);border-bottom:2px solid #C4B5FD">
+              <div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:#5B21B6;display:flex;align-items:center;justify-content:center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               </div>
               <div>
-                <div style="font-size:14px;font-weight:800;color:#0D1F47">3 · Contención en crisis</div>
+                <div style="font-size:14px;font-weight:800;color:#3B0764">3 · Contención en crisis</div>
                 <div style="font-size:12px;color:#6B7280;font-style:italic">Cuando la persona está desbordada emocionalmente</div>
               </div>
             </div>
             <div style="padding:14px 18px 16px 72px;font-size:12.5px;color:#374151;line-height:1.6">
               <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
                 <div>
-                  <p style="font-weight:700;color:#0D1F47;margin:0 0 6px;font-size:13px">Técnica de respiración (4-4-4)</p>
-                  <div style="background:#F5F3FF;border-radius:8px;padding:12px 14px;font-size:12px;color:#4C1D95;line-height:1.7">
+                  <p style="font-weight:700;color:#3B0764;margin:0 0 6px;font-size:13px">Técnica de respiración (4-4-4)</p>
+                  <div style="background:#F5F3FF;border-radius:8px;padding:12px 14px;font-size:12px;color:#4C1D95;line-height:1.7;border:1px solid #DDD6FE">
                     <div>INSPIRAR durante <strong>4 tiempos</strong></div>
                     <div>BOTAR el aire durante <strong>4 tiempos</strong></div>
                     <div>AGUANTAR con pulmones vacíos <strong>4 tiempos</strong></div>
@@ -8729,15 +8740,15 @@ function hcToggle(i){
                   </div>
                 </div>
                 <div>
-                  <p style="font-weight:700;color:#0D1F47;margin:0 0 6px;font-size:13px">Abordaje de ideación suicida</p>
-                  <div style="background:#FFF1F2;border-radius:8px;padding:12px 14px;font-size:12px;color:#374151;line-height:1.6">
+                  <p style="font-weight:700;color:#3B0764;margin:0 0 6px;font-size:13px">Abordaje de ideación suicida</p>
+                  <div style="background:#FFF1F2;border-radius:8px;padding:12px 14px;font-size:12px;color:#374151;line-height:1.6;border:1px solid #FCA5A5">
                     <p style="margin:0 0 5px"><strong>Señales de alerta:</strong> "no veo futuro", "quiero desaparecer", "ya no quiero seguir".</p>
                     <p style="margin:0 0 5px"><strong>Preguntar directamente:</strong> ¿Ha pensado en quitarse la vida? ¿Cómo? ¿Qué le detiene?</p>
                     <p style="margin:0"><strong>No dejar sola a la persona.</strong> No prometer cosas que no se pueden cumplir. Devolver la dignidad: <em>"Tu vida es importante."</em></p>
                   </div>
                 </div>
               </div>
-              <div style="margin-top:12px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:8px;padding:12px 14px;font-size:12px;color:#166534;line-height:1.5">
+              <div style="margin-top:12px;background:#EDE9FE;border:1px solid #C4B5FD;border-radius:8px;padding:12px 14px;font-size:12px;color:#3B0764;line-height:1.5">
                 <strong>Cierre:</strong> redirigir a tema neutro. Repasar acuerdos: <em>"Lo que voy a hacer es [acción], en [tiempo]."</em> Si hay afectación residual: respiración o refuerzo positivo. Dejar tarjeta de contacto del CPT. Registrar estado emocional al cierre.
               </div>
             </div>
@@ -9085,7 +9096,7 @@ function tsbToggle(i){document.getElementById('tsb'+i).classList.toggle('open')}
         <div class="vxn">🎙️ Entrevistas</div>
       </div>
       <div class="vxb">
-        <div class="vxitem"><span class="vxdot" style="color:#2DAA9E">▸</span>PPL y familiares</div>
+        <div class="vxitem"><span class="vxdot" style="color:#2DAA9E">▸</span>Residentes y familiares</div>
         <div class="vxitem"><span class="vxdot" style="color:#2DAA9E">▸</span>Personal del recinto</div>
         <div class="vxitem"><span class="vxdot" style="color:#2DAA9E">▸</span>Autoridades y dirección</div>
         <div class="vxitem"><span class="vxdot" style="color:#2DAA9E">▸</span>Sociedad civil</div>
@@ -9591,7 +9602,7 @@ function tsbToggle(i){document.getElementById('tsb'+i).classList.toggle('open')}
         <div class="vxn">🎙️ Entrevistas</div>
       </div>
       <div class="vxb">
-        <div class="vxitem"><span class="vxdot" style="color:#2DAA9E">▸</span>PPL y familiares</div>
+        <div class="vxitem"><span class="vxdot" style="color:#2DAA9E">▸</span>Residentes y familiares</div>
         <div class="vxitem"><span class="vxdot" style="color:#2DAA9E">▸</span>Personal del recinto</div>
         <div class="vxitem"><span class="vxdot" style="color:#2DAA9E">▸</span>Autoridades y dirección</div>
         <div class="vxitem"><span class="vxdot" style="color:#2DAA9E">▸</span>Sociedad civil</div>
@@ -9742,7 +9753,7 @@ function tsbToggle(i){document.getElementById('tsb'+i).classList.toggle('open')}
 <div class="sm">
   <div style="font-size:12.5px;font-weight:800;color:#0D1F47;margin-bottom:12px;text-transform:uppercase;letter-spacing:.04em">Las 9 dimensiones de monitoreo CPT</div>
   <div class="dg">
-    <div class="dc"><div class="dn">D1</div><div class="dt">Trato</div><div class="dd">Relaciones PPL–personal, violencia, uso de fuerza, respeto a dignidad</div></div>
+    <div class="dc"><div class="dn">D1</div><div class="dt">Trato</div><div class="dd">Relaciones residentes–personal, violencia, uso de fuerza, respeto a dignidad</div></div>
     <div class="dc"><div class="dn">D2</div><div class="dt">Medidas de protección</div><div class="dd">Acceso a DPP, garantías procesales, protección contra represalias</div></div>
     <div class="dc"><div class="dn">D3</div><div class="dt">Condiciones materiales</div><div class="dd">Infraestructura, higiene, alimentación, agua, espacio vital</div></div>
     <div class="dc"><div class="dn">D4</div><div class="dt">Régimen y actividades</div><div class="dd">Programas de reinserción, trabajo, educación, uso del tiempo</div></div>
@@ -9756,8 +9767,8 @@ function tsbToggle(i){document.getElementById('tsb'+i).classList.toggle('open')}
   <div style="overflow-x:auto">
     <table>
       <tr><th>Subdimensión</th><th>📄 Fuente documental</th><th>👁️ Observación</th><th>🎙️ Entrevistas</th></tr>
-      <tr><td>Acceso a agua potable</td><td>Registro indica entrega diaria de 2 L por persona</td><td>Dispensadores vacíos en módulo 3 al momento de la visita</td><td>3 PPL refieren no tener agua desde el día anterior</td></tr>
-      <tr><td>Estado de celdas</td><td>Sin registros de mantención en el período</td><td>Humedad visible en paredes, iluminación deficiente</td><td>PPL señalan "lleva meses así"</td></tr>
+      <tr><td>Acceso a agua potable</td><td>Registro indica entrega diaria de 2 L por persona</td><td>Dispensadores vacíos en módulo 3 al momento de la visita</td><td>3 residentes refieren no tener agua desde el día anterior</td></tr>
+      <tr><td>Estado de celdas</td><td>Sin registros de mantención en el período</td><td>Humedad visible en paredes, iluminación deficiente</td><td>Residentes señalan "lleva meses así"</td></tr>
       <tr><td>Higiene personal</td><td>Protocolo indica kit mensual de aseo</td><td>No se observaron kits disponibles</td><td>7 de 10 personas dicen no haberlo recibido</td></tr>
     </table>
   </div>
