@@ -8806,12 +8806,12 @@ function hcToggle(i){
 
       <section class="section" id="inf-fase-1" data-mod="informes">
         <div class="sec-header">
-          <span class="sec-tag">Fase 01 · Tipos de Informe</span>
           <h3>Tipos de Informes CPT</h3>
           <p class="sec-desc">El CPT produce distintos tipos de informes según el contexto de la visita, el público y el objetivo. Elegir el formato correcto es el primer paso antes de redactar.</p>
         </div>
 <style>
-.tiw{display:flex;flex-direction:column;gap:14px;font-family:'Atkinson Hyperlegible Next',sans-serif}
+.tiw{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;font-family:'Atkinson Hyperlegible Next',sans-serif;align-items:start}
+.tiw .tic{min-width:0}
 .tiw *{box-sizing:border-box}
 .tic{border-radius:14px;overflow:hidden;box-shadow:0 2px 14px rgba(0,0,0,.09)}
 .tich{display:flex;align-items:center;gap:16px;padding:18px 22px;cursor:pointer;user-select:none;transition:opacity .15s}
@@ -9001,7 +9001,7 @@ function hcToggle(i){
 
   <!-- ══ 3. INFORME ANUAL ══ -->
   <div class="tic" id="tic2">
-    <div class="tich" style="background:linear-gradient(135deg,#8B6620,#6B4C10)" onclick="ticToggle(2)">
+    <div class="tich" style="background:linear-gradient(135deg,#E8736A,#C0524A)" onclick="ticToggle(2)">
       <div class="tich-ico">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
