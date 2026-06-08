@@ -251,6 +251,12 @@ body{
   line-height:1.3;
 }
 .tn-item.active .tn-name{color:var(--navy);font-weight:700}
+.tn-sub{padding-top:6px;padding-bottom:6px;padding-left:48px;margin-bottom:1px;opacity:.85}
+.tn-sub .tn-dot{width:10px;height:10px;left:24px;background:var(--cream-dark);border-width:1.5px}
+.tn-sub .tn-num{font-size:8.5px;color:#9CA3AF}
+.tn-sub .tn-name{font-size:11.5px;font-weight:500}
+.tn-sub.active{opacity:1}
+.tn-sub.visited .tn-dot{background:var(--accent-light);border-color:var(--accent)}
 
 /* ══════════════ MAIN CONTENT ══════════════ */
 main{
@@ -2470,7 +2476,7 @@ footer strong{color:var(--navy);font-weight:800}
         <div class="stepper">
 
           <div class="step">
-            <span class="step-num">01</span>
+            <span class="step-num" id="fase-4-p1">01</span>
             <div class="step-head">
               <div class="step-title">Levantamiento exhaustivo de información</div>
               <span class="step-tag">Diagnóstico</span>
@@ -2500,7 +2506,7 @@ footer strong{color:var(--navy);font-weight:800}
           </div>
 
           <div class="step">
-            <span class="step-num">02</span>
+            <span class="step-num" id="fase-4-p2">02</span>
             <div class="step-head">
               <div class="step-title">Selección de lugares y criterios de priorización</div>
               <span class="step-tag">Priorización</span>
@@ -2549,7 +2555,7 @@ footer strong{color:var(--navy);font-weight:800}
           </div>
 
           <div class="step">
-            <span class="step-num">03</span>
+            <span class="step-num" id="fase-4-p3">03</span>
             <div class="step-head">
               <div class="step-title">Cantidad total de visitas</div>
               <span class="step-tag">Cobertura</span>
@@ -2572,7 +2578,7 @@ footer strong{color:var(--navy);font-weight:800}
           </div>
 
           <div class="step">
-            <span class="step-num">04</span>
+            <span class="step-num" id="fase-4-p4">04</span>
             <div class="step-head">
               <div class="step-title">Tipos de visitas a realizar</div>
               <span class="step-tag">Diseño</span>
@@ -2692,7 +2698,7 @@ footer strong{color:var(--navy);font-weight:800}
           </div>
 
           <div class="step">
-            <span class="step-num">05</span>
+            <span class="step-num" id="fase-4-p5">05</span>
             <div class="step-head">
               <div class="step-title">Visitas anunciadas o no anunciadas</div>
               <span class="step-tag">Estrategia</span>
@@ -2731,7 +2737,7 @@ footer strong{color:var(--navy);font-weight:800}
           </div>
 
           <div class="step">
-            <span class="step-num">06</span>
+            <span class="step-num" id="fase-4-p6">06</span>
             <div class="step-head">
               <div class="step-title">Duración de las visitas</div>
               <span class="step-tag">Tiempo</span>
@@ -2800,7 +2806,7 @@ footer strong{color:var(--navy);font-weight:800}
           </div>
 
           <div class="step">
-            <span class="step-num">07</span>
+            <span class="step-num" id="fase-4-p7">07</span>
             <div class="step-head">
               <div class="step-title">Orden de las visitas</div>
               <span class="step-tag">Cronograma</span>
@@ -5448,8 +5454,7 @@ function smToggle(sec, idx) {
 </div>
     </div>
   </div>
-</div>
-      
+
 
 
       </section>
@@ -5467,11 +5472,9 @@ function smToggle(sec, idx) {
 .spz *{box-sizing:border-box}
 .spz .intro{background:#F9FAFB;border-left:4px solid var(--navy);padding:14px 16px;border-radius:0 8px 8px 0;font-size:13px;color:#374151;line-height:1.6;margin-bottom:20px}
 .spz .pg{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
-.spz .pc{border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08)}
-.spz .ph{padding:16px 12px;color:white;text-align:center}
-.spz .pt{font-size:20px;font-weight:800;margin-bottom:2px}
-.spz .ps{font-size:11px;opacity:.85;letter-spacing:.04em;text-transform:uppercase}
-.spz .pb{background:white;padding:14px 12px}
+.spz .pc{border-radius:10px;background:white;box-shadow:0 2px 8px rgba(0,0,0,.08);border-top:5px solid #ccc;padding:14px 14px 14px}
+.spz .pt{font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:4px}
+.spz .ps{font-size:22px;font-weight:800;color:#0D1F47;letter-spacing:-.01em;margin-bottom:12px;line-height:1.1}
 .spz .pl{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
 .spz .pd{font-size:12px;color:#4B5563;line-height:1.5;margin-bottom:10px}
 .spz .pe{background:#F9FAFB;border-radius:6px;padding:8px 10px;font-size:11px;color:#374151;line-height:1.5}
@@ -5485,41 +5488,37 @@ function smToggle(sec, idx) {
 <div class="spz">
   <div class="intro">El <strong>plazo</strong> es el intervalo temporal sugerido para la implementación de la recomendación, en función de la gravedad del daño, la complejidad de su solución y la magnitud de personas afectadas. Establecer el plazo elimina la ambigüedad de cuándo debe actuar la autoridad y permite sincronizar con los ciclos presupuestarios.</div>
   <div class="pg">
-    <div class="pc">
-      <div class="ph" style="background:#1E3A5F"><div class="pt">Urgente</div><div class="ps">1 mes</div></div>
-      <div class="pb">
-        <div class="pl" style="color:#C0392B">Cuándo aplicar</div>
-        <div class="pd">Daño irreparable inminente. Una instrucción del mando puede resolverlo <em>sin</em> inversión ni proyectos.</div>
-        <div class="eg">Ejemplos</div>
-        <div class="pe">Cese del aislamiento prolongado · Abastecimiento de emergencia de agua/alimentos · Traslado de persona en riesgo vital · Recarga de extintores · Reparación de fuga de gas</div>
-      </div>
+    <div class="pc" style="border-top-color:#C0392B">
+      <div class="pt" style="color:#C0392B">Urgente</div>
+      <div class="ps">1 mes</div>
+      <div class="pl" style="color:#C0392B">Cuándo aplicar</div>
+      <div class="pd">Daño irreparable inminente. Una instrucción del mando puede resolverlo <em>sin</em> inversión ni proyectos.</div>
+      <div class="eg">Ejemplos</div>
+      <div class="pe">Cese del aislamiento prolongado · Abastecimiento de emergencia de agua/alimentos · Traslado de persona en riesgo vital · Recarga de extintores · Reparación de fuga de gas</div>
     </div>
-    <div class="pc">
-      <div class="ph" style="background:#7A4A18"><div class="pt">Corto plazo</div><div class="ps">6 meses</div></div>
-      <div class="pb">
-        <div class="pl" style="color:#D4941A">Cuándo aplicar</div>
-        <div class="pd">Problemas resolubles con recursos existentes y voluntad de gestión. Calza con la mitad del año fiscal.</div>
-        <div class="eg">Ejemplos</div>
-        <div class="pe">Compra de colchones/ropa de cama · Reparaciones menores (luminaria, baños) · Redistribución de turnos · Redactar protocolos internos · Firma de convenios con municipios</div>
-      </div>
+    <div class="pc" style="border-top-color:#B5572E">
+      <div class="pt" style="color:#B5572E">Corto plazo</div>
+      <div class="ps">6 meses</div>
+      <div class="pl" style="color:#B5572E">Cuándo aplicar</div>
+      <div class="pd">Problemas resolubles con recursos existentes y voluntad de gestión. Calza con la mitad del año fiscal.</div>
+      <div class="eg">Ejemplos</div>
+      <div class="pe">Compra de colchones/ropa de cama · Reparaciones menores (luminaria, baños) · Redistribución de turnos · Redactar protocolos internos · Firma de convenios con municipios</div>
     </div>
-    <div class="pc">
-      <div class="ph" style="background:#0D5E5A"><div class="pt">Mediano plazo</div><div class="ps">1 año</div></div>
-      <div class="pb">
-        <div class="pl" style="color:#2DAA9E">Cuándo aplicar</div>
-        <div class="pd">Requiere planificación financiera. El Estado define el presupuesto de un año al siguiente (DIPRES).</div>
-        <div class="eg">Ejemplos</div>
-        <div class="pe">Contratación de profesionales · Adquisición de vehículos · Renovación de redes eléctricas o sanitarias · Implementación de sistemas informáticos</div>
-      </div>
+    <div class="pc" style="border-top-color:#2DAA9E">
+      <div class="pt" style="color:#2DAA9E">Mediano plazo</div>
+      <div class="ps">1 año</div>
+      <div class="pl" style="color:#2DAA9E">Cuándo aplicar</div>
+      <div class="pd">Requiere planificación financiera. El Estado define el presupuesto de un año al siguiente (DIPRES).</div>
+      <div class="eg">Ejemplos</div>
+      <div class="pe">Contratación de profesionales · Adquisición de vehículos · Renovación de redes eléctricas o sanitarias · Implementación de sistemas informáticos</div>
     </div>
-    <div class="pc">
-      <div class="ph" style="background:#0D1F47"><div class="pt">Largo plazo</div><div class="ps">3 a 5 años</div></div>
-      <div class="pb">
-        <div class="pl" style="color:#0D1F47">Cuándo aplicar</div>
-        <div class="pd">Requiere obras civiles mayores o cambios estructurales que pasan por el Ciclo de Inversión Pública (MIDESO-RS).</div>
-        <div class="eg">Ejemplos</div>
-        <div class="pe">Construcción de nuevo centro penitenciario · Reposición de pabellón psiquiátrico · Modificaciones a Ley Orgánica del servicio · Cambios en política nacional</div>
-      </div>
+    <div class="pc" style="border-top-color:#0D1F47">
+      <div class="pt" style="color:#0D1F47">Largo plazo</div>
+      <div class="ps">3–5 años</div>
+      <div class="pl" style="color:#0D1F47">Cuándo aplicar</div>
+      <div class="pd">Requiere obras civiles mayores o cambios estructurales que pasan por el Ciclo de Inversión Pública (MIDESO-RS).</div>
+      <div class="eg">Ejemplos</div>
+      <div class="pe">Construcción de nuevo centro penitenciario · Reposición de pabellón psiquiátrico · Modificaciones a Ley Orgánica del servicio · Cambios en política nacional</div>
     </div>
   </div>
   <div style="font-size:12px;font-weight:800;color:#0D1F47;margin-bottom:12px;text-transform:uppercase;letter-spacing:.04em">¿Dónde formular recomendaciones según plazo?</div>
@@ -5530,6 +5529,7 @@ function smToggle(sec, idx) {
     <div class="wc"><div class="wt">📊 Informe Anual</div><div class="wd">Problemáticas sistémicas. <strong>Todas deben formularse en mediano plazo</strong> (1 año). Alta visibilidad.</div></div>
   </div>
   <div class="note">⚡ <strong>Recomendaciones urgentes:</strong> se utilizan exclusivamente cuando la situación requiere medidas inmediatas por la gravedad de las vulneraciones. Por lo general no requieren presupuesto: solo una instrucción del mando. Se relacionan también con casos derivados a instituciones de protección (INDH, DPP).</div>
+</div>
 </div>
       </section>
 
@@ -5638,17 +5638,7 @@ function smToggle(sec, idx) {
           </div>
         </div>
 
-        <button class="infog-modal-trigger" onclick="toggleInline('modal-seguimiento')" data-inline="modal-seguimiento">
-  <div class="infog-modal-trigger-ico">📊</div>
-  <div class="infog-modal-trigger-body">
-    <div class="infog-modal-trigger-title">Etapas del seguimiento y diálogo</div>
-    <div class="infog-modal-trigger-sub">Flujo de visita y flujo anual · Haz clic para abrir la infografía interactiva</div>
-  </div>
-  <span class="infog-modal-trigger-arr">→</span>
-</button>
-
-<div class="inline-panel" id="modal-seguimiento">
-  <div style="padding:4px 0">
+<div style="padding:4px 0">
       <div class="infog-embed-outer">
   <style>
 
@@ -9101,8 +9091,8 @@ function tsbToggle(i){document.getElementById('tsb'+i).classList.toggle('open')}
 .sm *{box-sizing:border-box}
 .sm p{margin:0}
 .sm .dg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
-.sm .dc{background:#E6F7F6;border-radius:10px;padding:14px 16px;border-left:4px solid #2DA8A2}
-.sm .dn{font-size:11px;font-weight:800;color:#1E8880;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.sm .dc{background:#FAF3E8;border-radius:10px;padding:14px 16px;border-left:4px solid #B5572E}
+.sm .dn{font-size:11px;font-weight:800;color:#7A4A18;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
 .sm .dt{font-size:13px;font-weight:700;color:#0D1F47;margin-bottom:4px}
 .sm .dd{font-size:11.5px;color:#6B7280;line-height:1.5}
 .sm table{width:100%;border-collapse:collapse;font-size:12px}
@@ -9968,6 +9958,13 @@ const SECTIONS = {
     {id:'fase-2', num:'Fase 02', name:'Principios básicos'},
     {id:'fase-3', num:'Fase 03', name:'Relación con sociedad civil'},
     {id:'fase-4', num:'Fase 04', name:'Programa Anual'},
+    {id:'fase-4-p1', num:'↳ Paso 1', name:'Levantamiento de información', sub:true},
+    {id:'fase-4-p2', num:'↳ Paso 2', name:'Selección de lugares', sub:true},
+    {id:'fase-4-p3', num:'↳ Paso 3', name:'Cantidad de visitas', sub:true},
+    {id:'fase-4-p4', num:'↳ Paso 4', name:'Tipos de visitas', sub:true},
+    {id:'fase-4-p5', num:'↳ Paso 5', name:'Anunciadas o no anunciadas', sub:true},
+    {id:'fase-4-p6', num:'↳ Paso 6', name:'Duración de visitas', sub:true},
+    {id:'fase-4-p7', num:'↳ Paso 7', name:'Orden de visitas', sub:true},
     {id:'fase-5', num:'Fase 05', name:'Etapas de la visita'},
     {id:'fase-6', num:'Fase 06', name:'Dimensiones CPT'},
     {id:'fase-7', num:'Fase 07', name:'Cursos APT'},
@@ -10013,7 +10010,7 @@ function renderTimeline(){
   const list = document.getElementById('tnList');
   const items = SECTIONS[currentMod];
   list.innerHTML = items.map((it,i)=>`
-    <div class="tn-item${i===0?' active':''}${visited.has(it.id)?' visited':''}" data-target="${it.id}">
+    <div class="tn-item${i===0&&!it.sub?' active':''}${visited.has(it.id)?' visited':''}${it.sub?' tn-sub':''}" data-target="${it.id}">
       <span class="tn-dot"></span>
       <span class="tn-num">${it.num}</span>
       <span class="tn-name">${it.name}</span>
