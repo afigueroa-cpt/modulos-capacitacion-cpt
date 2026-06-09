@@ -4572,17 +4572,6 @@ function etapaSub(id){
   </div>
 </div>
 
-<!-- ── FOOTER ── -->
-<div class="cpt-footer">
-  <div class="cpt-circle">CPT</div>
-  <div>
-    <div class="cpt-name">Comité para la Prevención de la Tortura</div>
-    <div class="cpt-sub">Mecanismo Nacional de Prevención · Ley 21.154 · Chile</div>
-  </div>
-</div>
-
-
-
 </div>
   <script>
 const smActive = {1: null, 2: null};
@@ -5417,19 +5406,61 @@ function smToggle(sec, idx) {
   </div>
 </div>
 
-<!-- ── FOOTER ── -->
-<div class="cpt-footer">
-  <div class="cpt-circle">CPT</div>
-  <div>
-    <div class="cpt-name">Comité para la Prevención de la Tortura</div>
-    <div class="cpt-sub">Mecanismo Nacional de Prevención · Ley 21.154 · Chile</div>
-  </div>
-</div>
+<script>
+(function(){
+  var answers = [
+    {s:'falta',m:'falta',a:'cumple',t:'cumple',r:'cumple'},
+    {s:'cumple',m:'falta',a:'falta',t:'falta',r:'cumple'},
+    {s:'cumple',m:'cumple',a:'cumple',t:'cumple',r:'falta'}
+  ];
+  var labels = {s:'Específico',m:'Medible',a:'Alcanzable',t:'Dirigida',r:'Sensible a causas'};
+  var state = [{},{},{}];
+
+  window.ej_mark = function(idx, crit, val, btn) {
+    var opts = btn.parentElement.querySelectorAll('.cr-opt');
+    opts.forEach(function(b){ b.classList.remove('sel-falta','sel-cumple'); });
+    btn.classList.add(val === 'falta' ? 'sel-falta' : 'sel-cumple');
+    state[idx][crit] = val;
+  };
+
+  window.ej_reveal = function(idx) {
+    var ans = answers[idx];
+    var userState = state[idx];
+    var keys = ['s','m','a','t','r'];
+    var rows = '';
+    keys.forEach(function(k){
+      var userVal = userState[k];
+      var correctVal = ans[k];
+      var match = userVal === correctVal;
+      var icon = match ? '✓' : (userVal ? '✗' : '—');
+      var cls = match ? 'fb-great' : (userVal ? 'fb-good' : 'fb-ok');
+      rows += '<div class="feedback-row ' + cls + '"><span class="fb-icon">' + icon + '</span><strong>' + labels[k] + '</strong>: ' + correctVal + (userVal && !match ? ' (marcaste: '+userVal+')' : '') + '</div>';
+    });
+    document.getElementById('feedback-' + idx).innerHTML = rows;
+    document.getElementById('smart-side-' + idx).classList.add('revealed');
+    var revBtn = document.getElementById('reveal-btn-' + idx);
+    if (revBtn) revBtn.disabled = true;
+  };
+
+  window.resetCard = function(idx) {
+    document.getElementById('criteria-' + idx).querySelectorAll('.cr-opt').forEach(function(b){ b.classList.remove('sel-falta','sel-cumple'); });
+    document.getElementById('feedback-' + idx).innerHTML = '';
+    document.getElementById('smart-side-' + idx).classList.remove('revealed');
+    var revBtn = document.getElementById('reveal-btn-' + idx);
+    if (revBtn) revBtn.disabled = false;
+    state[idx] = {};
+    var tag = document.getElementById('state-tag-' + idx);
+    if (tag) tag.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v4"/><circle cx="8" cy="11" r=".5" fill="currentColor"/></svg> Evalúa la recomendación débil';
+  };
+
+  window.ej_resetAll = function() { [0,1,2].forEach(resetCard); };
+})();
+</script>
 
 
 
 </div>
-  
+
 </div>
     </div>
   </div>
@@ -5502,7 +5533,7 @@ function smToggle(sec, idx) {
   </div>
   <div style="font-size:12px;font-weight:800;color:#0D1F47;margin-bottom:12px;text-transform:uppercase;letter-spacing:.04em">¿Dónde formular recomendaciones según plazo?</div>
   <div class="where">
-    <div class="wc"><div class="wt">📄 Informe de Visita</div><div class="wd">Recomendaciones locales dirigidas a la autoridad del recinto. Principalmente urgentes y corto plazo.</div></div>
+    <div class="wc"><div class="wt">📄 Informe de Visita</div><div class="wd">Idealmente recomendaciones locales dirigidas a la autoridad local/regional del recinto.</div></div>
     <div class="wc"><div class="wt">🔬 Informe Temático</div><div class="wd">Recomendaciones a múltiples actores. Marco legal, políticas públicas, mediano y largo plazo.</div></div>
     <div class="wc"><div class="wt">✉️ Oficio específico</div><div class="wd">Situaciones críticas que no pueden esperar al informe. Triangulado con equipo y área especialista.</div></div>
     <div class="wc"><div class="wt">📊 Informe Anual</div><div class="wd">Problemáticas sistémicas. <strong>Todas deben formularse en mediano plazo</strong> (1 año). Alta visibilidad.</div></div>
@@ -6586,21 +6617,11 @@ function smToggle(sec, idx) {
     <svg viewBox="0 0 20 20" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"><circle cx="10" cy="10" r="9"/><path d="M10 6v5"/><circle cx="10" cy="14.5" r=".5" fill="var(--accent)"/></svg>
     <span><strong>Validación cruzada.</strong> En todo proceso de seguimiento, los equipos de monitoreo aportan el criterio especializado para detectar <em>cumplimientos en papel</em>, y la secretaría ejecutiva realiza el análisis "en frío" de plazos y evidencia. Así se previene que la cercanía con el recinto suavice o endurezca la exigencia.</span>
   </div>
-
-  <!-- ══ FOOTER ══ -->
-  <div class="cpt-footer">
-    <div class="cpt-circle">CPT</div>
-    <div>
-      <div class="cpt-name">Comité para la Prevención de la Tortura</div>
-      <div class="cpt-sub">Mecanismo Nacional de Prevención · Ley 21.154 · Chile</div>
-    </div>
   </div>
 
 </div>
 
 </div>
-  
-  </div>
 </div>
 
         <div class="callout" style="margin-top:18px">
@@ -7517,18 +7538,9 @@ function smToggle(sec, idx) {
   </div>
   <div class="results-panel" id="results-1"></div>
 </div>
-
-<!-- FOOTER -->
-<div class="cpt-footer">
-  <div class="cpt-circle">CPT</div>
-  <div>
-    <div class="cpt-name">Comité para la Prevención de la Tortura</div>
-    <div class="cpt-sub">Mecanismo Nacional de Prevención · Ley 21.154 · Chile</div>
-  </div>
 </div>
 
 </div><!-- wrap -->
-
 
 </div>
                 <script>
@@ -7743,7 +7755,6 @@ function psToggleScale() {
               </div>
             </div>
           </div>
-        </div>
 
       </section>
 
